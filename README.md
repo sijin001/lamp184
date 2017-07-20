@@ -1,0 +1,2 @@
+# lamp184
+object
