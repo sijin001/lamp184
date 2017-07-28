@@ -11,15 +11,33 @@ use DB;
 class MovieController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 显示网站前台首页
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        // 轮播图
+        $res = DB::table('slides')->get();
+        
+        // 电影
         $movies = DB::table('movie')->where('status','=',1)->get();
         $comovies = DB::table('movie')->where('status','=',2)->get();
-        return view('home.index',['movies'=>$movies,'comovies'=>$comovies]);
+
+        $arr = [];
+        // 商品分类
+        $type = DB::table('goods_type')->get();
+        
+        // 商品
+        for($i = 0; $i < count($type); $i++) {
+            $list = DB::table('goods')->where('tid', $type[$i]->id)
+                ->join('goods_photo', 'goods_photo.gid', '=', 'goods.id')
+                ->where('goods_photo.index',1)
+                ->get();  
+            $arr[$type[$i]->tname] = $list;
+        }
+
+        return view('home.index',['res' => $res, 'movies' => $movies,'comovies' => $comovies,'type' => $type, 'arr' => $arr]);
     }
 
     /**

@@ -1221,21 +1221,21 @@ input:focus {
 .mall-list .mall-list-con .mall-con a {
   width: 100%;
   height: 100%;
-  display: inline-block;
+  /*display: inline-block;*/
 }
 /* line 486, ../sass/screen.scss */
 .mall-list .mall-list-con .mall-con ul {
-  display: inline-block;
-  width: 820px;
+  /*display: inline-block;
+  width: 820px;*/
 }
 /* line 490, ../sass/screen.scss */
 .mall-list .mall-list-con .mall-con ul li {
-  margin: 0 10px 10px 0;
-  display: inline-block;
+  margin: 0 10px 10px 0;float:left;
+  /*display: inline-block;*/
 }
 /* line 494, ../sass/screen.scss */
 .mall-list .mall-list-con .mall-con ul li img {
-  width: 400px;
+  width: 390px;
   height: 260px;
 }
 /* line 501, ../sass/screen.scss */
@@ -1948,7 +1948,8 @@ input:focus {
         /* line 1134, ../sass/screen.scss */
         .mall-index-center .mall-index-center-con .mall-index-center-con1 ul {
             display: inline-block;
-            width: 821px;
+            /* width: 821px; */
+			width: 100%;
         }
             /* line 1138, ../sass/screen.scss */
             .mall-index-center .mall-index-center-con .mall-index-center-con1 ul li {
@@ -1958,7 +1959,8 @@ input:focus {
             }
                 /* line 1143, ../sass/screen.scss */
                 .mall-index-center .mall-index-center-con .mall-index-center-con1 ul li img {
-                    width: 400px;
+                    /* width: 400px; */
+					width: 390px;
                     height: 260px;
                 }
         /* line 1150, ../sass/screen.scss */

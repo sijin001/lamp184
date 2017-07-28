@@ -1,15 +1,18 @@
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1">
     <title>中影·国际影城官网|电影|在线预订电影票|电影票团购|中影·国际影城</title>
-    <meta name="Keywords" content="网上订电影票,网上订购电影票,网上预订电影票,在线订购电影票,电影票预定,南京电影票,西安电影票,成都电影票,合肥电影票,徐州电影票,常州电影票,黄石电影票,苏州电影票" /> 
-    <meta name="Description" content="中影·国际影城官网是中国最专业的电影票网上预定购买网站，为广大影迷提供最新的影片排期查询，网上订电影票，在线订电影票，优惠折扣在线选座等功能，为企业提供电影票团购等服务，免费服务热线400-998-8022" /> 
+    <meta name="Keywords" content="" /> 
+    <meta name="Description" content="" /> 
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <link href="{{ asset('home/css/reset-min.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('home/css/main.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('home/css/inside_pages.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('home/css/ui-lightness/jquery-ui-1.8.5.custom.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('home/css/style.css') }}" rel="stylesheet" /><link href="{{ asset('home/css/my.css') }}" rel="stylesheet" /><link href="{{ asset('home/css/screen.css') }}" rel="stylesheet" />
+    <link href="{{ asset('home/css/reset-min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('home/css/main.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('home/css/inside_pages.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('home/css/ui-lightness/jquery-ui-1.8.5.custom.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('home/css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('home/css/my.css') }}" rel="stylesheet" />
+    <link href="{{ asset('home/css/screen.css') }}" rel="stylesheet" />
     <script type="text/javascript" src="{{ asset('home/js/jquery-1.8.3.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('home/js/plugins/jquery-ui-1.8.23.custom.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('home/js/comm/Dialog.js') }}"></script>
@@ -682,23 +685,9 @@
 
 </title></head>
 <body>
-    <form method="post" action="schedule.aspx" id="form1">
-<div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTcwOTAzOTkwNg9kFgJmD2QWAgIBD2QWAmYPFgIeBFRleHQFiAYNCiAgICA8dGl0bGU+5Lit5b2xwrflm73pmYXlvbHln47lrpjnvZF855S15b2xfOWcqOe6v+mihOiuoueUteW9seelqHznlLXlvbHnpajlm6LotK185Lit5b2xwrflm73pmYXlvbHln448L3RpdGxlPg0KICAgIDxtZXRhIG5hbWU9IktleXdvcmRzIiBjb250ZW50PSLnvZHkuIrorqLnlLXlvbHnpags572R5LiK6K6i6LSt55S15b2x56WoLOe9keS4iumihOiuoueUteW9seelqCzlnKjnur/orqLotK3nlLXlvbHnpags55S15b2x56Wo6aKE5a6aLOWNl+S6rOeUteW9seelqCzopb/lronnlLXlvbHnpags5oiQ6YO955S15b2x56WoLOWQiOiCpeeUteW9seelqCzlvpDlt57nlLXlvbHnpags5bi45bee55S15b2x56WoLOm7hOefs+eUteW9seelqCzoi4/lt57nlLXlvbHnpagiIC8+IA0KICAgIDxtZXRhIG5hbWU9IkRlc2NyaXB0aW9uIiBjb250ZW50PSLkuK3lvbHCt+WbvemZheW9seWfjuWumOe9keaYr+S4reWbveacgOS4k+S4mueahOeUteW9seelqOe9keS4iumihOWumui0reS5sOe9keerme+8jOS4uuW5v+Wkp+W9sei/t+aPkOS+m+acgOaWsOeahOW9seeJh+aOkuacn+afpeivou+8jOe9keS4iuiuoueUteW9seelqO+8jOWcqOe6v+iuoueUteW9seelqO+8jOS8mOaDoOaKmOaJo+WcqOe6v+mAieW6p+etieWKn+iDve+8jOS4uuS8geS4muaPkOS+m+eUteW9seelqOWboui0reetieacjeWKoe+8jOWFjei0ueacjeWKoeeDree6vzQwMC05OTgtODAyMiIgLz4gDQogICAgPG1ldGEgaHR0cC1lcXVpdj0iWC1VQS1Db21wYXRpYmxlIiBjb250ZW50PSJJRT05IiAvPg0KICAgIGRkqq2U1DLVI4dGVXXiUn5fcxtqyiA=" />
-</div>
-
-<div class="aspNetHidden">
-
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgKv0ZTRCwKku77lDMfG3v2UA72u/7jxfg4AYS54erhB" />
-</div>
-
-        <div id="zhezao" class="loading" style="display: none;">
-            <div id="container"></div>
-        </div>
-        <!--头部开始-->
-        <!--logo-->
-        
-        
+    <div id="zhezao" class="loading" style="display: none;">
+        <div id="container"></div>
+    </div>
 <!---头部开始-->
 
 <header class="index-header">
@@ -710,12 +699,10 @@
         <!---菜单导航 start-->
         <nav class="index-nav">
             <ul>
-                <li id="1"><a href="{{ url('/') }}" title="首页">首 页</a></li>
+                <li id=""><a href="{{ url('/') }}" title="首页">首 页</a></li>
                 <li id="2"><a href="../cinema/cinema.aspx" title="购票通道">影 院</a></li>
-                <li id="3"><a href="schedule.aspx" title="在线购票">在线购票</a></li>
-                <li id="4" style="display: none;"><a href="../appclient/client.aspx" title="移动下载">移动下载</a></li>
-                 <li id="5"><a href="../mall/Index.aspx" title="商城"><span class="icon-2"></span>商城</a></li>
-              
+                <li id="3"><a href="{{ url('/home/movie/get') }}" title="在线购票" class="">在线购票</a></li>
+                <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li>
                 <li id="6"><a href="../activity/ActList.aspx" title="优惠活动">优惠活动</a></li>
             </ul>
         </nav>
@@ -770,73 +757,10 @@
     </div>
 </header>
 
-
-
-
-
-
-
 <!---头部结束-->
 
 <script type="text/javascript" language="javascript">
-    //选择城市操作
-    $("#change").click(function () {
-        $(".City_list").show();
-        var cityNo = getCookie("_CityNo_");
-        if (cityNo != "") {
-            $("#" + cityNo).attr("class", "sel");
-        }
-    });
-    function changeCityClick() {
-        $(".City_list").show();
-        var cityNo = getCookie("_CityNo_");
-        if (cityNo != "") {
-            $("#" + cityNo).attr("class", "sel");
-        }
-    }
-    $(".City_list").mouseleave(function () {
-        $(".City_list").hide();
-    });
-
-    //切换城市
-    function ChangCity(id) {
-        var str = $("#" + id).html();
-        if (str.length > 4) {
-            str = str.substr(0, 4);
-        }
-        $("#span_CityName").html(str);
-        setCookie("_CityName_", encodeURI(str));
-        setCookie("_CityNo_", encodeURI(id));
-        // window.location.href = '../index.aspx';
-        var urls = window.location.href;
-        if (urls != "" && urls.indexOf("movie.aspx") != -1 && urls.indexOf("?") == -1) {    //影片页面
-            window.location.href = window.location.href;
-        } else if (urls != "" && urls.indexOf("cinema.aspx") != -1 && urls.indexOf("?") == -1) {    //影院页面
-            window.location.href = window.location.href;
-        } else if (urls != "" && urls.indexOf("schedule.aspx") != -1) { //排期查询页面
-            //window.location.href = window.location.href;
-            window.location.href = "schedule.aspx";
-        } else if (urls != "" && urls.indexOf("exticket_list.aspx") != -1) { //活动促销页面
-            window.location.href = window.location.href;
-        }
-        else if (urls != "" && urls.indexOf("mall") != -1) { //商城页
-            window.location.href = window.location.href;
-        }
-        else {
-            window.location.href = '../index.aspx';
-        }
-
-    }
-
-    //设置默认值
-    if (getCookie("_CityName_") != null) {
-        $("#span_CityName").html(getCookie("_CityName_"));
-
-    } else {
-        setCookie("_CityName_", encodeURI("北京"));
-        setCookie("_CityNo_", encodeURI("110100"));
-    }
-
+   
     //JS Cookie操作
     function getCookieVal(offset) {
         var endstr = document.cookie.indexOf(";", offset);
@@ -881,8 +805,6 @@
         expires.setTime(expires.getTime() + (exp * 24 * 60 * 60 * 1000));
         document.cookie = name + "=" + value + "; path=/; expires=" + expires.toGMTString();
     }
-
-
 
     //选项卡操作
     //$(".mune_xia").hide();
@@ -1200,11 +1122,6 @@
         });
     </script>
 
-
-
-        
-        
-
 <footer class="index-footer">
 			<div class="pro-box">
                 <img style=" margin-top: 50px;
@@ -1310,7 +1227,6 @@
 //<![CDATA[
 actcinemamap = []//]]>
 </script>
-</form>
 </body>
 </html>
 

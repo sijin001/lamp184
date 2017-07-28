@@ -451,14 +451,14 @@
                 </li>
 
                 <li>
-                  <a href="wysiwyg.html">
+                  <a href="{{ url('admin/shop') }}">
                     <i class="icon-double-angle-right"></i>
                     购物车
                   </a>
                 </li>
 
                 <li>
-                  <a href="dropzone.html">
+                  <a href="{{ url('admin/order') }}">
                     <i class="icon-double-angle-right"></i>
                     订单
                   </a>
@@ -471,6 +471,42 @@
                 <i class="icon-list-alt"></i>
                 <span class="menu-text"> 友情链接 </span>
               </a>
+            </li>
+
+            <li>
+              <a href="#" class="dropdown-toggle">
+                <i class="icon-edit"></i>
+                <span class="menu-text"> 网站轮播图 </span>
+
+                <b class="arrow icon-angle-down"></b>
+              </a>
+
+              <ul class="submenu">
+                <li>
+                  <a href="{{ url('admin/lunbo') }}">
+                    <i class="icon-double-angle-right"></i>
+                    轮播图
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" class="dropdown-toggle">
+                <i class="icon-edit"></i>
+                <span class="menu-text"> 站点管理 </span>
+
+                <b class="arrow icon-angle-down"></b>
+              </a>
+
+              <ul class="submenu">
+                <li>
+                  <a href="{{ url('admin/config') }}">
+                    <i class="icon-double-angle-right"></i>
+                    站点配置
+                  </a>
+                </li>
+              </ul>
             </li>
 
           </ul><!-- /.nav-list -->

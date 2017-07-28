@@ -2,15 +2,21 @@
 <!-- saved from url=(0060)http://www.cfc.com.cn/buy/buyinfo.aspx?orderno=ZY10014057657 -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>中影·国际影城官网|电影|在线预订电影票|电影票团购|中影·国际影城</title>
-    <meta name="Keywords" content="网上订电影票,网上订购电影票,网上预订电影票,在线订购电影票,电影票预定,南京电影票,西安电影票,成都电影票,合肥电影票,徐州电影票,常州电影票,黄石电影票,苏州电影票"> 
-    <meta name="Description" content="中影·国际影城官网是中国最专业的电影票网上预定购买网站，为广大影迷提供最新的影片排期查询，网上订电影票，在线订电影票，优惠折扣在线选座等功能，为企业提供电影票团购等服务，免费服务热线400-998-8022"> 
+    <meta name="Keywords" content=""> 
+    <meta name="Description" content=""> 
     <meta http-equiv="X-UA-Compatible" content="IE=9">
-    <link href="{{ asset('home/css/reset-min.css') }}" rel="stylesheet" type="text/css"><link href="{{ asset('home/css/main.css') }}" rel="stylesheet" type="text/css"><link href="{{ asset('home/css/inside_pages.css') }}" rel="stylesheet" type="text/css"><link href="{{ asset('home/css/jquery-ui-1.8.5.custom.css') }}" rel="stylesheet" type="text/css"><link href="{{ asset('home/css/style.css') }}" rel="stylesheet"><link href="{{ asset('home/css/my.css') }}" rel="stylesheet"><link href="{{ asset('home/css/screen.css') }}" rel="stylesheet">
-    <script type="text/javascript" src="{{ asset('home/js/jquery-1.8.3.min.js') }}">></script>
-    <script type="text/javascript" src="{{ asset('home/js/jquery-ui-1.8.23.custom.min.js') }}">></script>
-    <script type="text/javascript" src="{{ asset('home/js/Dialog.js') }}">></script>
-    <script type="text/javascript" src="{{ asset('home/js/common.js') }}">></script>
-    <script type="text/javascript" src="{{ asset('home/js/gotoTop.js') }}">></script>
+    <link href="{{ asset('home/css/reset-min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('home/css/main.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('home/css/inside_pages.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('home/css/jquery-ui-1.8.5.custom.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('home/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('home/css/my.css') }}" rel="stylesheet">
+    <link href="{{ asset('home/css/screen.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ asset('home/js/jquery-1.8.3.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('home/js/jquery-ui-1.8.23.custom.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('home/js/Dialog.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('home/js/common.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('home/js/gotoTop.js') }}"></script>
     <style type="text/css">
         .loading {
             position: fixed;
@@ -68,21 +74,32 @@
     </style>
 <title>
 
-</title><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/mall" src="{{ asset('home/js/mall.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/io/console" src="{{ asset('home/js/console.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/comp/base" src="{{ asset('home/js/base.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/queryNode" src="{{ asset('home/js/queryNode.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/evt/add" src="{{ asset('home/js/add.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/header" src="{{ asset('home/js/header.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/mall" src="{{ asset('home/js/mall(1).js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/util/each" src="{{ asset('home/js/each.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/sizzle" src="{{ asset('home/js/sizzle.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/util/getType" src="{{ asset('home/js/getType.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/parseNode" src="{{ asset('home/js/parseNode.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/className" src="{{ asset('home/js/className.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/contains" src="{{ asset('home/js/contains.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/jquery.easing.1.3" src="{{ asset('home/js/jquery.easing.1.3.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/jquery.elastislide" src="{{ asset('home/js/jquery.elastislide.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/isElement" src="{{ asset('home/js/isElement.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/str/trim" src="{{ asset('home/js/trim.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/getStyle" src="{{ asset('home/js/getStyle.js') }}">></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/isNode" src="{{ asset('home/js/isNode.js') }}">></script></head>
+</title>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/mall" src="{{ asset('home/js/mall.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/io/console" src="{{ asset('home/js/console.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/comp/base" src="{{ asset('home/js/base.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/queryNode" src="{{ asset('home/js/queryNode.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/evt/add" src="{{ asset('home/js/add.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/header" src="{{ asset('home/js/header.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/mall" src="{{ asset('home/js/mall(1).js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/util/each" src="{{ asset('home/js/each.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/sizzle" src="{{ asset('home/js/sizzle.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/util/getType" src="{{ asset('home/js/getType.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/parseNode" src="{{ asset('home/js/parseNode.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/className" src="{{ asset('home/js/className.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/contains" src="{{ asset('home/js/contains.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/jquery.easing.1.3" src="{{ asset('home/js/jquery.easing.1.3.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/jquery.elastislide" src="{{ asset('home/js/jquery.elastislide.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/isElement" src="{{ asset('home/js/isElement.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/str/trim" src="{{ asset('home/js/trim.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/getStyle" src="{{ asset('home/js/getStyle.js') }}"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/isNode" src="{{ asset('home/js/isNode.js') }}"></script>
+</head>
 <body>
-    <form method="post" action="http://www.cfc.com.cn/buy/buyinfo.aspx?orderno=ZY10014057657" id="form1" target="_blank">
-<div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMjQ4MTc5MzkxZGQ=">
-</div>
+    <div id="zhezao" class="loading" style="display: none;">
+        <div id="container"></div>
+    </div> 
 
-
-        <div id="zhezao" class="loading" style="display: none;">
-            <div id="container"></div>
-        </div>
-        <!--头部开始-->
-        <!--logo-->
-        
-        
 <!---头部开始-->
 
 <header class="index-header">
@@ -96,13 +113,11 @@
         <!---菜单导航 start-->
         <nav class="index-nav">
             <ul>
-                <li id="1"><a href="http://www.cfc.com.cn/index.aspx" title="首页">首 页</a></li>
-                <li id="2"><a href="http://www.cfc.com.cn/cinema/cinema.aspx" title="购票通道">影 院</a></li>
-                <li id="3"><a href="http://www.cfc.com.cn/search/schedule.aspx" title="在线购票" class="hover">在线购票</a></li>
-                <li id="4" style="display: none;"><a href="http://www.cfc.com.cn/appclient/client.aspx" title="移动下载">移动下载</a></li>
-                 <li id="5"><a href="http://www.cfc.com.cn/mall/Index.aspx" title="商城"><span class="icon-2"></span>商城</a></li>
-              
-                <li id="6"><a href="http://www.cfc.com.cn/activity/ActList.aspx" title="优惠活动">优惠活动</a></li>
+                <li id=""><a href="{{ url('/') }}" title="首页">首 页</a></li>
+                <li id="2"><a href="../cinema/cinema.aspx" title="购票通道">影 院</a></li>
+                <li id="3"><a href="{{ url('/home/movie/get') }}" title="在线购票" class="">在线购票</a></li>
+                <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li>
+                <li id="6"><a href="../activity/ActList.aspx" title="优惠活动">优惠活动</a></li>
             </ul>
         </nav>
         <!---菜单导航 end-->
@@ -156,73 +171,10 @@
     </div>
 </header>
 
-
-
-
-
-
-
 <!---头部结束-->
 
 <script type="text/javascript" language="javascript">
-    //选择城市操作
-    $("#change").click(function () {
-        $(".City_list").show();
-        var cityNo = getCookie("_CityNo_");
-        if (cityNo != "") {
-            $("#" + cityNo).attr("class", "sel");
-        }
-    });
-    function changeCityClick() {
-        $(".City_list").show();
-        var cityNo = getCookie("_CityNo_");
-        if (cityNo != "") {
-            $("#" + cityNo).attr("class", "sel");
-        }
-    }
-    $(".City_list").mouseleave(function () {
-        $(".City_list").hide();
-    });
-
-    //切换城市
-    function ChangCity(id) {
-        var str = $("#" + id).html();
-        if (str.length > 4) {
-            str = str.substr(0, 4);
-        }
-        $("#span_CityName").html(str);
-        setCookie("_CityName_", encodeURI(str));
-        setCookie("_CityNo_", encodeURI(id));
-        // window.location.href = '../index.aspx';
-        var urls = window.location.href;
-        if (urls != "" && urls.indexOf("movie.aspx") != -1 && urls.indexOf("?") == -1) {    //影片页面
-            window.location.href = window.location.href;
-        } else if (urls != "" && urls.indexOf("cinema.aspx") != -1 && urls.indexOf("?") == -1) {    //影院页面
-            window.location.href = window.location.href;
-        } else if (urls != "" && urls.indexOf("schedule.aspx") != -1) { //排期查询页面
-            //window.location.href = window.location.href;
-            window.location.href = "schedule.aspx";
-        } else if (urls != "" && urls.indexOf("exticket_list.aspx") != -1) { //活动促销页面
-            window.location.href = window.location.href;
-        }
-        else if (urls != "" && urls.indexOf("mall") != -1) { //商城页
-            window.location.href = window.location.href;
-        }
-        else {
-            window.location.href = '../index.aspx';
-        }
-
-    }
-
-    //设置默认值
-    if (getCookie("_CityName_") != null) {
-        $("#span_CityName").html(getCookie("_CityName_"));
-
-    } else {
-        setCookie("_CityName_", encodeURI("北京"));
-        setCookie("_CityNo_", encodeURI("110100"));
-    }
-
+   
     //JS Cookie操作
     function getCookieVal(offset) {
         var endstr = document.cookie.indexOf(";", offset);
@@ -334,7 +286,7 @@
                 <!--t_tit-->
                 <div class="t_detail cf ">
                     <div class="tinfo1">
-                        <img src="{{ asset('admin/upload/movie/'.$list[0]->title_pic ) }}" width="95" height="133">
+                        <img src="{{ asset('admin/upload/movie/'.$list[0]->title_pic) }}" width="95" height="133">
                         <h4>
                             {{ $list[0]->title }}</h4>
                         <p>
@@ -627,11 +579,6 @@
         <!--contTet-->
     </div>
 
-
-
-        
-        
-
 <footer class="index-footer">
             <div class="pro-box">
                 <img style=" margin-top: 50px;
@@ -702,7 +649,9 @@
                 <script type="text/javascript">
                     var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
                     document.write(unescape("%3Cspan id='cnzz_stat_icon_1000542813'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1000542813%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-                </script><span id="cnzz_stat_icon_1000542813"><a href="http://www.cnzz.com/stat/website.php?web_id=1000542813" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="{{ asset('home/images/pic1.gif') }}"></a></span><script src="{{ asset('home/js/z_stat.php') }}" type="text/javascript"></script><script src="{{ asset('home/js/core.php') }}" charset="utf-8" type="text/javascript"></script>
+                </script><span id="cnzz_stat_icon_1000542813"><a href="http://www.cnzz.com/stat/website.php?web_id=1000542813" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="{{ asset('home/images/pic1.gif') }}"></a></span>
+                <script src="{{ asset('home/js/z_stat.php') }}" type="text/javascript"></script>
+                <script src="{{ asset('home/js/core.php') }}" charset="utf-8" type="text/javascript"></script>
                 </div>
         </footer>
 
@@ -1139,9 +1088,6 @@
                     return;
             }
 
-      
-
-          
           
             var couponAll=[];
             var couponSelect=[];
@@ -1844,10 +1790,6 @@
 
         });
 
-
-            
-            
-            
         //订单已经超过支付时间
         function SetTimeOut() {
             SetOrderStatus(2);
@@ -1861,8 +1803,6 @@
             $("#payStellarCouponDetail").hide()
             $("#payStellarCoupon").attr("class", "radioOff").attr("onclick", "");
             $("#payStellarCouponH5").attr("onclick", "");
-
-
         }
 
 
@@ -2085,18 +2025,18 @@
 
 
     <script>
-    $(function() {
-        $(".backToTop").goToTop();
-        $(window).bind('scroll resize', function() {
-            $(".backToTop").goToTop({
-                pageWidth: 1030,
-                duration: 0
+        $(function() {
+            $(".backToTop").goToTop();
+            $(window).bind('scroll resize', function() {
+                $(".backToTop").goToTop({
+                    pageWidth: 1030,
+                    duration: 0
+                });
             });
         });
-    });
 
     </script>
-    <script type="text/javascript" src="{{ asset('home/js/require.min.js') }}">></script>
+    <script type="text/javascript" src="{{ asset('home/js/require.min.js') }}"></script>
     <script type="text/javascript">
         require.config({
             baseUrl: "/resource/js/mall/src",
@@ -2107,8 +2047,5 @@
             page.init();
         });
     </script>
-    </form>
-
-
-
-<a href="javascript:;" class="backToTop" title="返回顶部" style="display: inline; position: fixed; top: 503px; left: 1228.5px;">返回顶部</a></body></html>
+</body>
+</html>

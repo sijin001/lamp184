@@ -1,12 +1,19 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0056)http://www.cfc.com.cn/buy/goseat.aspx?seqno=171028184883 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head id="Head1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>中影·国际影城官网|电影|在线预订电影票|电影票团购|中影·国际影城</title>
-        <meta name="Keywords" content="网上订电影票,网上订购电影票,网上预订电影票,在线订购电影票,电影票预定,南京电影票,西安电影票,成都电影票,合肥电影票,徐州电影票,常州电影票,黄石电影票,苏州电影票"> 
-        <meta name="Description" content="中影·国际影城官网是中国最专业的电影票网上预定购买网站，为广大影迷提供最新的影片排期查询，网上订电影票，在线订电影票，优惠折扣在线选座等功能，为企业提供电影票团购等服务，免费服务热线400-998-8022"> 
+        <meta name="Keywords" content=""> 
+        <meta name="Description" content=""> 
         <meta http-equiv="X-UA-Compatible" content="IE=9">
-        <link href="{{ asset('home/css/reset-min.css') }}" rel="stylesheet" type="text/css"><link href="{{ asset('home/css/main.css') }}" rel="stylesheet" type="text/css"><link href="{{ asset('home/css/inside_pages.css') }}" rel="stylesheet" type="text/css"><link href="{{ asset('home/css/ui-lightness/jquery-ui-1.8.5.custom.css') }}" rel="stylesheet" type="text/css"><link href="{{ asset('home/css/style.css') }}" rel="stylesheet"><link href="{{ asset('home/css/my.css') }}" rel="stylesheet"><link href="{{ asset('home/css/screen.css') }}" rel="stylesheet">
+        <link href="{{ asset('home/css/reset-min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('home/css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('home/css/inside_pages.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('home/css/ui-lightness/jquery-ui-1.8.5.custom.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('home/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('home/css/my.css') }}" rel="stylesheet">
+        <link href="{{ asset('home/css/screen.css') }}" rel="stylesheet">
         <script type="text/javascript" src="{{ asset('home/js/jquery-1.8.3.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('home/js/plugins/jquery-ui-1.8.23.custom.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('home/js/comm/common.js') }}"></script>
@@ -54,37 +61,28 @@
         <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/getStyle" src="{{ asset('home/js/getStyle.js') }}"></script>
     </head>
     <body>
-        <form method="post" action="http://www.cfc.com.cn/buy/goseat.aspx?seqno=171028184883" id="form1">
-        <div class="aspNetHidden">
-        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMzQ3MDkxOTAyD2QWAmYPZBYCAgEPZBYCZg8WAh4EVGV4dAWIBg0KICAgIDx0aXRsZT7kuK3lvbHCt+WbvemZheW9seWfjuWumOe9kXznlLXlvbF85Zyo57q/6aKE6K6i55S15b2x56WofOeUteW9seelqOWboui0rXzkuK3lvbHCt+WbvemZheW9seWfjjwvdGl0bGU+DQogICAgPG1ldGEgbmFtZT0iS2V5d29yZHMiIGNvbnRlbnQ9Iue9keS4iuiuoueUteW9seelqCznvZHkuIrorqLotK3nlLXlvbHnpags572R5LiK6aKE6K6i55S15b2x56WoLOWcqOe6v+iuoui0reeUteW9seelqCznlLXlvbHnpajpooTlrpos5Y2X5Lqs55S15b2x56WoLOilv+WuieeUteW9seelqCzmiJDpg73nlLXlvbHnpags5ZCI6IKl55S15b2x56WoLOW+kOW3nueUteW9seelqCzluLjlt57nlLXlvbHnpags6buE55+z55S15b2x56WoLOiLj+W3nueUteW9seelqCIgLz4gDQogICAgPG1ldGEgbmFtZT0iRGVzY3JpcHRpb24iIGNvbnRlbnQ9IuS4reW9scK35Zu96ZmF5b2x5Z+O5a6Y572R5piv5Lit5Zu95pyA5LiT5Lia55qE55S15b2x56Wo572R5LiK6aKE5a6a6LSt5Lmw572R56uZ77yM5Li65bm/5aSn5b2x6L+35o+Q5L6b5pyA5paw55qE5b2x54mH5o6S5pyf5p+l6K+i77yM572R5LiK6K6i55S15b2x56Wo77yM5Zyo57q/6K6i55S15b2x56Wo77yM5LyY5oOg5oqY5omj5Zyo57q/6YCJ5bqn562J5Yqf6IO977yM5Li65LyB5Lia5o+Q5L6b55S15b2x56Wo5Zui6LSt562J5pyN5Yqh77yM5YWN6LS55pyN5Yqh54Ot57q/NDAwLTk5OC04MDIyIiAvPiANCiAgICA8bWV0YSBodHRwLWVxdWl2PSJYLVVBLUNvbXBhdGlibGUiIGNvbnRlbnQ9IklFPTkiIC8+DQogICAgZGRhbOmIey3DHTCJhRvWZBvRfpfPFw==">
-        </div>
-
-
         <div id="zhezao" class="loading" style="display: none;">
             <div id="container"></div>
         </div>
-        <!--头部开始-->
-        <!--logo-->
-        
-        
         <!---头部开始-->
 
         <header class="index-header">
             <div class="header-con">
                 <div class="logo">
-                    <img src="{{ asset('home/images/web-v2/logo_03.png') }}" alt=""></div>
+                    <img src="{{ asset('home/images/web-v2/logo_03.png') }}" alt="">
+                </div>
 
-                <div class="address" onclick="changeCityClick()"><a href="javascript:void(0);" id="span_CityName">北京</a><span class="icon-1" id="change"></span></div>
-                <!---选择城市结束-->
-
+                <div class="address" onclick="changeCityClick()">
+                    <a href="javascript:void(0);" id="span_CityName">北京</a>
+                    <span class="icon-1" id="change"></span>
+                </div>
                 <!---菜单导航 start-->
                 <nav class="index-nav">
                     <ul>
-                        <li id="1"><a href="http://www.cfc.com.cn/index.aspx" title="首页">首 页</a></li>
-                        <li id="2"><a href="http://www.cfc.com.cn/cinema/cinema.aspx" title="购票通道">影 院</a></li>
-                        <li id="3"><a href="http://www.cfc.com.cn/search/schedule.aspx" title="在线购票" class="hover">在线购票</a></li>
-                        <li id="4" style="display: none;"><a href="http://www.cfc.com.cn/appclient/client.aspx" title="移动下载">移动下载</a></li>
-                         <li id="5"><a href="http://www.cfc.com.cn/mall/Index.aspx" title="商城"><span class="icon-2"></span>商城</a></li>
+                        <li id="2"><a href="{{ url('/') }}" title="首页">首 页</a></li>
+                        <li id="3"><a href="http://www.cfc.com.cn/cinema/cinema.aspx" title="购票通道">影 院</a></li>
+                        <li id="4"><a href="{{ url('/home/movie/get') }}" title="在线购票" class="">在线购票</a></li>
+                         <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li>
                       
                         <li id="6"><a href="http://www.cfc.com.cn/activity/ActList.aspx" title="优惠活动">优惠活动</a></li>
                     </ul>
@@ -188,8 +186,6 @@
                 document.cookie = name + "=" + value + "; path=/; expires=" + expires.toGMTString();
             }
 
-
-
             //选项卡操作
             //$(".mune_xia").hide();
             var name = window.location.pathname;
@@ -238,8 +234,7 @@
         <div class="warpc">
             <div class="contCon">
                 <span class="ls"></span><span class="rs"></span>
-                <div class="ticsteps tic2">
-                </div>
+                <div class="ticsteps tic2"></div>
                 <!--steps-->
                 <div class="seatWarp cf">
                     <div class="seatWarpL">
@@ -283,14 +278,9 @@
                         <div class="choseProduct">
                             <h2>选择卖品：</h2>
                             <div class=" productMenu " id="productDetails">
-                                <ul>
-
-                                    
+                                <ul>       
                                 </ul>
-
                             </div>
-
-
                         </div>
                         <!--卖品-->
                         <div class="payHelp mt30">
@@ -364,7 +354,6 @@
                                     <!--trunShow-->
                                 </div>
                                 场次：<em class="bold red"><span id="ShowDate">{{ $show[0]->date.' '.' '.$show[0]->time }}</span></em>
-
                             </div>
                         </div>
                         <div class="seatSe mt20 cf">
@@ -929,7 +918,9 @@
                     var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
                     document.write(unescape("%3Cspan id='cnzz_stat_icon_1000542813'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1000542813%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
                 </script>
-                <span id="cnzz_stat_icon_1000542813"><a href="http://www.cnzz.com/stat/website.php?web_id=1000542813" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="{{ asset('home/images/pic1.gif') }}"></a></span><script src="{{ asset('home/js/z_stat.php') }}" type="text/javascript"></script><script src="{{ asset('home/js/core.php') }}" charset="utf-8" type="text/javascript"></script>
+                <span id="cnzz_stat_icon_1000542813"><a href="http://www.cnzz.com/stat/website.php?web_id=1000542813" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="{{ asset('home/images/pic1.gif') }}"></a></span>
+                <script src="{{ asset('home/js/z_stat.php') }}" type="text/javascript"></script>
+                <script src="{{ asset('home/js/core.php') }}" charset="utf-8" type="text/javascript"></script>
                 </div>
         </footer>
 
@@ -955,6 +946,5 @@
                 page.init();
             });
         </script>
-    </form>
-
-    <a href="javascript:;" class="backToTop" title="返回顶部" style="display: none; position: fixed; top: 503px; left: 1228.5px;">返回顶部</a></body></html>
+     </body>
+</html>

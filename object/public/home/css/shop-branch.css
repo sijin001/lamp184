@@ -284,9 +284,11 @@ body  a:hover{
 
         .m-mall-all-contant .center ul li {
             display: inline-block;
-            width: 236px;
-            border-bottom: 1px solid #ddd;
-            border-right: 1px solid #ddd;
+            /* width: 236px; */
+			width: 224px;margin:5px;
+			border:1px solid #ddd;
+            /*border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;*/
             text-align: center;
             height: 312px;
             position: relative;
