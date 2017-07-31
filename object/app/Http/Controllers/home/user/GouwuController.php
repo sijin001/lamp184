@@ -1,43 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\home\movie;
+namespace App\Http\Controllers\home\user;
 
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use DB;
-class MovieController extends Controller
+class GouwuController extends Controller
 {
     /**
-     * 显示网站前台首页
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // 轮播图
-        $res = DB::table('slides')->get();
-        
-        // 电影
-        $movies = DB::table('movie')->where('status','=',1)->get();
-        $comovies = DB::table('movie')->where('status','=',2)->get();
 
-        $arr = [];
-        // 商品分类
-        $type = DB::table('goods_type')->get();
-        
-        // 商品
-        for($i = 0; $i < count($type); $i++) {
-            $list = DB::table('goods')->where('tid', $type[$i]->id)
-                ->join('goods_photo', 'goods_photo.gid', '=', 'goods.id')
-                ->where('goods_photo.index',1)
-                ->get();  
-            $arr[$type[$i]->tname] = $list;
-        }
-
-        return view('home.index',['res' => $res, 'movies' => $movies,'comovies' => $comovies,'type' => $type, 'arr' => $arr]);
     }
 
     /**
@@ -69,7 +48,17 @@ class MovieController extends Controller
      */
     public function show($id)
     {
-        //
+       
+       //dd($id);
+        $arr = DB::table('shopping_cart')
+                ->join('goods','shopping_cart.gid','=','goods.id')
+                ->join('goods_photo','goods_photo.gid','=','goods.id')
+                ->where('shopping_cart.uid','=',$id)
+                ->where('goods_photo.index','=',1)
+                ->select('goods.*','goods_photo.gimage')
+                ->get();
+        //dd($arr);
+        return view('home.user.gouwu',['arr'=>$arr]);
     }
 
     /**

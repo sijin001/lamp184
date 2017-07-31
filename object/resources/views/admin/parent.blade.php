@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>控制台 - Bootstrap后台管理系统模版Ace下载</title>
+    <title>控制台 - 影票后台管理系统</title>
     <meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
     <meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +18,7 @@
 
     <!-- fonts -->
 
-    <!--<link rel="stylesheet" href="http://fonts.useso.com/css?family=Open+Sans:400,300" />-->
+    <!-- <link rel="stylesheet" href="http://fonts.useso.com/css?family=Open+Sans:400,300" /> -->
 
     <!-- ace styles -->
 
@@ -55,228 +55,38 @@
           <a href="#" class="navbar-brand">
             <small>
               <i class="icon-leaf"></i>
-              ACE后台管理系统
+              影院后台管理系统
             </small>
           </a><!-- /.brand -->
         </div><!-- /.navbar-header -->
 
         <div class="navbar-header pull-right" role="navigation">
           <ul class="nav ace-nav">
-            <li class="grey">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <i class="icon-tasks"></i>
-                <span class="badge badge-grey">4</span>
-              </a>
+            <span id="neirong" style="color: white;float:right; display:none">管理员：{{ session('adminuser')->name }} 性别：{{ session('adminuser')->name==0?"男":"女"  }}<br>职位：{{ session('adminuser')->zhiwei }}</span>
+    
 
-              <ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-                <li class="dropdown-header">
-                  <i class="icon-ok"></i>
-                  还有4个任务完成
-                </li>
+      <script src="{{ asset('admin/js/jquery-1.8.3.min.js') }}"></script>
+        <script type="text/javascript">
+              
+              var idr = document.getElementById('neirong');
 
-                <li>
-                  <a href="#">
-                    <div class="clearfix">
-                      <span class="pull-left">软件更新</span>
-                      <span class="pull-right">65%</span>
-                    </div>
+                function click(){
+                  idr.style.display = 'block';
+                }
+              
 
-                    <div class="progress progress-mini ">
-                      <div style="width:65%" class="progress-bar "></div>
-                    </div>
-                  </a>
-                </li>
 
-                <li>
-                  <a href="#">
-                    <div class="clearfix">
-                      <span class="pull-left">硬件更新</span>
-                      <span class="pull-right">35%</span>
-                    </div>
-
-                    <div class="progress progress-mini ">
-                      <div style="width:35%" class="progress-bar progress-bar-danger"></div>
-                    </div>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <div class="clearfix">
-                      <span class="pull-left">单元测试</span>
-                      <span class="pull-right">15%</span>
-                    </div>
-
-                    <div class="progress progress-mini ">
-                      <div style="width:15%" class="progress-bar progress-bar-warning"></div>
-                    </div>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <div class="clearfix">
-                      <span class="pull-left">错误修复</span>
-                      <span class="pull-right">90%</span>
-                    </div>
-
-                    <div class="progress progress-mini progress-striped active">
-                      <div style="width:90%" class="progress-bar progress-bar-success"></div>
-                    </div>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    查看任务详情
-                    <i class="icon-arrow-right"></i>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="purple">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <i class="icon-bell-alt icon-animated-bell"></i>
-                <span class="badge badge-important">8</span>
-              </a>
-
-              <ul class="pull-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-                <li class="dropdown-header">
-                  <i class="icon-warning-sign"></i>
-                  8条通知
-                </li>
-
-                <li>
-                  <a href="#">
-                    <div class="clearfix">
-                      <span class="pull-left">
-                        <i class="btn btn-xs no-hover btn-pink icon-comment"></i>
-                        新闻评论
-                      </span>
-                      <span class="pull-right badge badge-info">+12</span>
-                    </div>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <i class="btn btn-xs btn-primary icon-user"></i>
-                    切换为编辑登录..
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <div class="clearfix">
-                      <span class="pull-left">
-                        <i class="btn btn-xs no-hover btn-success icon-shopping-cart"></i>
-                        新订单
-                      </span>
-                      <span class="pull-right badge badge-success">+8</span>
-                    </div>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <div class="clearfix">
-                      <span class="pull-left">
-                        <i class="btn btn-xs no-hover btn-info icon-twitter"></i>
-                        粉丝
-                      </span>
-                      <span class="pull-right badge badge-info">+11</span>
-                    </div>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    查看所有通知
-                    <i class="icon-arrow-right"></i>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="green">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <i class="icon-envelope icon-animated-vertical"></i>
-                <span class="badge badge-success">5</span>
-              </a>
-
-              <ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-                <li class="dropdown-header">
-                  <i class="icon-envelope-alt"></i>
-                  5条消息
-                </li>
-
-                <li>
-                  <a href="#">
-                    <img src="{{ asset('admin/avatars/avatar.png') }}" class="msg-photo" alt="Alex's Avatar" />
-                    <span class="msg-body">
-                      <span class="msg-title">
-                        <span class="blue">Alex:</span>
-                        不知道写啥 ...
-                      </span>
-
-                      <span class="msg-time">
-                        <i class="icon-time"></i>
-                        <span>1分钟以前</span>
-                      </span>
-                    </span>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <img src="{{ asset('admin/avatars/avatar3.png') }}" class="msg-photo" alt="Susan's Avatar" />
-                    <span class="msg-body">
-                      <span class="msg-title">
-                        <span class="blue">Susan:</span>
-                        不知道翻译...
-                      </span>
-
-                      <span class="msg-time">
-                        <i class="icon-time"></i>
-                        <span>20分钟以前</span>
-                      </span>
-                    </span>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <img src="{{ asset('admin/avatars/avatar4.png') }}" class="msg-photo" alt="Bob's Avatar" />
-                    <span class="msg-body">
-                      <span class="msg-title">
-                        <span class="blue">Bob:</span>
-                        到底是不是英文 ...
-                      </span>
-
-                      <span class="msg-time">
-                        <i class="icon-time"></i>
-                        <span>下午3:15</span>
-                      </span>
-                    </span>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="inbox.html">
-                    查看所有消息
-                    <i class="icon-arrow-right"></i>
-                  </a>
-                </li>
-              </ul>
-            </li>
+        </script>
+            
+                
+            
 
             <li class="light-blue">
               <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                <img class="nav-user-photo" src="{{ asset('admin/avatars/user.jpg') }}" alt="Jason's Photo" />
+                <img class="nav-user-photo" src="{{ asset('admin/avatars/avatar2.png') }}" alt="Jason's Photo" />
                 <span class="user-info">
-                  <small>欢迎光临,</small>
-                  Jason
+                  <small>{{ session('adminuser')->name }}</small>
+                  {{ session('adminuser')->zhiwei }}
                 </span>
 
                 <i class="icon-caret-down"></i>
@@ -284,23 +94,23 @@
 
               <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                 <li>
-                  <a href="#">
-                    <i class="icon-cog"></i>
-                    设置
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <i class="icon-user"></i>
+                  <a href="{{ url('admin/film/get') }}">
+                    <i class="icon-user" ></i>
                     个人资料
                   </a>
                 </li>
+                <li>
+                  <a href="{{ url('admin/film/set/'.session('adminuser')->id) }}">
+                    <i class="icon-cog"></i>
+                    修改资料
+                  </a>
+                </li>
+
 
                 <li class="divider"></li>
 
                 <li>
-                  <a href="#">
+                  <a href="{{ url('admin/over') }}">
                     <i class="icon-off"></i>
                     退出
                   </a>
@@ -366,7 +176,7 @@
             </li>
 
             <li>
-              <a href="typography.html">
+              <a href="{{url('admin/user')}}">
                 <i class="icon-text-width"></i>
                 <span class="menu-text"> 用户管理 </span>
               </a>
@@ -382,35 +192,35 @@
 
               <ul class="submenu">
                 <li>
-                  <a href="{{ url('/movie') }}">
+                  <a href="{{ url('admin/movie') }}">
                     <i class="icon-double-angle-right"></i>
                     电影
                   </a>
                 </li>
 
                 <li>
-                  <a href="{{ url('/movieroom') }}">
+                  <a href="{{ url('admin/movieroom') }}">
                     <i class="icon-double-angle-right"></i>
                     影厅
                   </a>
                 </li>
 
                 <li>
-                  <a href="{{ url('/movieshow') }}">
+                  <a href="{{ url('admin/movieshow') }}">
                     <i class="icon-double-angle-right"></i>
                     场次
                   </a>
                 </li>
 
                 <li>
-                  <a href="{{ url('/movieorder') }}">
+                  <a href="{{ url('admin/movieorder') }}">
                     <i class="icon-double-angle-right"></i>
                     订单
                   </a>
                 </li>
 
                 <li>
-                  <a href="{{ url('/moviecomment') }}">
+                  <a href="{{ url('admin/moviecomment') }}">
                     <i class="icon-double-angle-right"></i>
                     评论
                   </a>
@@ -420,14 +230,14 @@
             </li>
 
             <li>
-              <a href="#" class="dropdown-toggle">
+              <a href="{{ url('admin/ads') }}" class="dropdown-toggle">
                 <i class="icon-list"></i>
                 <span class="menu-text"> 广告管理 </span>
               </a>
 
             </li>
 
-            <li>
+           <li>
               <a href="#" class="dropdown-toggle">
                 <i class="icon-edit"></i>
                 <span class="menu-text"> 商品管理 </span>
@@ -467,13 +277,13 @@
             </li>
 
             <li>
-              <a href="widgets.html">
+              <a href="{{ url('admin/link') }}">
                 <i class="icon-list-alt"></i>
                 <span class="menu-text"> 友情链接 </span>
               </a>
             </li>
 
-            <li>
+             <li>
               <a href="#" class="dropdown-toggle">
                 <i class="icon-edit"></i>
                 <span class="menu-text"> 网站轮播图 </span>

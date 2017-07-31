@@ -100,37 +100,57 @@
         <div class="m-mall-con">
             <div class="m-mall-con-order-header sprite" style="background-position:0 -127px;"></div>
             <div class="order-address" id="m_orderDetail">
-                <div class="order-address-receipt">
-                    <div class="title"><h2>收货地址</h2></div>
-                    <div class="address" node-name="addressContainer">
-                        <div id="userAddress" node-name="address"><div id="186" cid="0" class="item active"><h2>郭颖妲</h2><p>13649267750</p><p>北京市北京市昌平区兄弟连育荣教育园</p><p></p><h3 style="display: none;"><a href="javascript:void(0)">设为默认</a>|<a href="javascript:void(0)">编辑</a>|<a href="javascript:void(0)">删除</a></h3><h5>默认地址</h5></div></div>   
-                    </div>
-                </div>
 
                 <div class="order-address-distribution " node-name="choice">
-                    <div class="title"><h2>选择地址</h2></div>
-                    <div style="margin:10px;font-size:16px;">
-                        收货人姓名：
-                        <input type="text">
-                    </div>
-                    <div style="margin:10px;font-size:16px;">
-                        选&nbsp;择&nbsp;地&nbsp;址：
-                        <select name="city" id="cid">
-                            <option>---请选择---</option>
-                        </select>
-                    </div>
-                    <div style="margin:10px;font-size:16px;">
-                        详&nbsp;细&nbsp;地&nbsp;址：<br>
-                        <textarea name="" cols="80" rows="3"></textarea>
-                    </div>
-                    <div style="margin:10px;font-size:16px;">
-                        手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：
-                        <input type="text">
-                    </div>
+                    <form action="{{ url('/home/confirmorder') }}" name="myform" method="post">
+                        {{ csrf_field() }}
+                        <div class="title"><h2>选择地址</h2></div>
+                        <div style="margin:10px;font-size:16px;">
+                            收货人姓名：
+                            <input type="text" name="myname">
+                        </div>
+                        <div style="margin:10px;font-size:16px;">
+                            选&nbsp;择&nbsp;地&nbsp;址：
+                            <select name="city" id="cid">
+                                <option>---请选择---</option>
+                            </select>
+                        </div>
+                        <div style="margin:10px;font-size:16px;">
+                            详&nbsp;细&nbsp;地&nbsp;址：<br>
+                            <textarea name="address" cols="80" rows="3"></textarea>
+                        </div>
+                        <div style="margin:10px;font-size:16px;">
+                            手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：
+                            <input type="text" name="phone">
+                        </div>
+                       
+                            <input type="text" name="uid" value="{{ session('user')->id }}" style="display:none;">
+                            <input type="text" name="gid" value="{{ $list->gid }}" style="display:none;">
+                            <input type="text" name="time" value="{{ time() }}" style="display:none;">
+                            <input type="text" name="sendtime" value="" style="display:none;">
+                            <input type="text" name="address" value="" style="display:none;">
+                            <input type="text" name="mynumber" value="{{ $_GET['number'] }}" style="display:none;">
+                    </form>
                 </div>
                 <div class="order-address-send" node-name="choice">
                     <div class="title"><h2>送货时间</h2></div>
-                    <div id="sendTime"><p sendtimeid="1" class="hover"><samp>不限送货时间<br><span>周一到周日</span></samp></p><p sendtimeid="2"><samp>工作日送货<br><span>周一到周五</span></samp></p><p sendtimeid="3"><samp>双休日、节假日送货<br><span>非工作日时间</span></samp></p></div>
+                    <div id="sendTime">
+                        <p sendtimeid="1" class="hover">
+                            <samp>不限送货时间<br>
+                                <span>周一到周日</span>
+                            </samp>
+                        </p>
+                        <p sendtimeid="2">
+                            <samp>工作日送货<br>
+                                <span>周一到周五</span>
+                            </samp>
+                        </p>
+                        <p sendtimeid="3">
+                            <samp>双休日、节假日送货<br>
+                                <span>非工作日时间</span>
+                            </samp>
+                        </p>
+                    </div>
                     
                 </div>
                 <div class="order-address-shop">
@@ -171,7 +191,7 @@
                         <span style="display:inline-block; margin-top:2px;">￥
                             <em id="payAllPrice">{{ ($list->price)*($_GET['number']).'.00' }}</em>
                         </span>
-                        <em id="payAllPrice"><a href="{{ url('/home/confirmorder/'.$list->gid.'&'.$_GET['number']) }}" class="but" style="text-decoration:none; margin-top:-8px;">确认订单</a></em>
+                        <em id="payAllPrice"><a href="javascript:doSub()" class="but" style="text-decoration:none; margin-top:-8px;">确认订单</a></em>
                     </p><em id="payAllPrice">
                 </em></div><em id="payAllPrice">
             </em></div><em id="payAllPrice">
@@ -200,6 +220,7 @@
             url:url,
             type:'get',
             dataType:'json',
+            async:false,
             data:{upid:0},
             success:function(data){
                 //遍历从数据库查出来的数据，生成新的option选项追加到select里面
@@ -228,12 +249,13 @@
                     url:url,
                     type:'post',
                     dataType:'json',
+                    async:false,
                     data:{upid:v,'_token':"{{ csrf_token() }}"},
                     success:function(data){
                         //判断是不是最后一级城市，最后一级城市查询数据库的data.length == 0
                         if(data.length>0){
                             //生成一个新的select选项
-                            var select = $("<select><option>---请选择---</option></select>");
+                            var select = $("<select name='city'><option>---请选择---</option></select>");
                             //遍历从数据库查出来的数据，生成新的option选项追加到select里面
                             for (var i = 0; i < data.length; i++) {
                                 $(select).append("<option value="+data[i].id+">"+data[i].name+'</option>');
@@ -249,6 +271,28 @@
                 });
             }
         });
+
+        // 选择送货时间
+        $('#sendTime').find('p').click(function(){
+            $('#sendTime').find('p').removeClass('hover');
+            $(this).attr('class','hover');
+            var str = $(this).find('span').html();
+            $("input[name='sendtime']").val(str);
+        })
+
+        // 提交
+        function doSub()
+        {
+            var str = '';
+            $("option:selected").each(function() {
+                str = str+$(this).html();
+            })
+            $("input[name='address']").val(str);
+            var myform = document.myform;
+            myform.submit();
+        }
+
+
     </script>
 
 

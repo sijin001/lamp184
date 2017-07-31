@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\home\goods;
+namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 
@@ -8,17 +8,49 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use DB;
-
-class ConfirmController extends Controller
+class HomeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 显示网站前台首页
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+         
+        
+        // 轮播图
+        $res = DB::table('slides')->get();
+        
+        // 电影
+        $movies = DB::table('movie')->where('status','=',1)->get();
+        $comovies = DB::table('movie')->where('status','=',2)->get();
+
+        $arr = [];
+        // 商品分类
+        $type = DB::table('goods_type')->get();
+        
+        // 商品
+        for($i = 0; $i < count($type); $i++) {
+            $list = DB::table('goods')->where('tid', $type[$i]->id)
+                ->join('goods_photo', 'goods_photo.gid', '=', 'goods.id')
+                ->where('goods_photo.index',1)
+                ->get();  
+            $arr[$type[$i]->tname] = $list;
+        }
+
+        //广告
+        $ads = DB::table('ads')->orderBy('id','desc')->limit(3)->get();
+        //链接
+        $link = DB::table('link')->get();
+         //$link= \view::share($linko);
+        
+        session(['link'=>$link]);
+            // $ooo=session('link');
+            //  dd($ooo);
+            
+
+        return view('home.index',['res' => $res, 'movies' => $movies,'comovies' => $comovies,'type' => $type, 'arr' => $arr, 'ads' => $ads]);
     }
 
     /**
@@ -39,15 +71,7 @@ class ConfirmController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        $uid = $request->input('uid');
-        $gid = $request->input('gid');
-        $name = $request->input('myname');
-        $site = $request->input('address');
-        $number = $request->input('mynumber');
-        $time = $request->input('time');
-        $sendtime = $request->input('sendtime');
-        $phone = $request->input('phone');
+        //
     }
 
     /**
@@ -58,18 +82,7 @@ class ConfirmController extends Controller
      */
     public function show($id)
     {
-        // dd($id);
-        $res = explode('&',$id);
-        // dd($res);
-        
-        $list = DB::table('goods')->where('goods.id',$res[0])
-            // ->join('goods_photo','goods_photo.gid','=','goods.id')
-            ->first();
-        
-        $num = $res[1];
-        // dd($num);
-        // dd($list);
-        return view('home.goods.orderConfirm', ['list' => $list, 'num' => $num]);
+        //
     }
 
     /**

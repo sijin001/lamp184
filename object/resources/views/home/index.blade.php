@@ -193,38 +193,24 @@
 					</div>
             </div>
 		</div>
-		<!-- <div class="layout2">
-			<nav class="layout2-nav">
-				<ul>
-					<li><a href="search/schedule.aspx" target="_blank"><div class="icon-10"></div><br>快速购票</a></li>
-					<li><a href="javascript:void(0)" onclick="myOrder()"><div class="icon-11"></div><br>我的订单</a></li>
-					<li><a href="javascript:void(0)" onclick="userCard()"><div class="icon-12"></div><br>中影通卡</a></li>
-					<li><a href="search/SeachCoupon.aspx" target="_blank"><div class="icon-13"></div><br>兑换码服务</a></li>
-					<li><a href="../weibo.com/chinacinemacinema" target="_blank"><div class="icon-14"></div><br>官方微博</a></li>
-	
-					<li><a href="help/helpgoseat.aspx#num1" target="_blank"><div class="icon-16"></div><br>取票流程</a></li>
-					<li><a href="javascript:void(0);" onclick="complain()" ><div class="icon-17"></div><br>投诉建议</a></li>
-                    <li><a href="#sell_stores" ><div class="icon-48"></div><br>购卖品</a></li>
-				</ul>
-			</nav>
-			<div class="process">
-				<div class="title"><div class="icon-18"></div>购票流程</div>
-				<ul>
-					<li><div class="icon-19"></div></li>
-					<li><div class="icon-20"></div></li>
-					<li style="margin-right: 0;"><div class="icon-21"></div></li>
-				</ul>
-			</div>
-			<div class="code">
-				<ul>
-					<li><img src="{{ asset('home/images/wechat.jpg') }}" width="144" height="183">
-					<li style="padding-top:5px;"><img src="{{ asset('home/images/appCode.jpg') }}" width="144" height="183"></li>
-				</ul>
-			</div>
-			<div class="tel">
-				<p><span>全国统一客服热线</span><br>400-9988-022</p>
-			</div>
-		</div> -->
+		<div class="layout2">
+			
+				@foreach($ads as $v)
+                
+					<a href="{{ $v->url }}" target="_blank">    
+					<img src="{{ asset('admin/upload/ads/'.$v->picture) }} " width=200 height=196>
+				    </a>
+                <div class="process">
+                    <div class="title" >
+                            <div class="icon-40"></div><a href="{{ $v->url }}" target="_blank" style="{{ 'color:rgb('.rand(0,255).','.rand(0,255).','.rand(0,255).')' }}" >:{{ $v->content }}</a>
+                    </div>  
+                
+                </div>
+                
+                @endforeach
+		
+			
+		</div>
 	</div>
 </section>
 

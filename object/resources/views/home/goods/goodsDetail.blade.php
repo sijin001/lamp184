@@ -142,6 +142,7 @@
                     <div node-name="buy" class="shoping">
                         <a class="but1" href="javascript:doCart({{ $res->gid }})" style="text-decoration: none;"><em class="shoppingc sprite" style="text-decoration: none;"></em>加入购物车</a>
                         <a class="but1" href="javascript:doBuy({{ $res->gid }})">立即购买</a>
+                        <span id="ses" style="display:none">{{ session('user') }}</span>
                     </div>
                     @if (session('status'))
                     <div class="alert alert-success">
@@ -176,7 +177,7 @@
         function doAdd(ob)
         {
             // alert(ob.innerHTML);
-            $('#mynum').val(eval($('#mynum').val()+ob.innerHTML+1) <0 ? 0 : eval($('#mynum').val()+ob.innerHTML+1));
+            $('#mynum').val(eval($('#mynum').val()+ob.innerHTML+1) <1 ? 1 : eval($('#mynum').val()+ob.innerHTML+1));
             // if(ob.innerHTML == '-'){
             //     var val = ob.nextSibling.nextSibling.value;
             //     val = parseInt(val) - 1;
@@ -191,23 +192,26 @@
         // 立即购买
         function doBuy(id)
         {
-            // alert(id);
-            var num = $('#mynum').val();
-            var url = "{{ url('/home/goodsorder') }}";
-            $.ajax({
-                type:'get',
-                url:url,
-                // dataType:'json',
-                data:{id:id,num:num},
-                success:function(data){
-                    // alert(data);
-                    window.location.href = data;
-                },
-                error:function(){
-                    alert('ajax请求失败！！！');
-                }
+            var ses = $('#ses').html();
+            if( ses != '') {
+                var num = $('#mynum').val();
+                var url = "{{ url('/home/goodsorder') }}";
+                $.ajax({
+                    type:'get',
+                    url:url,
+                    // dataType:'json',
+                    data:{id:id,num:num},
+                    success:function(data){
+                        window.location.href = data;
+                    },
+                    error:function(){
+                        alert('ajax请求失败！！！');
+                    }
 
-            });
+                });
+            }else{
+                window.location.href = "{{ url('/login') }}";
+            }
         }
         // 加入购物车
         function doCart(id)

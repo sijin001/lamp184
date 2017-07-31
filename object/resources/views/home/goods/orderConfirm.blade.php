@@ -257,13 +257,10 @@
                     </div>
                     <div class="contant-bottom">
                         <div class="business-con-top">
-                              
-                                             <span><input name="pay" type="radio" value="ALIPAY10" class="radio"><em class="bank-bg1 sprite"></em></span>
-                                        
-                                            <span><input name="pay" type="radio" value="WEIXIN" checked="checked" class="radio"><em class="bank-bg2 sprite"></em></span>
-                                        
-                                             <span><input name="pay" type="radio" value="CCB" class="radio"><em class="bank-bg3 sprite"></em></span>
-                                                             
+                             <span><input name="pay" type="radio" value="ALIPAY10" class="radio"><em class="bank-bg1 sprite"></em></span>
+                            <span><input name="pay" type="radio" value="WEIXIN" checked="checked" class="radio"><em class="bank-bg2 sprite"></em></span>
+                             <span><input name="pay" type="radio" value="CCB" class="radio"><em class="bank-bg3 sprite"></em></span>
+                             <span id="uid" style="display:none;">{{ session('user')->id }}</span>                                
                         </div>
                         <p>您还需支付:<span>￥<?php echo ($list->price) * $num . '.00'; ?></span><a onclick="payorder()" class="but" style="text-decoration:none;cursor:pointer;">立即支付</a></p>
                     </div>
@@ -319,14 +316,7 @@
 
     function payorder()
     {
-
-        var paychenal = $('input:radio[name="pay"]:checked').val();
-        if (paychenal == null || paychenal == undefined || paychenal=="")
-        {
-            showAlert("请选择支付方式！");
-            return;
-        }
-
+        var uid = $('#uid').html();
         $.ajax({
             type: "POST",
             dataType: "json",

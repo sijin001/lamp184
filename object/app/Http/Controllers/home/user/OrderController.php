@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\home\goods;
+namespace App\Http\Controllers\home\user;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use DB;
-
-class ConfirmController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +16,7 @@ class ConfirmController extends Controller
      */
     public function index()
     {
-        //
+       return view('home.user.order');
     }
 
     /**
@@ -39,15 +37,7 @@ class ConfirmController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        $uid = $request->input('uid');
-        $gid = $request->input('gid');
-        $name = $request->input('myname');
-        $site = $request->input('address');
-        $number = $request->input('mynumber');
-        $time = $request->input('time');
-        $sendtime = $request->input('sendtime');
-        $phone = $request->input('phone');
+        //
     }
 
     /**
@@ -58,18 +48,7 @@ class ConfirmController extends Controller
      */
     public function show($id)
     {
-        // dd($id);
-        $res = explode('&',$id);
-        // dd($res);
-        
-        $list = DB::table('goods')->where('goods.id',$res[0])
-            // ->join('goods_photo','goods_photo.gid','=','goods.id')
-            ->first();
-        
-        $num = $res[1];
-        // dd($num);
-        // dd($list);
-        return view('home.goods.orderConfirm', ['list' => $list, 'num' => $num]);
+        //
     }
 
     /**
