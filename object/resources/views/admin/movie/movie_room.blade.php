@@ -73,7 +73,7 @@
 	    {
 	        if (confirm('确定要删除吗？')) {
 	            var form = document.myform;
-	            form.action = '/movieroom/'+id;
+	            form.action = "{{ url('/admin/movieroom/"+id+"') }}";
 	            form.submit();
 	        }
 	    }
@@ -105,7 +105,7 @@
 	        newobj.focus();
 	        newobj.onblur = function()
 	        {
-	            var url = "{{ url('/movieroomajax') }}";
+	            var url = "{{ url('/admin/movieroomajax') }}";
 	            var name = newobj.name;
 	            var value = newobj.value;
 	            if (newobj.value != oldhtml) {

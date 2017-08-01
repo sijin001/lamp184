@@ -78,7 +78,7 @@
             <img src="{{ asset('home/images/web-v2/logo_03.png') }}" alt="">
         </div>
 
-        <div class="address" onclick="changeCityClick()"><a href="javascript:void(0);" id="span_CityName">北京</a><span class="icon-1" id="change"></span></div>
+        <div class="address" onclick="changeCityClick()"><a href="javascript:void(0);" id="span_CityName"></a><span id="change"></span></div>
         
         <!---切换城市开始-->
         
@@ -88,7 +88,7 @@
         <nav class="index-nav">
             <ul>
                 <li id="2"><a href="{{ url('/') }}" title="首页">首 页</a></li>
-                <li id="3"><a href="cinema/cinema.aspx" title="购票通道">影 院</a></li>
+                <li id="3"><a href="{{ url('/home/movieplace') }}" title="购票通道">影 院</a></li>
                 <li id="4"><a href="{{ url('/home/movie/get') }}" title="在线购票">在线购票</a></li>
                 <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li>
               
@@ -108,52 +108,37 @@
                 </li>
             </ul>
         </div>
-
-@else
-                                                
-                                                <div class="m-header section_r1" >
-                                                    <div class="m-header my">
-
-
-
-                                                        <div node-name="user" class="my-user">
-                                                           <em class="sprite my-user-icon"></em>
-                                                            {{ session('user')->name }}
-                                                            <span id="spano"><em class="sprite my-user-triangle"></em> </span>
-                                                                <div node-name="userEject" class="my-user-eject" style="display: none;">
-                                                                    <p><a href="{{ url('home/user')}}" style="font-size:14px">我的资料</a></p>
-                                                                    <p><a href="{{ url('home/order') }}" style="font-size:14px"><p>我的订单</a></p>
-                                                                    <p><a href="{{ url('home/score') }}" style="font-size:14px"><p>我的积分</a></p>
-
-                                                                    
-                                                                    <p><a href="{{ url('home/over') }}" style="font-size:14px">退出</a></p>
-
-                                                                </div>  
-                                                        </div>
-
-                                                        
-
-                                                        <div node-name="cart" class="cart">
-                                                            <a href="{{ url('home/gouwu/'.session('user')->id) }}"><em class="sprite cart-carticon"></em>
-                                                            <em class="sprite cart-nub">0</em></a>
-
-                                                            <div node-name="cartEject" class="my-cart-eject" style="display: none;">
-                                                                <div class="cart-eject-top clearfix">
-                                                                    <div class="layout1"></div>
-                                                                    <div class="layout2"></div>
-                                                                </div>
-                                                                <div class="cart-eject-contant">
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-  
+@else                
+        <div class="m-header section_r1" >
+            <div class="m-header my">
+                <div node-name="user" class="my-user">
+                   <em class="sprite my-user-icon"></em>
+                    {{ session('user')->name }}
+                    <span id="spano"><em class="sprite my-user-triangle"></em> </span>
+                    <div node-name="userEject" class="my-user-eject" style="display: none;">
+                        <p><a href="{{ url('home/user')}}" style="font-size:14px">我的资料</a></p>
+                        <p><a href="{{ url('home/order') }}" style="font-size:14px"><p>我的订单</a></p>
+                        <p><a href="{{ url('home/score') }}" style="font-size:14px"><p>我的积分</a></p>
+                        <p><a href="{{ url('home/over') }}" style="font-size:14px">退出</a></p>
+                    </div>  
+                </div>
+                <div node-name="cart" class="cart">
+                    <a href="{{ url('home/gouwu/'.session('user')->id) }}"><em class="sprite cart-carticon"></em>
+                    <em class="sprite cart-nub">0</em></a>
+                    <div node-name="cartEject" class="my-cart-eject" style="display: none;">
+                        <div class="cart-eject-top clearfix">
+                            <div class="layout1"></div>
+                            <div class="layout2"></div>
+                        </div>
+                        <div class="cart-eject-contant">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 @endif
     </div>
 </header>
-
 <script type="text/javascript">
 $('#spano').bind('click',function(){
     $('.my-user-eject').slideToggle();
@@ -165,7 +150,7 @@ $('#spano').bind('click',function(){
 @yield('content')
 
 
-<footer class="index-footer">
+        <footer class="index-footer">
             <div class="pro-box">
                 <img style=" margin-top: 50px;
             margin-right: 50px;float: left;display: block;" class="codePic" src="{{ asset('home/images/doubleCode.jpg') }}">

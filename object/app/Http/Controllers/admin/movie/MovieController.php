@@ -11,9 +11,8 @@ use DB;
 class MovieController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 后台电影列表展示.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
@@ -49,29 +48,15 @@ class MovieController extends Controller
         }
 
         $movies = $ob->paginate(5);
-       // dd($arr);
         return view('admin.movie.movie_test',['movies'=>$movies,'where'=>$where,'arr'=>$arr]);   
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 后台电影添加.
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('admin.movie.movie_add');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //dd($request);
         //自定义错误消息格式
         $messages = array(
             'title.required' => '用户名必须填写',
@@ -162,10 +147,8 @@ class MovieController extends Controller
             $file->move('./admin/upload/movie', $titlepicname);
             // dd($file->getError());
             if($file->getError() > 0){
-                // return redirect('/uploads')->with('msg', '上传失败');
                 echo '上传失败';
             }else{
-                // return redirect('/uploads')->with('msg', '上传成功');
                 echo '上传成功';
             }
         }
@@ -174,13 +157,16 @@ class MovieController extends Controller
         $arr['poster'] = $postername;
         $arr['images'] = $imagesname;
         $arr['title_pic'] = $titlepicname;
-       // dd($arr);
         $id = DB::table('movie')->insertGetId($arr);
         if($id > 0){
-            return redirect('/movie')->with('msg', '添加成功');
+            return redirect('/admin/movie')->with('msg', '添加成功');
         }
     }
 
+    /**
+     * 后台电影更改.
+     *
+     */
     public function doChange(Request $request)
     {
         //获取传过来的值
@@ -192,7 +178,10 @@ class MovieController extends Controller
         echo json_encode($arr1);
     }
 
-
+    /**
+     * 后台电影删除.
+     *
+     */
     public function destroy($id)
     {
         $list = DB::table('show')->select('id')->where('mid',$id)->get();

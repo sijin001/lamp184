@@ -11,9 +11,8 @@ use DB;
 class MovieRoomController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 后台影厅列表展示.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -22,20 +21,8 @@ class MovieRoomController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 后台影厅添加.
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -51,33 +38,15 @@ class MovieRoomController extends Controller
 
         $id = DB::table('movie_room')->insertGetId($arr);
         if($id > 0){
-            return redirect('/movieroom')->with('msg','添加成功');
+            return redirect('/admin/movieroom')->with('msg','添加成功');
         }
 
     }
 
     /**
-     * Display the specified resource.
+     * 后台影厅更改.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
     public function doChange(Request $request)
     {
         $arr = $request->except('_token');
@@ -85,23 +54,10 @@ class MovieRoomController extends Controller
         $res = DB::table('movie_room')->where('id',$arr['id'])->update($arr1);
         echo json_encode($arr1);
     }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        
-    }
 
     /**
-     * Remove the specified resource from storage.
+     * 后台影厅删除.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
@@ -112,9 +68,9 @@ class MovieRoomController extends Controller
         $a = DB::table('show')->where('rid',$id)->delete();
         $res = DB::table('movie_room')->where('id', $id)->delete();
         if($res > 0){
-            return redirect('/movieroom')->with('msg','删除成功！');
+            return redirect('/admin/movieroom')->with('msg','删除成功！');
         }else{
-            return redirect('/movieroom')->with('msg','删除失败！');
+            return redirect('/admin/movieroom')->with('msg','删除失败！');
         }
     }
 }

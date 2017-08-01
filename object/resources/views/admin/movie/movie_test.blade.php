@@ -20,7 +20,7 @@
                                 <th width="8%">类型</th>
                                 <th width="3%">版本</th>
                                 <th width="5%">片长</th>
-                                <form action="/movie" name="myforms">
+                                <form action="{{ url('/admin/movie') }}" name="myforms">
                                 <th width="8%">
                                     <select class="col-md-12" style="height:30px" name="hot" onchange="doSearch(this)">
                                         <option value="" name="hot" >最热</option>
@@ -78,7 +78,7 @@
                             </tbody>
                         </form>
                     </table>
-                    {!! $movies->render() !!}
+                    {!! $movies->appends($where)->render() !!}
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -89,7 +89,7 @@
             <div class="col-md-12 form-grid1">
                 <div class="col-md-12 bottom-form">
                    
-                    <form action="/movie" method="post" enctype="multipart/form-data">
+                    <form action="{{ url('/admin/movie') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="col-md-12 bottom-form">
                             <div class="col-md-1 grid-form">
@@ -247,7 +247,7 @@
         newobj.focus();
         newobj.onblur = function()
         {
-            var url = "{{ url('/movieajax') }}";
+            var url = "{{ url('/admin/movieajax') }}";
             var name = newobj.name;
             var value = newobj.value;
             if (newobj.value != oldhtml) {
@@ -285,7 +285,7 @@
             var value = (element.innerHTML == '是') ? '2' : '1';
             var id = element.parentNode.firstChild.nextSibling.innerHTML;
             var name = element.id;
-            var url = "{{ url('/movieajax') }}";
+            var url = "{{ url('/admin/movieajax') }}";
             //创建ajax
             $.ajax({
                 url:url,
@@ -310,7 +310,7 @@
         if (confirm('确定要删除吗？')) {
             var form = document.myform;
             form.innerHTML = form.innerHTML+' {{ method_field('DElETE')}}';
-            form.action = '/movie/'+id;
+            form.action = "{{ url('/admin/movie/"+id+"') }}";
             form.submit();
         }
     }
