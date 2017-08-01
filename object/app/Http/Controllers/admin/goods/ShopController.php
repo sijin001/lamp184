@@ -21,6 +21,8 @@ class ShopController extends Controller
         $arr = DB::table('shopping_cart')
             ->join('goods', 'shopping_cart.gid', '=', 'goods.id')
             ->join('user', 'user.id', '=', 'shopping_cart.uid')
+            ->join('goods_photo', 'goods_photo.gid', '=', 'shopping_cart.gid')
+            ->where('goods_photo.index', 2)
             ->paginate(5);
         // dd($arr);
         $now = $arr->currentPage();

@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 显示用户基本信息页面
      *
      * @return \Illuminate\Http\Response
      */
@@ -65,7 +65,7 @@ class UserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * 修改个人信息
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id

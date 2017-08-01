@@ -14,9 +14,34 @@ class ShowController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.index');
+         //保存搜索条件
+        $where = [];
+        //实例化需要的表
+        $ob = DB::table('user');
+        
+        if($request->has('name')){
+            //获取搜索框input的条件
+            $name = $request->input('name');
+                        //将要带到分页中的数组
+                        $where['name'] = $name;
+            //给查询语句添加where条件
+            $ob->where('name','like','%'.$name.'%');
+        }
+        
+        //作用同上
+        if($request->has('sex')){
+            $sex = $request->input('sex');
+            $where['sex'] = $sex;
+            $ob->where('sex',$sex);
+        }
+        //执行分页查询
+        $list = $ob->paginate(3);
+        $now = $list->currentPage();
+
+        //加载模板时，把查询数据以及分页需要携带的参数传到模板页面上
+        return view('admin.user.index',['list' => $list,'where'=>$where,'now'=>$now]);
     }
 
     /**
@@ -33,23 +58,12 @@ class ShowController extends Controller
 
     public function updato(Request $request, $id)
     {
-    
-        $arr = $request->except('_token','_method');
-        //dd($arr);
-        
-        $res = DB::table('administrator')->where('id',$id)->update($arr);
-        if($res > 0){
-            return redirect('admin/film')->with('msg', '修改成功');
-        }else{
-            return redirect('admin/film')->with('error', '修改失败');
-        }
-   }
+        //
+    }
 
    public function showgl()
    {
-    $user = DB::table('administrator')->get();
-    //dd($user);
-    return view('admin.adminuser.index',['user'=>$user]);
+    //
    }
 
 }

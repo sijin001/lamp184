@@ -32,6 +32,7 @@ class ConfigController extends Controller
     {
         // dd($request);
         // 获取旧图片
+        $request->input('wstatus') == 0;
         $old = $request->input('photo');
         $arr = $request->except('_token','photo');
         // dd($arr);

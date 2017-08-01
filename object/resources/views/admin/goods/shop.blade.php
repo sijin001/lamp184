@@ -11,11 +11,13 @@
                 <thead>
                     <tr>
                         <th class="center">#</th>
+                        <th>商品图</th>
                         <th>商品信息</th>
-                        <th class="hidden-xs">价格</th>
+                        <th class="hidden-xs">价格（元）</th>
                         <th class="hidden-480">数量</th>
                         <th>用户名</th>
-                        <th>昵称</th>
+                        <th>地址</th>
+                        <th>电话</th>
                     </tr>
                 </thead>
 
@@ -25,14 +27,19 @@
                     <tr>
                         <td class="center">{{ $i }}</td>
                         <td>
-                            {{ $v->gname }}
+                            <img src="{{ asset('admin/upload/goods/'.$v->gimage) }}" width="70">
+                        </td>
+                        <td>
+                            <h5>{{ $v->gname }}</h5> <br>
+                            {{ $v->theme }}
                         </td>
                         <td class="hidden-xs">
-                            {{ $v->price }}
+                            ￥{{ $v->price }}
                         </td>
                         <td class="hidden-480"> {{ $v->number }} </td>
-                        <td> admin </td>
-                        <td> 123456 </td>
+                        <td> {{ $v->name }} </td>
+                        <td> {{ $v->addr }} </td>
+                        <td> {{ $v->phone }} </td>
                     </tr>
                     <?php $i++; ?>
                     @endforeach

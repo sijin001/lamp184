@@ -36,7 +36,7 @@ class RegistController extends Controller
    
 
     /**
-     * Display a listing of the resource.
+     * 显示注册页面
      *
      * @return \Illuminate\Http\Response
      */

@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class MoControllers extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 显示会员列表页面
      *
      * @return \Illuminate\Http\Response
      */
@@ -46,33 +46,29 @@ class MoControllers extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('admin.user.add');
+        // 
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-       $arr = $request->except('_token');
-       $id = DB::table('user')->insertGetId($arr);
-       if($id > 0){
-        return redirect('admin/user')->with('msg','添加成功');
-       }
+       // 
         
     }
 
     /**
-     * Display the specified resource.
+     * 显示修改用户页面
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -96,7 +92,7 @@ class MoControllers extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * 执行修改会员操作
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -106,9 +102,7 @@ class MoControllers extends Controller
     {
        $arr = $request->except('_token','_method');
         //dd($arr);
-        
-
-        
+          
         $res = DB::table('user')->where('id',$id)->update($arr);
         if($res > 0){
             return redirect('admin/user')->with('msg', '修改成功');
@@ -128,7 +122,7 @@ class MoControllers extends Controller
         //return 1111111;
         
     }
-
+    // 删除会员
     public function delo(Request $request )
     {
         $data = explode('###', $request->input('del'));

@@ -16,11 +16,13 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 	//后台首页显示
 	Route::get('/film', 'admin\user\ShowController@index');
 	Route::get('/film/set/{id}','admin\user\ShowController@show');
-	Route::post('/film/update/{id}','admin\user\ShowController@updato');
-	Route::get('/film/get','admin\user\ShowController@showgl');
+	// Route::post('/film/update/{id}','admin\user\ShowController@updato');
+	// Route::get('/film/get','admin\user\ShowController@showgl');
 
 	//user用户资源路由
 	Route::resource('/user', 'admin\user\MoControllers');
+	//adminuser管理员资源路由
+	Route::resource('/adminuser', 'admin\user\AdminUserController');
 						//删除列表路由，ajax方式传输
 	Route::get('/delete','admin\user\MoControllers@delo');
 

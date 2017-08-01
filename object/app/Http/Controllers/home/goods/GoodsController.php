@@ -29,6 +29,8 @@ class GoodsController extends Controller
             $list = DB::table('goods')->where('tid', $type[$i]->id)
                 ->join('goods_photo', 'goods_photo.gid', '=', 'goods.id')
                 ->where('goods_photo.index',1)
+                ->orderBy('goods.id', 'desc')
+                ->limit(6)
                 ->get();  
             // dd($list);
             $arr[$type[$i]->tname] = $list;

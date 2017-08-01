@@ -69,7 +69,7 @@
         <header class="index-header">
             <div class="header-con">
                 <div class="logo">
-                    <img src="{{ asset('home/images/web-v2/logo_03.png') }}" alt="">
+                    <img src="{{ asset('admin/upload/config/'.session('config')->logo) }}" alt="">
                 </div>
 
                 <div class="address" onclick="changeCityClick()">
@@ -849,80 +849,42 @@
         </script>
         <!--contTet-->
         <footer class="index-footer">
-            <div class="pro-box">
-                <img style=" margin-top: 50px;margin-right: 50px;float: left;display: block;" class="codePic" src="{{ asset('home/images/doubleCode.jpg') }}">
-                <ul style="float: left;width: 840px;">
-                    <li>
-                        <h3>新手上路</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num1">注册登录问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num2">用户绑定会员卡问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num3">影票相关问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num4">票价和支付问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num5">取票凭证码问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx">服务中心</a></p>
-                    </li>
-                    <li>
-                        <h3>购票指南</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num1">用户购票流程</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num2">取票观影指南</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num3">会员卡支付相关说明</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num4">网银支付相关说明</a></p>
-                    </li>
-                    <li>
-                        <h3>用户中心</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num1">购物流程</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num2">常见问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num3">发票制度</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num4">支付方式 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num5">配送方式 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num6">售后服务 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num7">退货政策 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num8">联系我们 </a></p>
-                    </li>
-                    <li>
-                        <h3>会员权益</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num1">会员订票权益</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num2">会员积分权益</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num3">入会资格</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num4">会员卡折扣说明</a></p>
-                    </li>
-                    <li>
-                        <h3>手机客户端</h3>
-                        <p><a href="http://www.cfc.com.cn/appclient/client.aspx">手机客户端介绍与下载</a></p>
-                        <p><a href="http://www.cfc.com.cn/#">影片信息查询</a></p>
-                        <p><a href="http://www.cfc.com.cn/#">手机自助购票</a></p>
-                    </li>
-                </ul>
-                 <div class="clear" style="clear: both;"></div> 
-            </div>
+        <div class="pro-box">
+            <img style=" margin-top: 50px;
+            margin-right: 50px;float: left;display: block;" class="codePic" src="{{ asset('home/images/doubleCode.jpg') }}">
+            <ul style="float: left;width: 840px;margin-top: 30px;">
+                <?php $link = session('link');?>
+                @foreach($link as $v)
+                <li style="margin-top:5px">
+                    <p><a href="{{ $v->url }}" target="_blank">{{ $v->title }}</a></p>
+                </li>
+                @endforeach  
+            </ul>
+            <div class="clear" style="clear: both;"></div> 
+        </div>
 
-            <div class="links-box">
-                <ul>
-                    <li><a href="http://www.cfc.com.cn/common/aboutus.aspx">关于中影</a></li>
-                    <li><a href="http://www.cfc.com.cn/common/contactus.aspx">联系方式</a></li>
-                    <li><a href="http://www.cfc.com.cn/common/addservice.aspx">服务协议 </a></li>
-                    <li><a href="http://www.cfc.com.cn/common/complaint.aspx">会员协议 </a></li>
-                    <li><a href="http://www.cfc.com.cn/common/hr.aspx">市场合作 </a></li>
-                    <li><a href="http://www.cfc.com.cn/common/privacy.aspx">隐私条款 </a></li>
-                    <li style="border-right: 0;"><a href="http://www.cfc.com.cn/common/pre.aspx">免责声明</a></li>
+        <div class="links-box">
+            <ul>
+                <li><a href="#">关于中影</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="#">服务协议 </a></li>
+                <li><a href="#">会员协议 </a></li>
+                <li><a href="#">市场合作 </a></li>
+                <li><a href="#">隐私条款 </a></li>
+                <li style="border-right: 0;"><a  href="#">免责声明</a></li>
 
-                </ul>
-            </div>
-            <div class="copyright">
-                Copyright © 2007 -
-                2017
-                ChinaFilm All rights reserved.<a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备15040734号-1 </a>中影影院投资有限公司 版权所有
-
-                
-                <script type="text/javascript">
-                    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-                    document.write(unescape("%3Cspan id='cnzz_stat_icon_1000542813'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1000542813%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-                </script>
-                <span id="cnzz_stat_icon_1000542813"><a href="http://www.cnzz.com/stat/website.php?web_id=1000542813" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="{{ asset('home/images/pic1.gif') }}"></a></span>
-                <script src="{{ asset('home/js/z_stat.php') }}" type="text/javascript"></script>
-                <script src="{{ asset('home/js/core.php') }}" charset="utf-8" type="text/javascript"></script>
-                </div>
-        </footer>
+            </ul>
+        </div>
+        <div class="copyright">
+            Copyright © 2007 -
+            2017
+            ChinaFilm All rights reserved.<a href="../www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备15040734号-1 </a>中影影院投资有限公司 版权所有 
+            <script type="text/javascript">
+                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cspan id='cnzz_stat_icon_1000542813'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1000542813%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+        </div>
+    </footer>
 
         <script>
             $(function() {

@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class OrderController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 显示我的订单页面
      *
      * @return \Illuminate\Http\Response
      */

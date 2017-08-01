@@ -72,204 +72,198 @@
             padding-left: 10px;
         }
     </style>
-<title>
-
-</title>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/mall" src="{{ asset('home/js/mall.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/io/console" src="{{ asset('home/js/console.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/comp/base" src="{{ asset('home/js/base.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/queryNode" src="{{ asset('home/js/queryNode.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/evt/add" src="{{ asset('home/js/add.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/header" src="{{ asset('home/js/header.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/mall" src="{{ asset('home/js/mall(1).js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/util/each" src="{{ asset('home/js/each.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/sizzle" src="{{ asset('home/js/sizzle.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/util/getType" src="{{ asset('home/js/getType.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/parseNode" src="{{ asset('home/js/parseNode.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/className" src="{{ asset('home/js/className.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/contains" src="{{ asset('home/js/contains.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/jquery.easing.1.3" src="{{ asset('home/js/jquery.easing.1.3.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/jquery.elastislide" src="{{ asset('home/js/jquery.elastislide.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/isElement" src="{{ asset('home/js/isElement.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/str/trim" src="{{ asset('home/js/trim.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/getStyle" src="{{ asset('home/js/getStyle.js') }}"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/isNode" src="{{ asset('home/js/isNode.js') }}"></script>
+    <title>
+    </title>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/mall" src="{{ asset('home/js/mall.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/io/console" src="{{ asset('home/js/console.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/comp/base" src="{{ asset('home/js/base.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/queryNode" src="{{ asset('home/js/queryNode.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/evt/add" src="{{ asset('home/js/add.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/header" src="{{ asset('home/js/header.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/mall" src="{{ asset('home/js/mall(1).js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/util/each" src="{{ asset('home/js/each.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/sizzle" src="{{ asset('home/js/sizzle.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/util/getType" src="{{ asset('home/js/getType.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/parseNode" src="{{ asset('home/js/parseNode.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/className" src="{{ asset('home/js/className.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/contains" src="{{ asset('home/js/contains.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/jquery.easing.1.3" src="{{ asset('home/js/jquery.easing.1.3.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/jquery.elastislide" src="{{ asset('home/js/jquery.elastislide.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/isElement" src="{{ asset('home/js/isElement.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/str/trim" src="{{ asset('home/js/trim.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/getStyle" src="{{ asset('home/js/getStyle.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/isNode" src="{{ asset('home/js/isNode.js') }}"></script>
 </head>
 <body>
     <div id="zhezao" class="loading" style="display: none;">
         <div id="container"></div>
     </div> 
+    <!---头部开始-->
+    <header class="index-header">
+        <div class="header-con">
+            <div class="logo">
+                <img src="{{ asset('admin/upload/config/'.session('config')->logo) }}" alt=""></div>
 
-<!---头部开始-->
+            <div class="address" onclick="changeCityClick()"><a href="javascript:void(0);" id="span_CityName">北京</a><span class="icon-1" id="change"></span></div>
+            
+            <!---菜单导航 start-->
+            <nav class="index-nav">
+                <ul>
+                    <li id=""><a href="{{ url('/') }}" title="首页">首 页</a></li>
+                    <li id="2"><a href="../cinema/cinema.aspx" title="购票通道">影 院</a></li>
+                    <li id="3"><a href="{{ url('/home/movie/get') }}" title="在线购票" class="">在线购票</a></li>
+                    <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li>
+                    <li id="6"><a href="../activity/ActList.aspx" title="优惠活动">优惠活动</a></li>
+                </ul>
+            </nav>
+            <!---菜单导航 end-->
 
-<header class="index-header">
-    <div class="header-con">
-        <div class="logo">
-            <img src="{{ asset('home/images/web-v2/logo_03.png') }}" alt=""></div>
+            <div class="land" style="display:none">
+                <ul>
+                    <li>
+                        <a href="http://www.cfc.com.cn/user/login.aspx"><span class="icon-3"></span>登录</a>
+                    </li>
+                    <li class="register">
+                        <a href="http://www.cfc.com.cn/user/reg.aspx">注册</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="m-header section_r1" style="">
+                <div class="m-header my">
+                    <div node-name="user" class="my-user">
+                        <em class="sprite my-user-icon"></em>
+                        1538350****<em class="sprite my-user-triangle"></em>
+                        <div node-name="userEject" class="my-user-eject" style="display: none;">
+                            <p class="" data-url="/user/userInfo.aspx">我的资料</p>
 
-        <div class="address" onclick="changeCityClick()"><a href="javascript:void(0);" id="span_CityName">北京</a><span class="icon-1" id="change"></span></div>
-        
+                            <p data-url="/user/ordersManager.aspx">我的订单</p>
 
-        <!---菜单导航 start-->
-        <nav class="index-nav">
-            <ul>
-                <li id=""><a href="{{ url('/') }}" title="首页">首 页</a></li>
-                <li id="2"><a href="../cinema/cinema.aspx" title="购票通道">影 院</a></li>
-                <li id="3"><a href="{{ url('/home/movie/get') }}" title="在线购票" class="">在线购票</a></li>
-                <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li>
-                <li id="6"><a href="../activity/ActList.aspx" title="优惠活动">优惠活动</a></li>
-            </ul>
-        </nav>
-        <!---菜单导航 end-->
+                            <p data-url="/user/MemberCardList.aspx">我的卡券</p>
 
-        <div class="land" style="display:none">
-            <ul>
-                <li>
-                    <a href="http://www.cfc.com.cn/user/login.aspx"><span class="icon-3"></span>登录</a>
-                </li>
-                <li class="register">
-                    <a href="http://www.cfc.com.cn/user/reg.aspx">注册</a>
-                </li>
-            </ul>
-        </div>
-        <div class="m-header section_r1" style="">
-            <div class="m-header my">
-                <div node-name="user" class="my-user">
-                    <em class="sprite my-user-icon"></em>
-                    1538350****<em class="sprite my-user-triangle"></em>
-                    <div node-name="userEject" class="my-user-eject" style="display: none;">
-                        <p class="" data-url="/user/userInfo.aspx">我的资料</p>
+                            <p data-url="/user/pointsList.aspx">我的积分</p>
 
-                        <p data-url="/user/ordersManager.aspx">我的订单</p>
+                            <p data-url="/user/complainList.aspx">我的意见</p>
 
-                        <p data-url="/user/MemberCardList.aspx">我的卡券</p>
-
-                        <p data-url="/user/pointsList.aspx">我的积分</p>
-
-                        <p data-url="/user/complainList.aspx">我的意见</p>
-
-                        <p data-url="/user/loginout.aspx" class="hover">退出</p>
-                    </div>
-                </div>
-
-                <div node-name="cart" class="cart">
-                    <em class="sprite cart-carticon"></em>
-                    <em class="sprite cart-nub">2</em>
-
-                    <div node-name="cartEject" class="my-cart-eject" style="display: none;">
-                        <div class="cart-eject-top clearfix">
-                            <div class="layout1"></div>
-                            <div class="layout2"></div>
+                            <p data-url="/user/loginout.aspx" class="hover">退出</p>
                         </div>
-                        <div class="cart-eject-contant">
-                            <dl><dt><img height="50" width="50" alt="" src="{{ asset('home/images/wKhkTFc6feSAfOIfAABU5BING_Y670.jpg') }}"></dt><dd><input type="hidden" name="h_productId" value="100"><input type="hidden" name="h_qty" value="1"><input type="hidden" name="h_price" value="69.00"><p style="width:180px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">美国队长标志T恤</p><h3>¥69.00<br> 删除</h3></dd></dl><dl><dt><img height="50" width="50" alt="" src="{{ asset('home/images/wKhkTFdLpoKAOM89AAA9uEjSuXI220.jpg') }}"></dt><dd><input type="hidden" name="h_productId" value="68"><input type="hidden" name="h_qty" value="1"><input type="hidden" name="h_price" value="88.00"><p style="width:180px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">魔兽部落风尚皮革手机壳</p><h3>¥88.00<br> 删除</h3></dd></dl><h2><span>共<i id="i_count">2</i>件商品<br>合计：<i id="i_totalPrice">¥157.00</i></span><samp><a class="cart-but" href="javascript:void(0)">去购物车结算</a></samp> </h2>
+                    </div>
+
+                    <div node-name="cart" class="cart">
+                        <em class="sprite cart-carticon"></em>
+                        <em class="sprite cart-nub">2</em>
+
+                        <div node-name="cartEject" class="my-cart-eject" style="display: none;">
+                            <div class="cart-eject-top clearfix">
+                                <div class="layout1"></div>
+                                <div class="layout2"></div>
+                            </div>
+                            <div class="cart-eject-contant">
+                                <dl><dt><img height="50" width="50" alt="" src="{{ asset('home/images/wKhkTFc6feSAfOIfAABU5BING_Y670.jpg') }}"></dt><dd><input type="hidden" name="h_productId" value="100"><input type="hidden" name="h_qty" value="1"><input type="hidden" name="h_price" value="69.00"><p style="width:180px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">美国队长标志T恤</p><h3>¥69.00<br> 删除</h3></dd></dl><dl><dt><img height="50" width="50" alt="" src="{{ asset('home/images/wKhkTFdLpoKAOM89AAA9uEjSuXI220.jpg') }}"></dt><dd><input type="hidden" name="h_productId" value="68"><input type="hidden" name="h_qty" value="1"><input type="hidden" name="h_price" value="88.00"><p style="width:180px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">魔兽部落风尚皮革手机壳</p><h3>¥88.00<br> 删除</h3></dd></dl><h2><span>共<i id="i_count">2</i>件商品<br>合计：<i id="i_totalPrice">¥157.00</i></span><samp><a class="cart-but" href="javascript:void(0)">去购物车结算</a></samp> </h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<!---头部结束-->
+    <!---头部结束-->
 
-<script type="text/javascript" language="javascript">
-   
-    //JS Cookie操作
-    function getCookieVal(offset) {
-        var endstr = document.cookie.indexOf(";", offset);
-        if (endstr == -1) {
-            endstr = document.cookie.length;
-        }
-        return decodeURI(document.cookie.substring(offset, endstr));
-    }
-
-    function getCookie(name) {
-        var arg = name + "=";
-        var alen = arg.length;
-        var clen = document.cookie.length;
-        var i = 0;
-        var j = 0;
-        while (i < clen) {
-            j = i + alen;
-            if (document.cookie.substring(i, j) == arg)
-                return getCookieVal(j);
-            i = document.cookie.indexOf(" ", i) + 1;
-            if (i == 0)
-                break;
-        }
-        return null;
-    }
-
-    function deleteCookie(name) {
-        var exp = new Date();
-        var cval = getCookie(name);
-        exp.setTime(exp.getTime() - 1);
-        document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
-    }
-
-    function setCookie(name, value) {
-        var argv = setCookie.arguments;
-        var argc = setCookie.arguments.length;
-        var exp = (argc > 2) ? argv[2] : 1;
-        var path = (argc > 3) ? argv[3] : null;
-        var domain = (argc > 4) ? argv[4] : null;
-        var secure = (argc > 5) ? argv[5] : false;
-        var expires = new Date();
-        expires.setTime(expires.getTime() + (exp * 24 * 60 * 60 * 1000));
-        document.cookie = name + "=" + value + "; path=/; expires=" + expires.toGMTString();
-    }
-
-
-
-    //选项卡操作
-    //$(".mune_xia").hide();
-    var name = window.location.pathname;
-    var on = 1;
-    if (name.indexOf("index") != -1) {
-        on = 1;
-    } else if (name.indexOf("cinema") != -1) {
-        on = 2;
-    } else if (name.indexOf("schedule") != -1 || name.indexOf("search") != -1 || name.indexOf("/buy/") != -1) {
-        on = 3;
-    } else if (name.indexOf("client") != -1) {
-        on = 4;
-    } else if (name.indexOf("ActList") != -1 || name.indexOf("CinnemaActivity") != -1 || name.indexOf("ActivityMoreInfo") > 0) {
-        on = 6;
-    } else if (name.indexOf("mall") != -1) {
-        on = 5;
-    }
-    $(".mune ul li a").attr("class", "");
-    $("#" + on).children("a").attr("class", "hover");
-    //$("#content" + on).show();
-
-    //鼠标悬停事件
-    $(".mune ul li").hover(
-        function () {
-            var id = this.id;
-            var a = $(this).children("a");
-            var c = a.attr("class");
-            if (c != "sel") {
-                a.attr("class", "sel");
+    <script type="text/javascript" language="javascript">
+       
+        //JS Cookie操作
+        function getCookieVal(offset) {
+            var endstr = document.cookie.indexOf(";", offset);
+            if (endstr == -1) {
+                endstr = document.cookie.length;
             }
-            else
-                a.removeAttr("class");
-        },
-        function () {
-            $("div .mune_xia").hide();
-            $(".mune ul li a").removeAttr("class");
-            $("#" + on + " a").attr("class", "sel");
-            //$("#content" + on).show();
+            return decodeURI(document.cookie.substring(offset, endstr));
         }
-    );
 
-    function notify() {
-        showAlert("商城正在维护升级中，预计于2016年7月18日16时完成，请稍候访问!");
-    }
-</script>
+        function getCookie(name) {
+            var arg = name + "=";
+            var alen = arg.length;
+            var clen = document.cookie.length;
+            var i = 0;
+            var j = 0;
+            while (i < clen) {
+                j = i + alen;
+                if (document.cookie.substring(i, j) == arg)
+                    return getCookieVal(j);
+                i = document.cookie.indexOf(" ", i) + 1;
+                if (i == 0)
+                    break;
+            }
+            return null;
+        }
+
+        function deleteCookie(name) {
+            var exp = new Date();
+            var cval = getCookie(name);
+            exp.setTime(exp.getTime() - 1);
+            document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+        }
+
+        function setCookie(name, value) {
+            var argv = setCookie.arguments;
+            var argc = setCookie.arguments.length;
+            var exp = (argc > 2) ? argv[2] : 1;
+            var path = (argc > 3) ? argv[3] : null;
+            var domain = (argc > 4) ? argv[4] : null;
+            var secure = (argc > 5) ? argv[5] : false;
+            var expires = new Date();
+            expires.setTime(expires.getTime() + (exp * 24 * 60 * 60 * 1000));
+            document.cookie = name + "=" + value + "; path=/; expires=" + expires.toGMTString();
+        }
 
 
-        
+
+        //选项卡操作
+        //$(".mune_xia").hide();
+        var name = window.location.pathname;
+        var on = 1;
+        if (name.indexOf("index") != -1) {
+            on = 1;
+        } else if (name.indexOf("cinema") != -1) {
+            on = 2;
+        } else if (name.indexOf("schedule") != -1 || name.indexOf("search") != -1 || name.indexOf("/buy/") != -1) {
+            on = 3;
+        } else if (name.indexOf("client") != -1) {
+            on = 4;
+        } else if (name.indexOf("ActList") != -1 || name.indexOf("CinnemaActivity") != -1 || name.indexOf("ActivityMoreInfo") > 0) {
+            on = 6;
+        } else if (name.indexOf("mall") != -1) {
+            on = 5;
+        }
+        $(".mune ul li a").attr("class", "");
+        $("#" + on).children("a").attr("class", "hover");
+        //$("#content" + on).show();
+
+        //鼠标悬停事件
+        $(".mune ul li").hover(
+            function () {
+                var id = this.id;
+                var a = $(this).children("a");
+                var c = a.attr("class");
+                if (c != "sel") {
+                    a.attr("class", "sel");
+                }
+                else
+                    a.removeAttr("class");
+            },
+            function () {
+                $("div .mune_xia").hide();
+                $(".mune ul li a").removeAttr("class");
+                $("#" + on + " a").attr("class", "sel");
+                //$("#content" + on).show();
+            }
+        );
+
+        function notify() {
+            showAlert("商城正在维护升级中，预计于2016年7月18日16时完成，请稍候访问!");
+        }
+    </script>
+   
     <div class="warpc">
         <div class="contCon">
             <span class="ls"></span><span class="rs"></span>
@@ -578,85 +572,43 @@
         </div>
         <!--contTet-->
     </div>
-
-<footer class="index-footer">
-            <div class="pro-box">
-                <img style=" margin-top: 50px;
+    <footer class="index-footer">
+        <div class="pro-box">
+            <img style=" margin-top: 50px;
             margin-right: 50px;float: left;display: block;" class="codePic" src="{{ asset('home/images/doubleCode.jpg') }}">
-                <ul style="float: left;width: 840px;">
-                    <li>
-                        <h3>新手上路</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num1">注册登录问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num2">用户绑定会员卡问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num3">影票相关问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num4">票价和支付问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num5">取票凭证码问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx">服务中心</a></p>
-                    </li>
-                    <li>
-                        <h3>购票指南</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num1">用户购票流程</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num2">取票观影指南</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num3">会员卡支付相关说明</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num4">网银支付相关说明</a></p>
-                    </li>
-                    <li>
-                        <h3>用户中心</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num1">购物流程</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num2">常见问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num3">发票制度</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num4">支付方式 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num5">配送方式 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num6">售后服务 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num7">退货政策 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num8">联系我们 </a></p>
-                    </li>
-                    <li>
-                        <h3>会员权益</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num1">会员订票权益</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num2">会员积分权益</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num3">入会资格</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num4">会员卡折扣说明</a></p>
-                    </li>
-                    <li>
-                        <h3>手机客户端</h3>
-                        <p><a href="http://www.cfc.com.cn/appclient/client.aspx">手机客户端介绍与下载</a></p>
-                        <p><a href="http://www.cfc.com.cn/#">影片信息查询</a></p>
-                        <p><a href="http://www.cfc.com.cn/#">手机自助购票</a></p>
-                    </li>
-                </ul>
-                 <div class="clear" style="clear: both;"></div> 
-            </div>
+            <ul style="float: left;width: 840px;margin-top: 30px;">
+                <?php $link = session('link');?>
+                @foreach($link as $v)
+                <li style="margin-top:5px">
+                    <p><a href="{{ $v->url }}" target="_blank">{{ $v->title }}</a></p>
+                </li>
+                @endforeach  
+            </ul>
+            <div class="clear" style="clear: both;"></div> 
+        </div>
 
-            <div class="links-box">
-                <ul>
-                    <li><a href="http://www.cfc.com.cn/common/aboutus.aspx">关于中影</a></li>
-                    <li><a href="http://www.cfc.com.cn/common/contactus.aspx">联系方式</a></li>
-                    <li><a href="http://www.cfc.com.cn/common/addservice.aspx">服务协议 </a></li>
-                    <li><a href="http://www.cfc.com.cn/common/complaint.aspx">会员协议 </a></li>
-                    <li><a href="http://www.cfc.com.cn/common/hr.aspx">市场合作 </a></li>
-                    <li><a href="http://www.cfc.com.cn/common/privacy.aspx">隐私条款 </a></li>
-                    <li style="border-right: 0;"><a href="http://www.cfc.com.cn/common/pre.aspx">免责声明</a></li>
+        <div class="links-box">
+            <ul>
+                <li><a href="#">关于中影</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="#">服务协议 </a></li>
+                <li><a href="#">会员协议 </a></li>
+                <li><a href="#">市场合作 </a></li>
+                <li><a href="#">隐私条款 </a></li>
+                <li style="border-right: 0;"><a  href="#">免责声明</a></li>
 
-                </ul>
-            </div>
-            <div class="copyright">
-                Copyright © 2007 -
-                2017
-                ChinaFilm All rights reserved.<a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备15040734号-1 </a>中影影院投资有限公司 版权所有
-
-                
-                <script type="text/javascript">
-                    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-                    document.write(unescape("%3Cspan id='cnzz_stat_icon_1000542813'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1000542813%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-                </script><span id="cnzz_stat_icon_1000542813"><a href="http://www.cnzz.com/stat/website.php?web_id=1000542813" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="{{ asset('home/images/pic1.gif') }}"></a></span>
-                <script src="{{ asset('home/js/z_stat.php') }}" type="text/javascript"></script>
-                <script src="{{ asset('home/js/core.php') }}" charset="utf-8" type="text/javascript"></script>
-                </div>
-        </footer>
-
-
-        
+            </ul>
+        </div>
+        <div class="copyright">
+            Copyright © 2007 -
+            2017
+            ChinaFilm All rights reserved.<a href="../www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备15040734号-1 </a>中影影院投资有限公司 版权所有 
+            <script type="text/javascript">
+                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cspan id='cnzz_stat_icon_1000542813'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1000542813%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+        </div>
+    </footer>
 
     <script type="text/javascript">
         // var showType='2D';
@@ -726,7 +678,6 @@
         //     })
         // }
 
-
         function paychannelselect(val){
             
             //getMemberPrePrice();
@@ -787,8 +738,6 @@
             $("#cardCharge").html("￥" + parseFloat(cardCharge/amount).toFixed(2));
 
             //$("#cardsorderprice").html("￥" + parseFloat(sanckPayPrice).toFixed(2));
-            
-        
             
             if (cardMoney < parseFloat(parseFloat(payPrice)+sorderpice) ) {
                 
@@ -2015,15 +1964,10 @@
         //         complete: function() {
         //             Complete();
         //         }
-        //     });
-
-            
-
+        //     });      
         // }
 
     </script>
-
-
     <script>
         $(function() {
             $(".backToTop").goToTop();

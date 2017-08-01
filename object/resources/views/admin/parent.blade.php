@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>控制台 - 影票后台管理系统</title>
+    <title>影票后台管理系统</title>
     <meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
     <meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -57,70 +57,66 @@
               <i class="icon-leaf"></i>
               影院后台管理系统
             </small>
-          </a><!-- /.brand -->
-        </div><!-- /.navbar-header -->
+          </a>
+        </div>
 
         <div class="navbar-header pull-right" role="navigation">
           <ul class="nav ace-nav">
-            <span id="neirong" style="color: white;float:right; display:none">管理员：{{ session('adminuser')->name }} 性别：{{ session('adminuser')->name==0?"男":"女"  }}<br>职位：{{ session('adminuser')->zhiwei }}</span>
+            <span id="neirong" style="color: white;float:right; display:none">
+              管理员：{{ session('adminuser')->name }} 
+              性别：{{ session('adminuser')->name==0?"男":"女"  }}<br>
+              职位：{{ session('adminuser')->zhiwei }}
+            </span>
     
 
       <script src="{{ asset('admin/js/jquery-1.8.3.min.js') }}"></script>
-        <script type="text/javascript">
-              
-              var idr = document.getElementById('neirong');
-
-                function click(){
-                  idr.style.display = 'block';
-                }
-              
-
-
-        </script>
+      <script type="text/javascript">
             
-                
-            
+            var idr = document.getElementById('neirong');
 
-            <li class="light-blue">
-              <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                <img class="nav-user-photo" src="{{ asset('admin/avatars/avatar2.png') }}" alt="Jason's Photo" />
-                <span class="user-info">
-                  <small>{{ session('adminuser')->name }}</small>
-                  {{ session('adminuser')->zhiwei }}
-                </span>
+              function click(){
+                idr.style.display = 'block';
+              }
+      </script>
+      <li class="light-blue">
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+          <img class="nav-user-photo" src="{{ asset('admin/avatars/avatar2.png') }}" alt="Jason's Photo" />
+          <span class="user-info">
+            <small>{{ session('adminuser')->name }}</small>
+            {{ session('adminuser')->zhiwei }}
+          </span>
 
-                <i class="icon-caret-down"></i>
-              </a>
+          <i class="icon-caret-down"></i>
+        </a>
 
-              <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                <li>
-                  <a href="{{ url('admin/film/get') }}">
-                    <i class="icon-user" ></i>
-                    个人资料
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ url('admin/film/set/'.session('adminuser')->id) }}">
-                    <i class="icon-cog"></i>
-                    修改资料
-                  </a>
-                </li>
+        <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+          <li>
+            <a href="{{ url('admin/adminuser') }}">
+              <i class="icon-user" ></i>
+              个人资料
+            </a>
+          </li>
+          <li>
+            <a href="{{ url('admin/film/set/'.session('adminuser')->id) }}">
+              <i class="icon-cog"></i>
+              修改资料
+            </a>
+          </li>
 
+          <li class="divider"></li>
 
-                <li class="divider"></li>
-
-                <li>
-                  <a href="{{ url('admin/over') }}">
-                    <i class="icon-off"></i>
-                    退出
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul><!-- /.ace-nav -->
-        </div><!-- /.navbar-header -->
-      </div><!-- /.container -->
-    </div>
+          <li>
+            <a href="{{ url('admin/over') }}">
+              <i class="icon-off"></i>
+              退出
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
 
     <div class="main-container" id="main-container">
       <script type="text/javascript">
@@ -165,13 +161,13 @@
 
               <span class="btn btn-danger"></span>
             </div>
-          </div><!-- #sidebar-shortcuts -->
+          </div>
 
           <ul class="nav nav-list">
             <li class="active">
-              <a href="index.html">
+              <a href="{{ url('admin/film') }}">
                 <i class="icon-dashboard"></i>
-                <span class="menu-text"> 控制台 </span>
+                <span class="menu-text"> 影院后台管理 </span>
               </a>
             </li>
 
@@ -319,7 +315,7 @@
               </ul>
             </li>
 
-          </ul><!-- /.nav-list -->
+          </ul>
 
           <div class="sidebar-collapse" id="sidebar-collapse">
             <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
@@ -337,11 +333,8 @@
 		      </script>
 
 		      <ul class="breadcrumb">
-		        <li>
-		          <i class="icon-home home-icon"></i>
-		          <a href="#">首页</a>
-		        </li>
-		        <li class="active">控制台</li>
+		        <li></li>
+		        <li class="active"></li>
 		      </ul><!-- .breadcrumb -->
 
 		      <div class="nav-search" id="nav-search">
@@ -351,11 +344,11 @@
 		            <i class="icon-search nav-search-icon"></i>
 		          </span>
 		        </form>
-		      </div><!-- #nav-search -->
+		      </div>
 		    </div>
 		    
         	@yield('content')
-        </div><!-- /.main-content -->
+        </div>
 
         <div class="ace-settings-container" id="ace-settings-container">
           <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
@@ -403,13 +396,13 @@
               </label>
             </div>
           </div>
-        </div><!-- /#ace-settings-container -->
-      </div><!-- /.main-container-inner -->
+        </div>
+      </div>
 
       <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
         <i class="icon-double-angle-up icon-only bigger-110"></i>
       </a>
-    </div><!-- /.main-container -->
+    </div>
 
     <!-- basic scripts -->
 
@@ -559,12 +552,7 @@
         }
         
        });
-      
-      
-      
-      
-      
-      
+         
         var d1 = [];
         for (var i = 0; i < Math.PI * 2; i += 0.5) {
           d1.push([i, Math.sin(i)]);
