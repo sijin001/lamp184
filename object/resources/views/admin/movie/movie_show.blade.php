@@ -7,7 +7,7 @@
 			<div id="addd" class="btn btn-primary" style="margin-left:20px;" onclick="doClick()" >添加</div>
 			<!--movieshow start-->
 			<div id="showadd" style="display:none;">
-				<form action="/movieshow" method="post" name="addform">
+				<form action="{{ url('/admin/movieshow') }}" method="post" name="addform">
 					{{ csrf_field() }}
 					<div class="col-md-12 bottom-form">
 						<div class="col-md-1 grid-form">
@@ -70,7 +70,7 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<form action="/movieshow" name="myforms">
+									<form action="{{ url('/admin/movieshow') }}" name="myforms">
 										<th>
 											<select class="col-md-12" style="height:30px" name="mid" onchange="doSearch(this)">
 												<option value="">电影名</option>
@@ -126,7 +126,7 @@
 								
 							</tbody>
 						</table>
-						{!! $shows->render() !!}
+						{!! $shows->appends($where)->render() !!}
 					</div>
 				</div>
 			</div>
@@ -139,7 +139,7 @@
 		{
 			if(confirm('确定要删除吗？')){
 				var form = document.myform;
-				form.action = '/movieshow/'+id;
+				form.action = "/admin/movieshow/"+id;
 				form.submit();
 			}
 		}
@@ -165,7 +165,7 @@
 			var id = element.parentNode.firstChild.nextSibling.innerHTML;
 			var name = element.id;
 			var oldhtml = element.innerHTML;
-			var url = "{{ url('/movieshowajax') }}";
+			var url = "{{ url('/admin/movieshowajax') }}";
 			var num = 1;
 
 			if(element.id == 'mid'){
@@ -300,7 +300,7 @@
 	        newobj.focus();
 	        newobj.onblur = function()
 	        {
-	            var url = "{{ url('/movieshowajax') }}";
+	            var url = "{{ url('/admin/movieshowajax') }}";
 	            var name = newobj.name;
 	            var value = newobj.value;
 	            if (newobj.value != oldhtml) {

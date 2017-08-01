@@ -31,31 +31,27 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 </head> 
 
 
-
 <body>
-  
+
         <div id="page-wrapper">
             <div class="main-page">
                 <div class="login-form">
                     <h4>管理员|登录</h4>
                     <h5><strong>欢迎</strong>登录后台管理</h5>
-               
-
                     <form action='{{ url("admin/login") }}' method="post">
-                    {{ csrf_field() }}
-                                                    
-                                            <!--判断之后带过来参数显示信息-->
-                                                    <h3 style="color:red;">
-                                                        @if(session('msg'))
-                                                        {{ session('msg') }}
-                                                        @endif
-                                                    </h3>
+                    {{ csrf_field() }}      
+                    <!--判断之后带过来参数显示信息-->
+                    <h3 style="color:red;">
+                        @if(session('msg'))
+                        {{ session('msg') }}
+                        @endif
+                    </h3>
 
                         <input type="text" class="pass" name="name" placeholder="用户名">
                         <input type="password" class="pass" name="pass" placeholder="登录密码" >
                     <div>
                          <div class= "col-md-6">
-                            <input type="password" class="pass" name="yanzheng" placeholder="验证码" >
+                            <input type="text" class="pass" name="yanzheng" placeholder="验证码" >
                          </div>
                             <div class="col-md-6">
                                     <img src="{{ url('admin/capth/'.time()) }}" onclick="this.src='{{ url('admin/capth') }}/'+Math.random()">

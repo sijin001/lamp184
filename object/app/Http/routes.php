@@ -13,6 +13,7 @@
 
 //影票后台路由群组
 Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
+
 	//后台首页显示
 	Route::get('/film', 'admin\user\ShowController@index');
 	Route::get('/film/set/{id}','admin\user\ShowController@show');
@@ -50,12 +51,21 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
     Route::resource('/lunbo', 'admin\slides\SlidesController');
 
     //电影
+    // 电影列表页
     Route::resource('/movie', 'admin\movie\MovieController');
+    // 电影修改
 	Route::post('/movieajax','admin\movie\MovieController@doChange');
+	// 影厅修改
 	Route::post('/movieroomajax','admin\movie\MovieRoomController@doChange');
+	// 电影场次修改
 	Route::post('/movieshowajax','admin\movie\MovieShowController@doChange');
+	//　影厅列表
 	Route::resource('/movieroom', 'admin\movie\MovieRoomController');
+	// 电影场次列表
 	Route::resource('/movieshow', 'admin\movie\MovieShowController');
+	// 电影订单列表
+	Route::resource('/movieorder', 'admin\movie\MovieOrderController');
+	// 电影评论列表
 	Route::resource('/moviecomment', 'admin\movie\MovieCommentController');
 
     //友情链接资源路由
@@ -101,20 +111,21 @@ Route::group(['prefix' => 'home','middleware' => 'logins'],function(){
     Route::resource('/gouwu ','home\user\GouwuController');
 
     //电影
+    // 电影订单生成页
     Route::resource('/movieorder','home\movie\MovieOrderController');
+    // 电影订单成功页
     Route::resource('/movieajax','home\movie\MovieAjaxController');
+    // 电影选择页
     Route::resource('/movie/seat','home\movie\MovieSeatController');
+    // 电影选座页验证码
     Route::get('/movie/seat/capth/{tmp}','home\movie\MovieSeatController@capth');
+    // 验证码判断
     Route::resource('/moviecapth','home\movie\MovieCapthController');
 
 
 	//前台订单
 	Route::resource('/goodsorder', 'home\goods\OrderController');
 	Route::resource('/confirmorder', 'home\goods\ConfirmController');
-
-	
-	
-	
 
 	//前台退出
 	Route::get('/over','home\user\LoginController@out');
@@ -137,8 +148,11 @@ Route::resource('/list', 'home\goods\ListController');
 Route::get('/list/{id}', 'home\goods\ListController@show');
 
 //电影
+// 电影详情页
 Route::resource('/home/movie/description','home\movie\MovieDesController');
+// 电影场次页
 Route::resource('/home/movie/get','home\movie\MovieGetController');
+//电影位置展示页
 Route::resource('/home/movieplace','home\movie\MoviePlaceController');
 
 
