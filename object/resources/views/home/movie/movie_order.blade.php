@@ -75,7 +75,7 @@
         </style>
     </head>
     <body>
-        <form method="post" action="http://www.cfc.com.cn/buy/buyinfo.aspx?orderno=ZY10014057657" id="form1" target="_blank">
+        <!-- <form method="post" action="http://www.cfc.com.cn/buy/buyinfo.aspx?orderno=ZY10014057657" id="form1" target="_blank"> -->
             <div class="aspNetHidden">
                 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMjQ4MTc5MzkxZGQ=">
             </div>
@@ -520,7 +520,7 @@
                     });
                 });
             </script>
-        </form>
+        <!-- </form> -->
         <a href="javascript:;" class="backToTop" title="返回顶部" style="display: inline; position: fixed; top: 503px; left: 1228.5px;">返回顶部</a>
     </body>
 </html>

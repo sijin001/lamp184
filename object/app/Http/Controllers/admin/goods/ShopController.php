@@ -30,13 +30,20 @@ class ShopController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 显示商品订单列表
      *
      * @return \Illuminate\Http\Response
      */
     public function order()
     {
-        return view('admin.goods.order');
+        $order = DB::table('goods_order')
+            ->join('user', 'user.id', '=', 'goods_order.uid')
+            ->select('goods_order.*', 'user.name', 'user.score')
+            ->orderBy('goods_order.time', 'desc')
+            ->paginate(5);
+        // dd($order);
+        $now = $order->currentPage();
+        return view('admin.goods.order', ['order' => $order, 'now'=>$now]);
     }
 
     /**
@@ -85,13 +92,19 @@ class ShopController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * 删除订单
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function del($id)
     {
-        //
+        $res = DB::table('goods_order')->where('id', $id)->delete();
+        // dd($res);
+        if($res > 0){
+            return redirect('/admin/order')->with('msg', '删除成功');
+        }else {
+            return redirect('/admin/order')->with('error', '删除失败');
+        }
     }
 }

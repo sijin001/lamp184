@@ -39,15 +39,15 @@ class ConfirmController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        $uid = $request->input('uid');
-        $gid = $request->input('gid');
-        $name = $request->input('myname');
-        $site = $request->input('address');
-        $number = $request->input('mynumber');
-        $time = $request->input('time');
-        $sendtime = $request->input('sendtime');
-        $phone = $request->input('phone');
+        // dd($request);
+        // $uid = $request->input('uid');
+        // $gid = $request->input('gid');
+        // $name = $request->input('myname');
+        // $site = $request->input('address');
+        // $number = $request->input('mynumber');
+        // $time = $request->input('time');
+        // $sendtime = $request->input('sendtime');
+        // $phone = $request->input('phone');
     }
 
     /**

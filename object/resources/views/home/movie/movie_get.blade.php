@@ -41,7 +41,7 @@
         </style>
     </head>
     <body>
-        <form method="post" action="schedule.aspx" id="form1">
+        <!-- <form method="post" action="schedule.aspx" id="form1"> -->
             <div class="aspNetHidden">
                 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
             </div>
@@ -550,6 +550,6 @@
             <script type="text/javascript">
             //<![CDATA[actcinemamap = []//]]>
             </script>
-        </form>
+        <!-- </form> -->
     </body>
 </html>

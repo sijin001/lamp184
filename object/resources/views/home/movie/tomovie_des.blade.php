@@ -237,7 +237,6 @@
                         <p> 国家：<span>{{ $movies[0]->country }}</span> </p>
                         <p> 版本：<span>{{ $movies[0]->format }}</span> </p>
                         <p> 片长：<span>{{ $movies[0]->length }}</span> </p>
-                        <a id="a_buy" name="a_buy" href="{{ url('/home/movie/get')}}" class="btnbuy" >立即购买</a>
                     </div>
                 </div>
 
@@ -271,7 +270,7 @@
                         <label id="lblerrmsg" style="color:Red;"></label>
                     </div>  
                     <div class="commit" style="display:none;" id="commenttext"> 
-                        <form method="post" action="{{ url('/home/movie/description') }}" id="form1">
+                        <form method="post" action="{{ url('/home/movie/toDescription') }}" id="form1">
                             {{ csrf_field() }}
                             <a href="javascript:void(0);" class="closeCmit" onclick="hideComment()"></a>
                             <input type="text" name="uid" style="display:none" value="{{ session('user') ? session('user')->id : '' }}"/>

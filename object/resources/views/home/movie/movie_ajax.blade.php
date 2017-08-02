@@ -7,7 +7,8 @@
         <meta name="Description" content=""> 
         <meta http-equiv="X-UA-Compatible" content="IE=9">
         <link href="{{ asset('home/css/reset-min.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('home/css/main.css') }}" rel="stylesheet" type="text/css"><link href="{{ asset('home/css/inside_pages.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('home/css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('home/css/inside_pages.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('home/css/jquery-ui-1.8.5.custom.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('home/css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('home/css/my.css') }}" rel="stylesheet">
@@ -67,7 +68,7 @@
         </style>
     </head>
     <body>
-        <form method="post" action="http://www.cfc.com.cn/buy/buyinfo.aspx?orderno=ZY10014057657" id="form1" target="_blank">
+        <!-- <form method="post" action="http://www.cfc.com.cn/buy/buyinfo.aspx?orderno=ZY10014057657" id="form1" target="_blank"> -->
             <div class="aspNetHidden">
                 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMjQ4MTc5MzkxZGQ=">
             </div>
@@ -268,7 +269,7 @@
                 });
             </script>
             <script type="text/javascript" src="{{ asset('home/js/require.min.js') }}"></script>
-        </form>
+        <!-- </form> -->
         <a href="javascript:;" class="backToTop" title="返回顶部" style="display: inline; position: fixed; top: 503px; left: 1228.5px;">返回顶部</a>
     </body>
 </html>

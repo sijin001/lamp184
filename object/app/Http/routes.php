@@ -42,6 +42,7 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 
                                     // 订单
     Route::get('/order', 'admin\goods\ShopController@order');
+    Route::get('/orderdel/{id}', 'admin\goods\ShopController@del');
 
     // 站点配置
     Route::get('/config', 'admin\config\ConfigController@index');
@@ -148,8 +149,10 @@ Route::resource('/list', 'home\goods\ListController');
 Route::get('/list/{id}', 'home\goods\ListController@show');
 
 //电影
-// 电影详情页
+// 正在上映电影详情页
 Route::resource('/home/movie/description','home\movie\MovieDesController');
+// 即将上映电影详情页
+Route::resource('/home/movie/toDescription','home\movie\ToMovieDesController');
 // 电影场次页
 Route::resource('/home/movie/get','home\movie\MovieGetController');
 //电影位置展示页

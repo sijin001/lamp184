@@ -136,7 +136,7 @@
         </title>
     </head>
 <body>
-    <form method="post" action="http://www.cfc.com.cn/cinema/cinema.aspx" id="form1">
+    <!-- <form method="post" action="http://www.cfc.com.cn/cinema/cinema.aspx" id="form1"> -->
         <div class="aspNetHidden">
             <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="">
         </div>
@@ -526,5 +526,5 @@
                 page.init();
             });
         </script>
-    </form>
+    <!-- </form> -->
 <a href="javascript:;" class="backToTop" title="返回顶部" style="display: none; position: fixed; top: 503px; left: 1228.5px;">返回顶部</a></body></html>

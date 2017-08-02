@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 
 use DB;
 
-class MovieDesController extends Controller
+class ToMovieDesController extends Controller
 {
     /**
      * 添加评论.
@@ -20,16 +20,15 @@ class MovieDesController extends Controller
         $list = $request->except('_token');
         $res = DB::table('comment')->insertGetId($list);
         if($res > 0){
-            return redirect('/home/movie/description/'.$list['mid'])->with('msg','添加成功');
+            return redirect('/home/movie/toDescription/'.$list['mid'])->with('msg','添加成功');
         }else{
-            return redirect('/home/movie/description/'.$list['mid'])->with('msg','添加失败');
+            return redirect('/home/movie/toDescription/'.$list['mid'])->with('msg','添加失败');
         }
     }
 
     /**
-     *显示评论.
+     * 即将上映电影列表.
      *
-     * @return 评论信息
      */
     public function show($id)
     {
@@ -41,6 +40,7 @@ class MovieDesController extends Controller
             ->orderBy('comment.ctime', 'desc');
         //执行搜索分页
         $comments = $ob->paginate(10);
-        return view('home.movie.movie_des',['movies'=>$movies,'comments'=>$comments]);
+        return view('home.movie.tomovie_des',['movies'=>$movies,'comments'=>$comments]); 
     }
+
 }

@@ -173,7 +173,7 @@
 							<div class="movies-box">
 								<div width="221" height="321"><img src="{{ asset('admin/upload/movie/'.$co->title_pic) }}"  alt=""/></div>
 								<div class="movies-box-eject">
-									<div class="icon-box1"><a href="movie/detail.aspx@fno=10001312"><div class="icon-5" style="margin-top:140px;"></div></a><a href="movie/detail.aspx@fno=10001312">影片详情</a></div>											
+									<div class="icon-box1"><a href="{{ url('/home/movie/toDescription/'.$co->id) }}"><div class="icon-5" style="margin-top:140px;"></div></a><a href="{{ url('/home/movie/toDescription/'.$co->id) }}">影片详情</a></div>											
 								</div>
 							</div>
 							<div class="text-box">
@@ -230,7 +230,7 @@
 </script>
 <section class="mall-list">
 	<div class="mall-list-con">
-		<div class="mall-banner" onclick="javascript:window.location.href='mall/Index.aspx'" style="cursor:pointer;"></div>
+		<div class="mall-banner" onclick='javascript:window.location.href="{{ url('/goods') }}"' style="cursor:pointer;"></div>
 		<nav class="mall-index-nav">
 			<ul>
                 <?php $i = 0; ?>
