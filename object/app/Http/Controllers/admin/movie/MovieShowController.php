@@ -12,9 +12,8 @@ use DB;
 class MovieShowController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 后台电影场次列表展示.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
@@ -71,20 +70,8 @@ class MovieShowController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 后台电影场次添加.
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -109,34 +96,16 @@ class MovieShowController extends Controller
         $arr = $request->except('_token');
         $id = DB::table('show')->insertGetId($arr);
         if($id > 0){
-            return redirect('/movieshow')->with('msg','添加成功');
+            return redirect('/admin/movieshow')->with('msg','添加成功');
         }else{
-            return redirect('/movieshow')->with('msg','添加失败');
+            return redirect('/admin/movieshow')->with('msg','添加失败');
         }
     }
 
     /**
-     * Display the specified resource.
+     * 电影场次更改.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
     public function doChange(Request $request)
     {
         $arr = $request->except('_token');
@@ -144,31 +113,19 @@ class MovieShowController extends Controller
         $res = DB::table('show')->where('id',$arr['id'])->update($arr1);
         echo json_encode($arr1);
     }
+    
     /**
-     * Update the specified resource in storage.
+     * 后台电影场次删除.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
+        DB::table('movie_order')->where('sid',$id)->delete();
         $res = DB::table('show')->where('id',$id)->delete();
         if($res > 0){
-            return redirect('/movieshow')->with('msg','删除成功');
+            return redirect('/admin/movieshow')->with('msg','删除成功');
         }else{
-            return redirect('/movieshow')->with('msg','删除失败');
+            return redirect('/admin/movieshow')->with('msg','删除失败');
         }
     }
 }

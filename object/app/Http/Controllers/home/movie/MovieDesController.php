@@ -12,80 +12,35 @@ use DB;
 class MovieDesController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 添加评论.
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function index($id)
-    {
-        //
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $list = $request->except('_token');
+        $res = DB::table('comment')->insertGetId($list);
+        if($res > 0){
+            return redirect('/home/movie/description/'.$list['mid'])->with('msg','添加成功');
+        }else{
+            return redirect('/home/movie/description/'.$list['mid'])->with('msg','添加失败');
+        }
     }
 
     /**
-     * Display the specified resource.
+     *显示评论.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return 评论信息
      */
     public function show($id)
     {
         $movies = DB::table('movie')->where('id','=',$id)->get();
-        return view('home.movie.movie_des',['movies'=>$movies]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $ob = DB::table('comment')
+            ->where('mid',$id)
+            ->join('user','user.id','=','comment.uid')
+            ->select('user.name','user.photo','comment.ctime','comment.content')
+            ->orderBy('comment.ctime', 'desc');
+        //执行搜索分页
+        $comments = $ob->paginate(10);
+        return view('home.movie.movie_des',['movies'=>$movies,'comments'=>$comments]);
     }
 }

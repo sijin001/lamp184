@@ -13,21 +13,21 @@
 					<div class="bs-docs-example">
 						<table class="table table-bordered">
 							<thead>
-								<form action="/moviecomment" name="myforms">
+								<form action="{{ url('/admin/moviecomment') }}" name="myforms">
 									<tr>
 										<th>#</th>
-										<th>用户名</th>
+										<th class="col-md-1">评论用户</th>
 										<th>
 											<select class="col-md-12" style="height:30px" name="mid" onchange="doSearch(this)">
-												<option value="">电影名</option>
+												<option value="" class="col-md-2">电影名</option>
 												@foreach($movies as $m)
 												<option value="{{ $m->id }}" {{ ($arr['mid'] == $m->id) ? 'selected' : '' }} >{{ $m->title }}</option>
 												@endforeach
 											</select>
 										</th>
-										<th>评论内容</th>
-										<th>评论时间</th>
-										<th>操作</th>
+										<th class="col-md-6">评论内容</th>
+										<th class="col-md-1">评论时间</th>
+										<th class="col-md-1">操作</th>
 									</tr>
 								</form>
 							</thead>
@@ -35,7 +35,7 @@
 								@foreach($comments as $c)
 								<tr>
 									<td>{{ $c->id }}</td>
-									<td>{{ $c->user }}</td>
+									<td>{{ $c->name }}</td>
 									<td>{{ $c->title }}</td>
 									<td>{{ $c->content }}</td>
 									<td>{{ $c->ctime }}</td>
@@ -46,7 +46,7 @@
 								
 							</tbody>
 						</table>
-						{!! $comments->render() !!}
+						{!! $comments->appends($where)->render() !!}
 					</div>
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 		{
 			if(confirm('确定要删除吗？')){
 				var form = document.myform;
-				form.action = '/moviecomment/'+id;
+				form.action = "{{ url('/admin/moviecomment/"+id+"') }}";
 				form.submit();
 			}
 		}

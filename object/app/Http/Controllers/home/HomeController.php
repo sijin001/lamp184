@@ -35,8 +35,8 @@ class HomeController extends Controller
             $list = DB::table('goods')->where('tid', $type[$i]->id)
                 ->join('goods_photo', 'goods_photo.gid', '=', 'goods.id')
                 ->where('goods_photo.index',1)
-				->orderBy('goods.id', 'desc')
-				->limit(6)
+                ->orderBy('goods.id','desc')
+                ->limit(6)
                 ->get();  
             $arr[$type[$i]->tname] = $list;
         }
@@ -50,7 +50,14 @@ class HomeController extends Controller
         session(['link'=>$link]);
             // $ooo=session('link');
             //  dd($ooo);
-            
+        
+        // 网站配置
+        $config = DB::table('config')->first();
+        // dd($config);
+        session(['config'=>$config]);
+        if($config->wstatus == 1){
+            return view('home.404');
+        }
 
         return view('home.index',['res' => $res, 'movies' => $movies,'comovies' => $comovies,'type' => $type, 'arr' => $arr, 'ads' => $ads]);
     }

@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 显示用户基本信息页面
      *
      * @return \Illuminate\Http\Response
      */
@@ -65,7 +65,7 @@ class UserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * 修改个人信息
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -103,6 +103,9 @@ class UserController extends Controller
 
         $res = DB::table('user')->where('id',$id)->update($arr);
         if($res > 0){
+
+                    $ob = DB::table('user')->where('id',$id)->first();
+                    session(['user'=>$ob]);
             return redirect('home/user')->with('msg','修改成功');
         }else{
             return redirect('home/user')->with('msg','修改失败');

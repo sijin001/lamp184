@@ -1,8 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0056)http://www.cfc.com.cn/buy/goseat.aspx?seqno=171028184883 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head id="Head1">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>中影·国际影城官网|电影|在线预订电影票|电影票团购|中影·国际影城</title>
         <meta name="Keywords" content=""> 
         <meta name="Description" content=""> 
@@ -36,31 +35,13 @@
         <script src="{{ asset('home/js/comm/StringBuilder.js') }}" type="text/javascript"></script>
 
         <script src="{{ asset('home/js/plugins/jquery.mCustomScrollbar.js') }}" type="text/javascript"></script>
-
-        <title>
-        <!-- 选座页面 -->
-        </title>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/mall" src="{{ asset('home/js/mall.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/io/console" src="{{ asset('home/js/console.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/comp/base" src="{{ asset('home/js/base.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/queryNode" src="{{ asset('home/js/queryNode.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/evt/add" src="{{ asset('home/js/add.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/header" src="{{ asset('home/js/header.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/mall" src="{{ asset('home/js/mall(1).js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/util/each" src="{{ asset('home/js/each.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/sizzle" src="{{ asset('home/js/sizzle.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/util/getType" src="{{ asset('home/js/getType.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/parseNode" src="{{ asset('home/js/parseNode.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/className" src="{{ asset('home/js/className.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/contains" src="{{ asset('home/js/contains.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/jquery.easing.1.3" src="{{ asset('home/js/jquery.easing.1.3.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zymall/mall/jquery.elastislide" src="{{ asset('home/js/jquery.elastislide.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/isElement" src="{{ asset('home/js/isElement.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/str/trim" src="{{ asset('home/js/trim.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/isNode" src="{{ asset('home/js/isNode.js') }}"></script>
-        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/dom/getStyle" src="{{ asset('home/js/getStyle.js') }}"></script>
     </head>
     <body>
+        <div class="aspNetHidden">
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="">
+        </div>
+
+
         <div id="zhezao" class="loading" style="display: none;">
             <div id="container"></div>
         </div>
@@ -69,77 +50,95 @@
         <header class="index-header">
             <div class="header-con">
                 <div class="logo">
-                    <img src="{{ asset('home/images/web-v2/logo_03.png') }}" alt="">
+                    <img src="{{ asset('admin/upload/config/'.session('config')->logo) }}" alt="">
                 </div>
 
-                <div class="address" onclick="changeCityClick()">
-                    <a href="javascript:void(0);" id="span_CityName">北京</a>
-                    <span class="icon-1" id="change"></span>
-                </div>
+                <div class="address" onclick="changeCityClick()"><a href="javascript:void(0);" ></a><span id="change"></span></div>
                 <!---菜单导航 start-->
-                <nav class="index-nav">
+               <nav class="index-nav">
                     <ul>
                         <li id="2"><a href="{{ url('/') }}" title="首页">首 页</a></li>
-                        <li id="3"><a href="http://www.cfc.com.cn/cinema/cinema.aspx" title="购票通道">影 院</a></li>
-                        <li id="4"><a href="{{ url('/home/movie/get') }}" title="在线购票" class="">在线购票</a></li>
-                         <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li>
+                        <li id="3"><a href="{{ url('/home/movieplace') }}" title="购票通道">影 院</a></li>
+                        <li id="4"><a href="{{ url('/home/movie/get') }}" title="在线购票">在线购票</a></li>
+                        <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li>
                       
-                        <li id="6"><a href="http://www.cfc.com.cn/activity/ActList.aspx" title="优惠活动">优惠活动</a></li>
+                        <li id="6"><a href="activity/ActList.aspx" title="优惠活动">优惠活动</a></li>
                     </ul>
                 </nav>
                 <!---菜单导航 end-->
 
+                @if(!session('user'))
                 <div class="land" style="">
                     <ul>
                         <li>
-                            <a href="http://www.cfc.com.cn/user/login.aspx"><span class="icon-3"></span>登录</a>
+                            <a href="{{ url('/login') }}"><span class="icon-3"></span>登录</a>
                         </li>
                         <li class="register">
-                            <a href="http://www.cfc.com.cn/user/reg.aspx">注册</a>
+                            <a href="{{ url('/regist') }}">注册</a>
                         </li>
                     </ul>
                 </div>
-                <div class="m-header section_r1" style="display:none">
+                @else    
+                <div class="m-header section_r1" >
                     <div class="m-header my">
                         <div node-name="user" class="my-user">
-                            <em class="sprite my-user-icon"></em>
-                            <em class="sprite my-user-triangle"></em>
+                           <em class="sprite my-user-icon"></em>
+                            {{ session('user')->name }}
+                            <span id="spano">
+                                <em class="sprite my-user-triangle"></em>
+                            </span>
                             <div node-name="userEject" class="my-user-eject" style="display: none;">
-                                <p class="" data-url="/user/userInfo.aspx">我的资料</p>
-
-                                <p data-url="/user/ordersManager.aspx">我的订单</p>
-
-                                <p data-url="/user/MemberCardList.aspx">我的卡券</p>
-
-                                <p data-url="/user/pointsList.aspx">我的积分</p>
-
-                                <p data-url="/user/complainList.aspx">我的意见</p>
-
-                                <p data-url="/user/loginout.aspx" class="hover">退出</p>
-                            </div>
+                                <p><a href="{{ url('home/user')}}" style="font-size:14px">我的资料</a></p>
+                                <p><a href="{{ url('home/order') }}" style="font-size:14px"><p>我的订单</a></p>
+                                <p><a href="{{ url('home/score') }}" style="font-size:14px"><p>我的积分</a></p>
+                                <p><a href="{{ url('home/over') }}" style="font-size:14px">退出</a></p>
+                            </div>  
                         </div>
-
                         <div node-name="cart" class="cart">
-                            <em class="sprite cart-carticon"></em>
-                            <em class="sprite cart-nub">0</em>
-
+                            <a href="{{ url('home/gouwu/'.session('user')->id) }}"><em class="sprite cart-carticon"></em>
+                            <em class="sprite cart-nub">0</em></a>
                             <div node-name="cartEject" class="my-cart-eject" style="display: none;">
                                 <div class="cart-eject-top clearfix">
                                     <div class="layout1"></div>
                                     <div class="layout2"></div>
                                 </div>
                                 <div class="cart-eject-contant">
-                                    
                                 </div>
+                                <div id="myseats">{{ $arrStr }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </header>
         <!---头部结束-->
-
+        <script type="text/javascript">
+            $('#spano').bind('click',function(){
+                $('.my-user-eject').slideToggle();
+            })
+        </script>
         <script type="text/javascript" language="javascript">
+            $(document).ready(function() {
+                var str = $('#myseats').html();
+                var arr = JSON.parse(str);
+                for (var x in arr) {
+                    $('.number').each(function() {
+                        if(parseInt($(this).html()) == x) {
+                            for (var i = 0; i < arr[x].length; i++) {
+                                $(this).parent().siblings().each(function() {
+                                    if($(this).find('span').attr('columnno') == arr[x][i]) {
+                                        var str = `<img width="20" height="20" alt="" src="{{ asset('home/images/seat2.jpg') }}">`;
+                                        $(this).find('span').remove('img');
+                                        $(this).find('span').html(str);
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+            
 
             //JS Cookie操作
             function getCookieVal(offset) {
@@ -226,15 +225,12 @@
                     //$("#content" + on).show();
                 }
             );
-
-            function notify() {
-                showAlert("商城正在维护升级中，预计于2016年7月18日16时完成，请稍候访问!");
-            }
         </script>
         <div class="warpc">
             <div class="contCon">
                 <span class="ls"></span><span class="rs"></span>
-                <div class="ticsteps tic2"></div>
+                <div class="ticsteps tic2">
+                </div>
                 <!--steps-->
                 <div class="seatWarp cf">
                     <div class="seatWarpL">
@@ -260,27 +256,174 @@
                                                 <dd><em class="number">1</em></dd>
                                                 <dd><span status="0" columnno="12" seatno="1MY1MY12MY844"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
                                                 <dd><span status="0" columnno="11" seatno="1MY1MY11MY845"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
-                                        <dd><span status="0" columnno="10" seatno="1MY1MY10MY846"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
-                                        <dd><span status="0" columnno="9" seatno="1MY1MY9MY847"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
-                                        <dd><span status="0" columnno="8" seatno="1MY1MY8MY848"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="7" seatno="1MY1MY7MY849"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
-                                        <dd><span status="0" columnno="6" seatno="1MY1MY6MY850"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="5" seatno="1MY1MY5MY851"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="4" seatno="1MY1MY4MY852"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="3" seatno="1MY1MY3MY853"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="2" seatno="1MY1MY2MY854"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="1" seatno="1MY1MY1MY855"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span></span></dd><dd><span></span></dd></dl><dl class="cf" sectionid="1"> <dd><em class="number">2</em></dd><dd><span status="0" columnno="12" seatno="1MY2MY12MY858"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="11" seatno="1MY2MY11MY859"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="10" seatno="1MY2MY10MY860"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="9" seatno="1MY2MY9MY861"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="8" seatno="1MY2MY8MY862"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="7" seatno="1MY2MY7MY863"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="6" seatno="1MY2MY6MY864"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="5" seatno="1MY2MY5MY865"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="4" seatno="1MY2MY4MY866"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="3" seatno="1MY2MY3MY867"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="2" seatno="1MY2MY2MY868"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="1" seatno="1MY2MY1MY869"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span></span></dd><dd><span></span></dd></dl><dl class="cf" sectionid="1"> <dd><em class="number">3</em></dd><dd><span status="0" columnno="12" seatno="1MY3MY12MY872"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="11" seatno="1MY3MY11MY873"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="10" seatno="1MY3MY10MY874"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="9" seatno="1MY3MY9MY875"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="8" seatno="1MY3MY8MY876"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="7" seatno="1MY3MY7MY877"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="6" seatno="1MY3MY6MY878"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="5" seatno="1MY3MY5MY879"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="4" seatno="1MY3MY4MY880"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="3" seatno="1MY3MY3MY881"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="2" seatno="1MY3MY2MY882"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="1" seatno="1MY3MY1MY883"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span></span></dd><dd><span></span></dd></dl><dl class="cf" sectionid="1"> <dd><em class="number">4</em></dd><dd><span status="0" columnno="12" seatno="1MY4MY12MY886"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="11" seatno="1MY4MY11MY887"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="10" seatno="1MY4MY10MY888"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="9" seatno="1MY4MY9MY889"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="8" seatno="1MY4MY8MY890"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="7" seatno="1MY4MY7MY891"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="6" seatno="1MY4MY6MY892"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="5" seatno="1MY4MY5MY893"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="4" seatno="1MY4MY4MY894"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="3" seatno="1MY4MY3MY895"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="2" seatno="1MY4MY2MY896"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="1" seatno="1MY4MY1MY897"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span></span></dd><dd><span></span></dd></dl><dl class="cf" sectionid="1"> <dd><em class="number">5</em></dd><dd><span status="0" columnno="12" seatno="1MY5MY12MY900"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="11" seatno="1MY5MY11MY901"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="10" seatno="1MY5MY10MY902"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="9" seatno="1MY5MY9MY903"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="8" seatno="1MY5MY8MY904"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="7" seatno="1MY5MY7MY905"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="6" seatno="1MY5MY6MY906"><img width="20" height="20" alt="" src="{{ asset('home/images/seat2.jpg') }}"></span></dd><dd><span status="0" columnno="5" seatno="1MY5MY5MY907"><img width="20" height="20" alt="" src="{{ asset('home/images/seat2.jpg') }}"></span></dd><dd><span status="0" columnno="4" seatno="1MY5MY4MY908"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="3" seatno="1MY5MY3MY909"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="2" seatno="1MY5MY2MY910"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="1" seatno="1MY5MY1MY911"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span></span></dd><dd><span></span></dd></dl><dl class="cf" sectionid="1"> <dd><em class="number">6</em></dd><dd><span status="0" columnno="12" seatno="1MY6MY12MY914"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="11" seatno="1MY6MY11MY915"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="10" seatno="1MY6MY10MY916"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="9" seatno="1MY6MY9MY917"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="8" seatno="1MY6MY8MY918"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="7" seatno="1MY6MY7MY919"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="6" seatno="1MY6MY6MY920"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="5" seatno="1MY6MY5MY921"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="4" seatno="1MY6MY4MY922"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="3" seatno="1MY6MY3MY923"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="2" seatno="1MY6MY2MY924"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="1" seatno="1MY6MY1MY925"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span></span></dd><dd><span></span></dd></dl><dl class="cf" sectionid="1"> <dd><em class="number">7</em></dd><dd><span status="0" columnno="12" seatno="1MY7MY12MY928"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="11" seatno="1MY7MY11MY929"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="10" seatno="1MY7MY10MY930"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="9" seatno="1MY7MY9MY931"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="8" seatno="1MY7MY8MY932"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="7" seatno="1MY7MY7MY933"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="6" seatno="1MY7MY6MY934"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="5" seatno="1MY7MY5MY935"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="4" seatno="1MY7MY4MY936"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="3" seatno="1MY7MY3MY937"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="2" seatno="1MY7MY2MY938"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="1" seatno="1MY7MY1MY939"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span></span></dd><dd><span></span></dd></dl><dl class="cf" sectionid="1"> <dd><em class="number">8</em></dd><dd><span status="0" columnno="12" seatno="1MY8MY12MY942"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="11" seatno="1MY8MY11MY943"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="10" seatno="1MY8MY10MY944"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="9" seatno="1MY8MY9MY945"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="8" seatno="1MY8MY8MY946"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
-                                        <dd><span status="0" columnno="7" seatno="1MY8MY7MY947"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="6" seatno="1MY8MY6MY948"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="5" seatno="1MY8MY5MY949"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="4" seatno="1MY8MY4MY950"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="3" seatno="1MY8MY3MY951"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="2" seatno="1MY8MY2MY952"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="1" seatno="1MY8MY1MY953"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span></span></dd>
-                                        <dd><span></span></dd></dl><dl class="cf" sectionid="1"> <dd><em class="number">9</em></dd><dd><span status="0" columnno="14" seatno="1MY9MY14MY956"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="13" seatno="1MY9MY13MY957"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="12" seatno="1MY9MY12MY958"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="11" seatno="1MY9MY11MY959"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="10" seatno="1MY9MY10MY960"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="9" seatno="1MY9MY9MY961"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="8" seatno="1MY9MY8MY962"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="7" seatno="1MY9MY7MY963"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
-                                        <dd><span status="0" columnno="6" seatno="1MY9MY6MY964"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="5" seatno="1MY9MY5MY965"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="4" seatno="1MY9MY4MY966"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="3" seatno="1MY9MY3MY967"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="2" seatno="1MY9MY2MY968"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd><dd><span status="0" columnno="1" seatno="1MY9MY1MY969"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd></dl></div></div>
+                                                <dd><span status="0" columnno="10" seatno="1MY1MY10MY846"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="9" seatno="1MY1MY9MY847"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="8" seatno="1MY1MY8MY848"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="7" seatno="1MY1MY7MY849"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="6" seatno="1MY1MY6MY850"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="5" seatno="1MY1MY5MY851"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="4" seatno="1MY1MY4MY852"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="3" seatno="1MY1MY3MY853"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="2" seatno="1MY1MY2MY854"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="1" seatno="1MY1MY1MY855"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span></span></dd>
+                                                <dd><span></span></dd>
+                                            </dl>
+                                            <dl class="cf" sectionid="1"> 
+                                                <dd><em class="number">2</em></dd>
+                                                <dd><span status="0" columnno="12" seatno="1MY2MY12MY858"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="11" seatno="1MY2MY11MY859"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="10" seatno="1MY2MY10MY860"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="9" seatno="1MY2MY9MY861"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="8" seatno="1MY2MY8MY862"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="7" seatno="1MY2MY7MY863"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="6" seatno="1MY2MY6MY864"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="5" seatno="1MY2MY5MY865"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="4" seatno="1MY2MY4MY866"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="3" seatno="1MY2MY3MY867"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="2" seatno="1MY2MY2MY868"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="1" seatno="1MY2MY1MY869"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span></span></dd>
+                                                <dd><span></span></dd>
+                                            </dl>
+                                            <dl class="cf" sectionid="1"> 
+                                                <dd><em class="number">3</em></dd>
+                                                <dd><span status="0" columnno="12" seatno="1MY3MY12MY872"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="11" seatno="1MY3MY11MY873"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="10" seatno="1MY3MY10MY874"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="9" seatno="1MY3MY9MY875"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="8" seatno="1MY3MY8MY876"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="7" seatno="1MY3MY7MY877"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="6" seatno="1MY3MY6MY878"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="5" seatno="1MY3MY5MY879"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="4" seatno="1MY3MY4MY880"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="3" seatno="1MY3MY3MY881"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="2" seatno="1MY3MY2MY882"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="1" seatno="1MY3MY1MY883"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span></span></dd>
+                                                <dd><span></span></dd>
+                                            </dl>
+                                            <dl class="cf" sectionid="1"> 
+                                                <dd><em class="number">4</em></dd>
+                                                <dd><span status="0" columnno="12" seatno="1MY4MY12MY886"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="11" seatno="1MY4MY11MY887"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="10" seatno="1MY4MY10MY888"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="9" seatno="1MY4MY9MY889"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="8" seatno="1MY4MY8MY890"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="7" seatno="1MY4MY7MY891"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="6" seatno="1MY4MY6MY892"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="5" seatno="1MY4MY5MY893"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="4" seatno="1MY4MY4MY894"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="3" seatno="1MY4MY3MY895"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="2" seatno="1MY4MY2MY896"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="1" seatno="1MY4MY1MY897"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span></span></dd>
+                                                <dd><span></span></dd>
+                                            </dl>
+                                            <dl class="cf" sectionid="1"> 
+                                                <dd><em class="number">5</em></dd>
+                                                <dd><span status="0" columnno="12" seatno="1MY5MY12MY900"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="11" seatno="1MY5MY11MY901"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="10" seatno="1MY5MY10MY902"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="9" seatno="1MY5MY9MY903"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="8" seatno="1MY5MY8MY904"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="7" seatno="1MY5MY7MY905"><img width="20" height="20" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}" onclick="clickSeat(this)"></span></dd>
+                                                <dd><span status="0" columnno="6" seatno="1MY5MY6MY906"><img width="20" height="20" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}" onclick="clickSeat(this)"></span></dd>
+                                                <dd><span status="0" columnno="5" seatno="1MY5MY5MY907"><img width="20" height="20" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}" onclick="clickSeat(this)"></span></dd>
+                                                <dd><span status="0" columnno="4" seatno="1MY5MY4MY908"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="3" seatno="1MY5MY3MY909"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="2" seatno="1MY5MY2MY910"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="1" seatno="1MY5MY1MY911"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span></span></dd>
+                                                <dd><span></span></dd>
+                                            </dl>
+                                            <dl class="cf" sectionid="1"> 
+                                                <dd><em class="number">6</em></dd>
+                                                <dd><span status="0" columnno="12" seatno="1MY6MY12MY914"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="11" seatno="1MY6MY11MY915"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="10" seatno="1MY6MY10MY916"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="9" seatno="1MY6MY9MY917"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="8" seatno="1MY6MY8MY918"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="7" seatno="1MY6MY7MY919"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="6" seatno="1MY6MY6MY920"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="5" seatno="1MY6MY5MY921"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="4" seatno="1MY6MY4MY922"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="3" seatno="1MY6MY3MY923"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="2" seatno="1MY6MY2MY924"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="1" seatno="1MY6MY1MY925"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span></span></dd>
+                                                <dd><span></span></dd>
+                                            </dl>
+                                            <dl class="cf" sectionid="1"> 
+                                                <dd><em class="number">7</em></dd>
+                                                <dd><span status="0" columnno="12" seatno="1MY7MY12MY928"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="11" seatno="1MY7MY11MY929"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="10" seatno="1MY7MY10MY930"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="9" seatno="1MY7MY9MY931"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="8" seatno="1MY7MY8MY932"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="7" seatno="1MY7MY7MY933"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="6" seatno="1MY7MY6MY934"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="5" seatno="1MY7MY5MY935"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="4" seatno="1MY7MY4MY936"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="3" seatno="1MY7MY3MY937"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="2" seatno="1MY7MY2MY938"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="1" seatno="1MY7MY1MY939"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span></span></dd>
+                                                <dd><span></span></dd>
+                                            </dl>
+                                            <dl class="cf" sectionid="1"> 
+                                                <dd><em class="number">8</em></dd>
+                                                <dd><span status="0" columnno="12" seatno="1MY8MY12MY942"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="11" seatno="1MY8MY11MY943"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="10" seatno="1MY8MY10MY944"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="9" seatno="1MY8MY9MY945"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="8" seatno="1MY8MY8MY946"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="7" seatno="1MY8MY7MY947"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="6" seatno="1MY8MY6MY948"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="5" seatno="1MY8MY5MY949"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="4" seatno="1MY8MY4MY950"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="3" seatno="1MY8MY3MY951"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="2" seatno="1MY8MY2MY952"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="1" seatno="1MY8MY1MY953"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span></span></dd>
+                                                <dd><span></span></dd>
+                                            </dl>
+                                            <dl class="cf" sectionid="1"> 
+                                                <dd><em class="number">9</em></dd>
+                                                <dd><span status="0" columnno="12" seatno="1MY9MY12MY958"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="11" seatno="1MY9MY11MY959"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="10" seatno="1MY9MY10MY960"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="9" seatno="1MY9MY9MY961"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="8" seatno="1MY9MY8MY962"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="7" seatno="1MY9MY7MY963"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="6" seatno="1MY9MY6MY964"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="5" seatno="1MY9MY5MY965"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="4" seatno="1MY9MY4MY966"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="3" seatno="1MY9MY3MY967"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="2" seatno="1MY9MY2MY968"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                                <dd><span status="0" columnno="1" seatno="1MY9MY1MY969"><img width="20" height="20" onclick="clickSeat(this)" seattype="1" alt="" src="{{ asset('home/images/seat1.jpg') }}"></span></dd>
+                                            </dl>
+                                        </div>
                                     </div>
-                                    <!--seatArea-->
                                 </div>
+                            <!--seatArea-->
                             </div>
-                            <!--examples-->
                         </div>
+                    <!--examples-->
+                    </div>
 
                         <!--卖品-->
                         <div class="choseProduct">
                             <h2>选择卖品：</h2>
                             <div class=" productMenu " id="productDetails">
-                                <ul>       
+                                <ul>
+
+                                    
                                 </ul>
+
                             </div>
+
+
                         </div>
                         <!--卖品-->
                         <div class="payHelp mt30">
@@ -312,7 +455,7 @@
                     <div class="seatWarpR">
                         <div class="movbInfo cf">
                             <div class="movbpic">
-                                <img id="FrontImg" src="" width="73" height="97" onerror="">
+                                <img id="FrontImg" src="{{ asset('admin/upload/movie/'.$show[0]->title_pic) }}" width="73" height="97" onerror="">
                             </div>
                             <div class="movbtext">
                                 <h5 class="Hide" id="FilmName">{{ $show[0]->title }}</h5>
@@ -341,7 +484,7 @@
 
                             <div class="cf">
                                 <div class="fr red" style="position: relative;">
-                                    <span class="chaneTurn" onclick="changeTheNumber()">[更换场次]</span>
+                                    <span class="chaneTurn" ><a href="{{ url('/home/movie/get') }}">[更换场次]</a></span>
                                     <div id="trunShow" class="trunShow" onmouseout="over()" onmouseover="out()">
                                         <div class="trunStit cf">
                                             <ul class="cf">
@@ -354,6 +497,7 @@
                                     <!--trunShow-->
                                 </div>
                                 场次：<em class="bold red"><span id="ShowDate">{{ $show[0]->date.' '.' '.$show[0]->time }}</span></em>
+
                             </div>
                         </div>
                         <div class="seatSe mt20 cf">
@@ -370,9 +514,6 @@
                         </div>
                         <p class="mt10">
                             <em id="myprice" style="display:none;">{{ $show[0]->price }}</em>
-                            <em id="myuserid" style="display:none;">{{ $show[0]->price }}</em>
-                            <em id="myshowid" style="display:none;">{{ $show[0]->id }}</em>
-                            <em id="mycapth" style="display:none;">1</em>
                             共计：<em class="red bold">￥0</em>
                         </p>
                         <div class="orderMinfo">
@@ -380,7 +521,14 @@
                                 请输入接收电子电影票的手机号码：
                             </p>
                             <p>
-                                <span>手机号：</span><input name="input" id="mobileNo" type="text" maxlength="11" class="text wid160" onkeyup="this.value=this.value.replace(/\D/g,&#39;&#39;)" onafterpaste="this.value=this.value.replace(/\D/g,&#39;&#39;)">
+                                <form action="/home/movieorder" method="post" name="myform" >
+                                    {{ csrf_field() }}
+                                    <input type="text" name="myshowid" style="display:none;" value="{{ $show[0]->id }}" />
+                                    <input type="text" name="myprice" style="display:none;" value="" />
+                                    <input type="text" name="myseat" style="display:none;" value="" />
+                                    
+                                    <span>手机号：</span><input name="input" id="mobileNo" type="text" maxlength="11" class="text wid160" onkeyup="this.value=this.value.replace(/\D/g,&#39;&#39;)" onafterpaste="this.value=this.value.replace(/\D/g,&#39;&#39;)">
+                                </form>
                             </p>
                             <p>
                                 <span>验证码：</span><input name="input" id="verifyCode" type="text" maxlength="5" class="text wid80" ><img style="height: 31px; margin-left: 5px; margin-top: -2px; width: 70px; border: 1px;" src="{{ url('/home/movie/seat/capth/'.time()) }}" onclick="this.src='{{ url('/home/movie/seat/capth') }}/'+Math.random()" id="Image1" alt="">
@@ -418,13 +566,13 @@
                 if (status == 0) {
                     var seatSum = $(".seatWarpR .seatSe p").eq(1).find("span").length;
                     if (seatSum >= 4) {
-                        showAlert("最多允许选择四个座位！");
+                        alert("最多允许选择四个座位！");
                         return;
                     }
                     var type = $(obj).attr("SeatType");
                     if (type == 5 || type == 6) {
                         if (seatSum >= 3) {
-                            showAlert("最多允许选择四个座位！");
+                            alert("最多允许选择四个座位！");
                             return;
                         }
                     }
@@ -501,7 +649,7 @@
                         $(".seatWarpR .seatSe p").eq(1).append(html);
                         return;
                     }
-                    showAlert("请连续选择座位，不要留下单个的空闲座位！");
+                    alert("请连续选择座位，不要留下单个的空闲座位！");
                     return;
                 }
             }
@@ -736,49 +884,31 @@
                 $.each(myseat,function(){
                     seat = seat + $(this).html()+'_';
                 })
-                var uid = 1;
                 var sid = $('#myshowid').html();
                 var myDate = new Date();
-                var number = myDate.getTime()+Math.floor(Math.random()*10).toString();
+                // var number = myDate.getTime()+Math.floor(Math.random()*10).toString();
                 var phone = $('#mobileNo').val();
                 var mycode = $('#verifyCode').val();
                 var url = "{{ url('/home/movieorder') }}";
-                $.ajax({
-                    type: "post",
-                    dataType: "json",
-                    url:url,
-                    data: {number:number,uid:uid,sid:sid,seat:seat,phone:phone,allprice:myprice,'_token':"{{ csrf_token() }}"},
-                    // cache: false,
-                    // beforeSend: function () { //请求前触发
-                    //     window.Processing();
-                    // },
-                    success: function (data) {
-                        window.location.href = "/home/movieorder/" +data ;
-                    },
-                    // complete: function () { //请求完成后触发
-                    //     window.Complete();
-                    // },
-                    error: function () {
-                        alert("创建订单请求失败，请重新刷新页面！");
-                    }
-                });
+
+                $("input[name='myseat']").val(seat);
+                $("input[name='myprice']").val(myprice);
+
+                $("form[name='myform']").submit();
             }
 
             //是否可以提交
             function isCheack() 
             {
                 var code = $("#verifyCode").val();
-                alert($('#mycapth').html());
                 $.ajax({
                     type:"GET",
                     url:"{{ url('/home/moviecapth') }}",
                     async: false,
                     data:{code:code},
                     success:function(data) {
-                        alert(data);
                         if(data == 'true') {
                             $('#mycapth').html(2);
-                            alert($('#mycapth').html());
                         }
                        
                     },
@@ -787,13 +917,6 @@
                     }
                 });
 
-                var sta = $('#mycapth').html();
-                alert(sta);
-                if(sta == 2) {
-                    $('#mycapth').html(1);
-                    alert("验证码输入不一致！");
-                    return "false";
-                }
                 var mobileNo = $("#mobileNo").val();
                 if ($.trim(mobileNo) == "") {
                     alert("请输入接受电子票的手机号码！");
@@ -819,25 +942,22 @@
                     alert("请选择座位！");
                     return "false";
                 }
-                // $(".seatWarpR .seatSe p").eq(2).find("span").each(function () {
-                //     proCode += $(this).attr("procode") + "|";
-                //     proNum += $(this).attr("pronum") + "|";
-                // });
 
                 var code = $("#verifyCode").val(); 
                 if ($.trim(code) == "") {
                     alert("请输入验证码！");
                     return "false";
-                }
+                }    proNum = proNum.substring(0, proNum.length - 1);
 
-                // seatNo = seatNo.substring(0, seatNo.length - 1);
-                // seatName = seatName.substring(0, seatName.length - 1);
-                // if (proCode != "")
-                //     proCode = proCode.substring(0, proCode.length - 1);
-                // if (proNum != "")
-                //     proNum = proNum.substring(0, proNum.length - 1);
+                var sta = $('#mycapth').html();
+                if(sta == 2) {
+                    $('#mycapth').html(1);
+                    alert("验证码输入不一致！");
+                    return "false";
+                }
             }
 
+            // 获取总票价
             function setallmoney() 
             {
                 var sellproPrice = 0;
@@ -849,81 +969,42 @@
         </script>
         <!--contTet-->
         <footer class="index-footer">
-            <div class="pro-box">
-                <img style=" margin-top: 50px;margin-right: 50px;float: left;display: block;" class="codePic" src="{{ asset('home/images/doubleCode.jpg') }}">
-                <ul style="float: left;width: 840px;">
-                    <li>
-                        <h3>新手上路</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num1">注册登录问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num2">用户绑定会员卡问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num3">影票相关问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num4">票价和支付问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpreg.aspx#num5">取票凭证码问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx">服务中心</a></p>
-                    </li>
-                    <li>
-                        <h3>购票指南</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num1">用户购票流程</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num2">取票观影指南</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num3">会员卡支付相关说明</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpgoseat.aspx#num4">网银支付相关说明</a></p>
-                    </li>
-                    <li>
-                        <h3>用户中心</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num1">购物流程</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num2">常见问题</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num3">发票制度</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num4">支付方式 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num5">配送方式 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num6">售后服务 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num7">退货政策 </a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpcenter.aspx#num8">联系我们 </a></p>
-                    </li>
-                    <li>
-                        <h3>会员权益</h3>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num1">会员订票权益</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num2">会员积分权益</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num3">入会资格</a></p>
-                        <p><a href="http://www.cfc.com.cn/help/helpmember.aspx#num4">会员卡折扣说明</a></p>
-                    </li>
-                    <li>
-                        <h3>手机客户端</h3>
-                        <p><a href="http://www.cfc.com.cn/appclient/client.aspx">手机客户端介绍与下载</a></p>
-                        <p><a href="http://www.cfc.com.cn/#">影片信息查询</a></p>
-                        <p><a href="http://www.cfc.com.cn/#">手机自助购票</a></p>
-                    </li>
-                </ul>
-                 <div class="clear" style="clear: both;"></div> 
-            </div>
+        <div class="pro-box">
+            <img style=" margin-top: 50px;
+            margin-right: 50px;float: left;display: block;" class="codePic" src="{{ asset('home/images/doubleCode.jpg') }}">
+            <ul style="float: left;width: 840px;margin-top: 30px;">
+                <?php $link = session('link');?>
+                @foreach($link as $v)
+                <li style="margin-top:5px">
+                    <p><a href="{{ $v->url }}" target="_blank">{{ $v->title }}</a></p>
+                </li>
+                @endforeach  
+            </ul>
+            <div class="clear" style="clear: both;"></div> 
+        </div>
 
-            <div class="links-box">
-                <ul>
-                    <li><a href="http://www.cfc.com.cn/common/aboutus.aspx">关于中影</a></li>
-                    <li><a href="http://www.cfc.com.cn/common/contactus.aspx">联系方式</a></li>
-                    <li><a href="http://www.cfc.com.cn/common/addservice.aspx">服务协议 </a></li>
-                    <li><a href="http://www.cfc.com.cn/common/complaint.aspx">会员协议 </a></li>
-                    <li><a href="http://www.cfc.com.cn/common/hr.aspx">市场合作 </a></li>
-                    <li><a href="http://www.cfc.com.cn/common/privacy.aspx">隐私条款 </a></li>
-                    <li style="border-right: 0;"><a href="http://www.cfc.com.cn/common/pre.aspx">免责声明</a></li>
+        <div class="links-box">
+            <ul>
+                <li><a href="#">关于中影</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="#">服务协议 </a></li>
+                <li><a href="#">会员协议 </a></li>
+                <li><a href="#">市场合作 </a></li>
+                <li><a href="#">隐私条款 </a></li>
+                <li style="border-right: 0;"><a  href="#">免责声明</a></li>
 
-                </ul>
-            </div>
-            <div class="copyright">
-                Copyright © 2007 -
-                2017
-                ChinaFilm All rights reserved.<a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备15040734号-1 </a>中影影院投资有限公司 版权所有
-
-                
-                <script type="text/javascript">
-                    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-                    document.write(unescape("%3Cspan id='cnzz_stat_icon_1000542813'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1000542813%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-                </script>
-                <span id="cnzz_stat_icon_1000542813"><a href="http://www.cnzz.com/stat/website.php?web_id=1000542813" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="{{ asset('home/images/pic1.gif') }}"></a></span>
-                <script src="{{ asset('home/js/z_stat.php') }}" type="text/javascript"></script>
-                <script src="{{ asset('home/js/core.php') }}" charset="utf-8" type="text/javascript"></script>
-                </div>
-        </footer>
-
+            </ul>
+        </div>
+        <div class="copyright">
+            Copyright © 2007 -
+            2017
+            ChinaFilm All rights reserved.<a href="../www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备15040734号-1 </a>中影影院投资有限公司 版权所有 
+            <script type="text/javascript">
+                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cspan id='cnzz_stat_icon_1000542813'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1000542813%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+        </div>
+    </footer>
         <script>
             $(function() {
                 $(".backToTop").goToTop();
@@ -946,5 +1027,5 @@
                 page.init();
             });
         </script>
-     </body>
-</html>
+
+    <a href="javascript:;" class="backToTop" title="返回顶部" style="display: none; position: fixed; top: 503px; left: 1228.5px;">返回顶部</a></body></html>

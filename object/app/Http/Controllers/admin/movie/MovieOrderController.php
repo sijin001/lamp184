@@ -12,9 +12,8 @@ use DB;
 class MovieOrderController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * 后台电影订单列表.
+     *  搜索分页
      */
     public function index(Request $request)
     {
@@ -27,7 +26,7 @@ class MovieOrderController extends Controller
             ->join('show', 'movie_order.sid','=','show.id')
             ->join('movie_room', 'show.rid','=','movie_room.id')
             ->join('movie','show.mid','=','movie.id')
-            ->select('movie_order.id','movie_order.number','movie_order.seat','movie.title','show.date','show.time','show.price','movie_room.rname','user.user');
+            ->select('movie_order.id','movie_order.number','movie_order.seat','movie.title','show.date','show.time','show.price','movie_room.rname','user.name');
 
         $arr['mid'] = $request->input('mid');
         $arr['date'] = $request->input('date');
@@ -65,78 +64,22 @@ class MovieOrderController extends Controller
         $orders = $ob->paginate(10);
         $movies = DB::table('movie')->select('id','title')->get();
         $rooms = DB::table('movie_room')->select('id','rname')->get();
-        $show = DB::table('show')->select('id','date','time')->get();
-        return view('admin.movie.movie_order', ['orders'=>$orders,'movies'=>$movies,'rooms'=>$rooms,'show'=>$show,'arr'=>$arr]);
+        $showDate = DB::table('show')->select('date')->distinct()->get();
+        $showTime = DB::table('show')->select('time')->distinct()->get();
+        return view('admin.movie.movie_order', ['orders'=>$orders,'movies'=>$movies,'rooms'=>$rooms,'showDate'=>$showDate,'showTime'=>$showTime,'arr'=>$arr,'where'=>$where]);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 后台电影订单删除.
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $res = DB::table('movie_order')->where('id',$id)->delete();
         if($res > 0){
-            return redirect('/movieorder')->with('msg','删除成功!');
+            return redirect('/admin/movieorder')->with('msg','删除成功!');
         }else{
-            return redirect('/movieorder')->with('msg','删除失败!');
+            return redirect('/admin/movieorder')->with('msg','删除失败!');
         }
     }
 }

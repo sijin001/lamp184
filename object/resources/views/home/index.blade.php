@@ -174,7 +174,7 @@
 							<div class="movies-box">
 								<div width="221" height="321"><img src="{{ asset('admin/upload/movie/'.$co->title_pic) }}"  alt=""/></div>
 								<div class="movies-box-eject">
-									<div class="icon-box1"><a href="movie/detail.aspx@fno=10001312"><div class="icon-5" style="margin-top:140px;"></div></a><a href="movie/detail.aspx@fno=10001312">影片详情</a></div>											
+									<div class="icon-box1"><a href="{{ url('/home/movie/toDescription/'.$co->id) }}"><div class="icon-5" style="margin-top:140px;"></div></a><a href="{{ url('/home/movie/toDescription/'.$co->id) }}">影片详情</a></div>											
 								</div>
 							</div>
 							<div class="text-box">
@@ -231,7 +231,7 @@
 </script>
 <section class="mall-list">
 	<div class="mall-list-con">
-		<div class="mall-banner" onclick="javascript:window.location.href='mall/Index.aspx'" style="cursor:pointer;"></div>
+		<div class="mall-banner" onclick='javascript:window.location.href="{{ url('/goods') }}"' style="cursor:pointer;"></div>
 		<nav class="mall-index-nav">
 			<ul>
                 <?php $i = 0; ?>
@@ -317,31 +317,9 @@
                 
             </div>
 
-				<div class="layout1" id="sell_stores">
-					<div class="title"><p>卖品列表</p></div>					
-					<div id="area_info" class="shopping">
-                        <p><span>城市：</span>
-                            <input id="MSelector_city" type="text" class="sell-city-search-input" value="请选择城市" readonly="readonly" />
-                        </p>
-                        <p class="sell-cinema-search-p">
-                            <span>影院：</span>
-                            <input id="MSelector_cinema" type="text" class="sell-cinema-search-input" value="请选择影院" readonly="readonly" />
-                        </p>
-                        <div id="sellCitySelector" class="sell-city-selector" style="display:none;position:relative;left:20px;top:0px;"></div>
-                        <div id="sellCinemaSelector" class="sell-cinema-selector" style="display:none;position:relative;"></div>
-                    </div>
+				
 
-					<div class="shop-box"id ="sellList">						
-					</div>	
-				</div>
-				<div class="layout2">
-					<div class="shop-process">
-						<div class="title"><div class="icon-33"></div>卖品选购流程</div>
-						<dl>
-							<dt><div class="icon-31"></div></dt>
-							<dd><p>选择影院</p><p>选择套餐数量并确认订单</p><p>支付</p><p>影院自助打票取货</p></dd>
-						</dl>
-					</div>
+				
 
                     <div id="sellLeftShoppingCart" class="shop-package-list" style="display:none"></div>
 

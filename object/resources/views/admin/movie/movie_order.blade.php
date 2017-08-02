@@ -13,12 +13,12 @@
 					<div class="bs-docs-example">
 						<table class="table table-bordered">
 							<thead>
-								<form action="/movieorder" name="myforms">
+								<form action="{{ url('/admin/movieorder') }}" name="myforms">
 									<tr>
 										<th>#</th>
 										<th>用户</th>
 										<th>订单号</th>
-										<th>
+										<th class="col-md-2">
 											<select class="col-md-12" style="height:30px" name="mid" onchange="doSearch(this)">
 												<option value="">电影名</option>
 												@foreach($movies as $m)
@@ -29,16 +29,16 @@
 										<th>
 											<select class="col-md-12" style="height:30px" name="date" onchange="doSearch(this)">
 												<option value="" name="date">放映日期</option>
-												@foreach($show as $sh)
-												<option   value="{{ $sh->date }}" {{ ($arr['date'] == $sh->date ) ? 'selected' : '' }}>{{ $sh->date }}</option>
+												@foreach($showDate as $sd)
+												<option   value="{{ $sd->date }}" {{ ($arr['date'] == $sd->date ) ? 'selected' : '' }}>{{ $sd->date }}</option>
 												@endforeach
 											</select>
 										</th>
 										<th>
 											<select class="col-md-12" style="height:30px" name="time" onchange="doSearch(this)">
 												<option value="" name="time">放映时间</option>
-												@foreach($show as $sh)
-												<option value="{{ $sh->time }}" {{ ($arr['time'] == $sh->time ) ? 'selected' : '' }}>{{ $sh->time }}</option>
+												@foreach($showTime as $st)
+												<option value="{{ $st->time }}" {{ ($arr['time'] == $st->time ) ? 'selected' : '' }}>{{ $st->time }}</option>
 												@endforeach
 											</select>
 										</th>
@@ -60,7 +60,7 @@
 								@foreach($orders as $v)
 								<tr>
 									<td>{{ $v->id}}</td>
-									<td>{{ $v->user}}</td>
+									<td>{{ $v->name}}</td>
 									<td>{{ $v->number }}</td>
 									<td>{{ $v->title }}</td>
 									<td>{{ $v->date }}</td>
@@ -73,7 +73,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{!! $orders->render() !!}
+						{!! $orders->appends($where)->render() !!}
 					</div>
 				</div>
 			</div>
@@ -87,7 +87,7 @@
 		{
 			if(confirm('确定要删除吗?')) {
 				var form = document.myform;
-				form.action = "/movieorder/"+id;
+				form.action = "/admin/movieorder/"+id;
 				form.submit();
 			}
 		}

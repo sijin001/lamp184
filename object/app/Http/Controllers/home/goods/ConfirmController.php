@@ -40,6 +40,7 @@ class ConfirmController extends Controller
     public function store(Request $request)
     {
         // dd($request);
+
         // $arr = $request->except('_token', 'city');
         $arr = [];
         $arr['uid'] = $request->input('uid');
@@ -61,6 +62,7 @@ class ConfirmController extends Controller
         // }
 
         return view('home.goods.orderConfirm' ,['arr' => $arr]);
+
     }
 
     /**

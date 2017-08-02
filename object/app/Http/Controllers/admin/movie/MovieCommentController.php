@@ -12,9 +12,8 @@ use DB;
 class MovieCommentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 后台电影评论列表.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
@@ -27,7 +26,7 @@ class MovieCommentController extends Controller
         $ob = DB::table('comment')
             ->join('movie','comment.mid','=','movie.id')
             ->join('user','comment.uid','=','user.id')
-            ->select('comment.*','movie.title','user.user');
+            ->select('comment.*','movie.title','user.name');
 
         if($request->has('mid')){
             $mid = $request->input('mid');
@@ -39,19 +38,22 @@ class MovieCommentController extends Controller
         $comments = $ob->paginate(10);
 
         $movies = DB::table('movie')->select('id','title')->get();
-        $users = DB::table('user')->select('id','user')->get();
+        $users = DB::table('user')->select('id','name')->get();
 
-        return view('admin.movie.movie_comment',['comments'=>$comments,'movies'=>$movies,'users'=>$users,'arr'=>$arr]);
+        return view('admin.movie.movie_comment',['comments'=>$comments,'movies'=>$movies,'users'=>$users,'arr'=>$arr,'where'=>$where]);
     }
 
-   
+    /**
+     * 后台电影评论删除.
+     *
+     */
     public function destroy($id)
     {
         $res = DB::table('comment')->where('id',$id)->delete();
         if($res > 0){
-            return redirect('/moviecomment')->with('msg','删除成功');
+            return redirect('/admin/moviecomment')->with('msg','删除成功');
         }else{
-            return redirect('/moviecomment')->with('msg','删除失败');
+            return redirect('/admin/moviecomment')->with('msg','删除失败');
         }
     }
 }
