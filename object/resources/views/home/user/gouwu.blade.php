@@ -175,20 +175,24 @@
                             <th>操作</th>
                         </tr>
                     </thead>
-                    <tbody>
-
+                    <tbody id='duoxuan'>
                         @foreach($arr as $v)                        
-                        <tr>
-                            <td style="text-align: left;">
-                                <input type="checkbox" name="{{ $v->id }}" value=" " style="width:25px;height:25px"  /></td>
+                        <tr >
+                            <td style="text-align:left; padding-left:10px">
+                                <input type="checkbox" name="qiuid" value="{{ $v->id }}" style="width:25px;height:25px"/>
+                            </td>
 
-                            <td style="text-align: left;"><dl><dt>
-                                     <img height="50" width="50" alt="" src="{{asset('admin/upload/goods/'.$v->gimage)}}"></dt><dd><a href="http://www.cfc.com.cn/mall/ProductDetail.aspx?id=116"> {{ $v->gname }}</a></dd></dl>
-                                </td>
+                            <td style="text-align: left;">
+                                <dl>
+                                    <dt><img height="50" width="50" alt="" src="{{asset('admin/upload/goods/'.$v->gimage)}}"></dt>
+                                    <dd><a href="http://www.cfc.com.cn/mall/ProductDetail.aspx?id=116"> {{ $v->gname }} </a></dd>
+                                </dl>
+                            </td>
                             <td>{{ $v->price }}</td>
-                            <td>0.00</td>
-                            <td><h4><em class="jian">-</em><input style="height:26px" type="text" class="text" value="2"><em class="jia">+</em></h4></td>
-                            <td><span>¥216.00</span></td><td><em class="delete sprite"></em></td>
+                            <td id='qunide'></td>
+                            <td  style="padding-left:50px"><input style="height:26px " type="text" class="text" value="{{ $v->number}}"></td>
+                            <td><span>{{ $v->price * $v->number}}</span></td>
+                            <td><em class="delete sprite" onclick="del(this)" ></em></td>
 
                         </tr>
                         @endforeach
@@ -196,11 +200,15 @@
                 </table>
                 <div class="m-settlement-bottom">
                     <h2><button onclick="checkAll()" style="width:50px;height:30px" >全选</button>
-
-                       <button onclick="del()" style="width:50px;height:30px" >删除</button>
                     </h2>
-                    <h3>共<i id="i_count">2</i>件商品，商品总价：<b id="i_totalPrice">¥216.00</b>
-                        <a class="m-settlement-but" href="http://www.cfc.com.cn/mall/shoppingCart.aspx#" id="btnSettlement" style="">去结算</a>
+                    <h3>共<i id="i_count">0</i>件商品，商品总价：<b id="i_totalPrice">¥0</b>
+                        <form action="{{ url('home/gouwu/create') }}" method="get" />
+                        <input type="hidden" id="daican" name="canshu" value=""><br>
+                        <input type="hidden" id="daican2" name="shuliang" value=""><br>
+                        <input type="hidden" id="daican3" name="zongjia" value=""><br>
+                        <button type="submit" class="m-settlement-but"  id="btnSettlement">去结算</button>
+                        
+                        </form>                   
                     </h3>
                 </div>
             </div>
@@ -219,31 +227,106 @@
 
 
     <script>
-        var el = document.getElementsByTagName('input'); 
-        var len = el.length; 
        
-        function checkAll(){
-            for(var i = 0; i < len; i++) { 
-            if(el[i].type == "checkbox"){ 
-            el[i].checked = true; 
-            }
+
+    // 购 物 车 全 选 遍 历
+        var st = 0;
+        var so = 0;
+        var str ='';
+        var arr = [];
+    function checkAll(){
+           $("input[type='checkbox']").each(function(){
+                //alert(11);
+                $(this).attr('checked',true);
+               
+                   //金额 
+                   var sr = $(this).parent().parent().find('span').html();
+                   st = eval(st+'+'+sr);
+                        //数量
+                        var sn = $(this).parent().parent().find(':text').val();
+                        so = eval(so+'+'+sn);
+                       //需要的id数组
+                          var id =  $(this).parent().parent().find(':checkbox').val();
+                          
+                          str =str+','+id;
+                     
+                    
+                    $('#daican3').val(st);
+                    $('#daican2').val(so);
+                    $('#daican').val(str);
+                    $('#i_count').html(so);
+                    $('#i_totalPrice').html('￥'+st);
+            })
         }
-    }
-         function del(){
-            for(var i = 0; i < len; i++) { 
-            if(el[i].type == "checkbox"){ 
-            el[i].checked = false; 
-            }
-        }
-    }
-
-   
-
-
-
     </script>
+    
+    <script>
+        
+        var st = 0;
+        var so = 0;
+        var str ='';
+    $(':checkbox').change(function()
+    {
+        $("input[type='checkbox']:checked").each(function(){
+            //金额
+            var sr = $(this).parent().parent().find('span').html();
+            st = eval(st+'+'+sr);
+                  //数量
+                  var sn = $(this).parent().parent().find(':text').val();
+                  so = eval(so+'+'+sn);
+                    
+
+                    var id =  $(this).parent().parent().find(':checkbox').val();
+
+                    //str =(str+id+'-'+sn+'+');
+                    
+                     arr.push([id+'-'+sn]);  
+                     str =str+','+id;
+
+        });
+
+        $('#daican3').val(st);
+        $('#daican2').val(so);
+        $('#daican').val(str);
+        $('#i_count').html(so);
+        $('#i_totalPrice').html('￥'+st);
+                    st = 0;
+                    so = 0; 
+                    str = '';
+                    arr =[];
+    });   
+
+</script>
+
+<script type="text/javascript">
+    var de = 0;
+    function del(a){
+            
+       de = $(a).parents().parents().find("input[type='checkbox']").val();
+        //alert(de);
+            
+            var url = "/home/gouwu/"+de+"/edit";
+            //alert(url);
+        $.ajax({
+            
+            url:url,
+            type: 'get',
+            data: {de:de},
+            dataType: 'json',
+            success: function(data){
+                alert(data);
+            location.href="{{ url('home/gouwu/1') }}"
+           
+            }
+            });           
+
+    }
+
+</script>
 
 
+<script>
+</script>
         
         
 

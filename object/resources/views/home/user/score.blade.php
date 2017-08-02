@@ -172,7 +172,7 @@
 <div class="layout1" id="m_centerNav">
     <div class="title"><em class="titleicon1 sprite"></em>
         <br>
-        <div id="lblMenuName"></div>
+        <div>我的积分：{{ session('user')->score }}分</div>
     </div>
     <ul node-name="nav">
         <li>
@@ -185,20 +185,20 @@
                 <em class="ordericon sprite"></em><a href="{{ url('home/order') }}">我的订单</a><em class="triangleicon sprite"></em>
             </h2>
 
-            <p>
+           <!--  <p>
                 <a id="m_2" href="../user/ordersManager.aspx">购票订单</a>
                 <a id="m_3" href="../user/ordersManager_Card.aspx">购卡订单</a>
                 <a id="m_4" href="../user/ordersManager_FillMoney.aspx">充值订单</a>
                 <a id="m_5" href="../user/ordersManager_Seller.aspx">购卖品订单</a>
                 <a id="m_6" href="../mall/MyProductOrder.aspx">购商品订单</a>
-            </p>
+            </p> -->
         </li>
         
-        <li>
+      <!--   <li>
             <h2>
                 <em class="integralicon sprite"></em><a style="background: none;" id="m_10" href="{{ url('home/score') }}">我的积分</a>
             </h2>
-        </li>
+        </li> -->
         
     </ul>
 </div>

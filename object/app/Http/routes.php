@@ -96,7 +96,7 @@ Route::group(['prefix' => 'home','middleware' => 'logins'],function(){
 	//我的积分
 	Route::resource('/score', 'home\user\ScoreController');
     //我的购物车
-    Route::resource('/gouwu ','home\user\GouwuController');
+    Route::resource('/gouwu','home\user\GouwuController');
 
     //电影
     Route::resource('/movieorder','home\movie\MovieOrderController');
@@ -109,6 +109,7 @@ Route::group(['prefix' => 'home','middleware' => 'logins'],function(){
 	//前台订单
 	Route::resource('/goodsorder', 'home\goods\OrderController');
 	Route::resource('/confirmorder', 'home\goods\ConfirmController');
+    Route::get('/ordersuccess/{tmp}', 'home\goods\ConfirmController@doSuccess');
 
 	
 	

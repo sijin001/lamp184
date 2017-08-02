@@ -123,7 +123,7 @@
                                                                 <div node-name="userEject" class="my-user-eject" style="display: none;">
                                                                     <p><a href="{{ url('home/user')}}" style="font-size:14px">我的资料</a></p>
                                                                     <p><a href="{{ url('home/order') }}" style="font-size:14px"><p>我的订单</a></p>
-                                                                    <p><a href="{{ url('home/score') }}" style="font-size:14px"><p>我的积分</a></p>
+                                                                    <!-- <p><a href="{{ url('home/score') }}" style="font-size:14px"><p>我的积分</a></p> -->
 
                                                                     
                                                                     <p><a href="{{ url('home/over') }}" style="font-size:14px">退出</a></p>
@@ -135,7 +135,7 @@
 
                                                         <div node-name="cart" class="cart">
                                                             <a href="{{ url('home/gouwu/'.session('user')->id) }}"><em class="sprite cart-carticon"></em>
-                                                            <em class="sprite cart-nub">0</em></a>
+                                                            </a>
 
                                                             <div node-name="cartEject" class="my-cart-eject" style="display: none;">
                                                                 <div class="cart-eject-top clearfix">

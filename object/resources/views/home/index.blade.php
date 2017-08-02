@@ -127,10 +127,11 @@
     <div class="pic" style=" position:relative;width:100%;">
         <!--图片列表-->
         <ul id="slides">
-          @foreach($res as $img)
-          <li style="z-index:5; display: none;"><a href="/" target="_blank"><img src="{{ asset('admin/upload/slides/'.$img->img) }}" /></a></li>
-          @endforeach
-        </ul>
+                @foreach($res as $img)
+                <li style='z-index:5; display: none; background: url("{{ asset('admin/upload/slides/'.$img->img) }}") 50% 0% no-repeat;' >
+				<a href="/" target="_blank" ></a></li>
+                @endforeach
+            </ul>
     </div>
 </div>  
 <section class="movies-list">

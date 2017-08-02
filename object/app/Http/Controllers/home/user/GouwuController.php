@@ -24,9 +24,29 @@ class GouwuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        //dd($request);
+            
+        $ido = $request->input();
+        $idr = $ido['canshu'];
+        $idp = ltrim($idr,",");
+        $id = explode(',',$idp);
+        $num = $ido['shuliang'];
+        $sum = $ido['zongjia'];
+
+        //dd($id);
+
+       $arr =  DB::table('shopping_cart')
+                     ->join('goods','shopping_cart.gid','=','goods.id')
+                     ->join('goods_photo','goods_photo.gid','=','goods.id')
+                     ->where('goods_photo.index','=',2)
+                     ->wherein('shopping_cart.id',$id)
+                     ->select('goods.gname','goods.price','goods_photo.gimage','shopping_cart.number','shopping_cart.id')
+                     ->get();
+       //dd($arr);
+
+        return view('home.goods.goodsOrder',['arr'=>$arr,'num'=>$num,'sum'=>$sum,'idp'=>$idp]);
     }
 
     /**
@@ -55,9 +75,9 @@ class GouwuController extends Controller
                 ->join('goods_photo','goods_photo.gid','=','goods.id')
                 ->where('shopping_cart.uid','=',$id)
                 ->where('goods_photo.index','=',1)
-                ->select('goods.*','goods_photo.gimage')
+                ->select('goods.gname','goods.price','goods_photo.gimage','shopping_cart.number','shopping_cart.id')
                 ->get();
-        //dd($arr);
+        // dd($arr);
         return view('home.user.gouwu',['arr'=>$arr]);
     }
 
@@ -69,7 +89,13 @@ class GouwuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $res = DB::table('shopping_cart')->where('id',$id)->delete();
+       
+        if(count($res)>0){
+            echo json_encode('删除成功');
+        }
+
+
     }
 
     /**

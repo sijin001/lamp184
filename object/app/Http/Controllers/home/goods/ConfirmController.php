@@ -39,15 +39,28 @@ class ConfirmController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        $uid = $request->input('uid');
-        $gid = $request->input('gid');
-        $name = $request->input('myname');
-        $site = $request->input('address');
-        $number = $request->input('mynumber');
-        $time = $request->input('time');
-        $sendtime = $request->input('sendtime');
-        $phone = $request->input('phone');
+        // dd($request);
+        // $arr = $request->except('_token', 'city');
+        $arr = [];
+        $arr['uid'] = $request->input('uid');
+        $arr['gid'] = $request->input('gid');
+        $arr['sname'] = $request->input('myname');
+        $arr['site'] = $request->input('address');
+        $arr['number'] = $request->input('mynumber');
+        $arr['time'] = $request->input('time');
+        $arr['sendtime'] = $request->input('sendtime');
+        $arr['phone'] = $request->input('phone');
+        $arr['prices'] = $request->input('myprice');
+
+        //dd($arr);
+        $reso = DB::table('user')->where('id',$arr['uid'])->update(['score'=>$arr['prices']]);
+        $res = DB::table('goods_order')->insertGetId($arr);
+        // dd($arr);
+        // if($res > 0){
+        //     return redirect('')
+        // }
+
+        return view('home.goods.orderConfirm' ,['arr' => $arr]);
     }
 
     /**
@@ -62,14 +75,14 @@ class ConfirmController extends Controller
         $res = explode('&',$id);
         // dd($res);
         
-        $list = DB::table('goods')->where('goods.id',$res[0])
+        $arr = DB::table('goods')->where('goods.id',$res[0])
             // ->join('goods_photo','goods_photo.gid','=','goods.id')
             ->first();
         
         $num = $res[1];
         // dd($num);
         // dd($list);
-        return view('home.goods.orderConfirm', ['list' => $list, 'num' => $num]);
+        return view('home.goods.orderConfirm', ['arr' => $arr, 'num' => $num]);
     }
 
     /**
@@ -104,5 +117,14 @@ class ConfirmController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function doSuccess($id) 
+    {
+        //var_dump($id);
+        $ido =  explode(',',$id);
+        $del = DB::table('shopping_cart')->wherein('id',$ido)->delete();
+       // dd($del);
+        return view('home.goods.orderSuccess');
     }
 }

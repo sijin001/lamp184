@@ -102,8 +102,8 @@
             <div class="order-address" id="m_orderDetail">
 
                 <div class="order-address-distribution " node-name="choice">
-                    <form action="{{ url('/home/confirmorder') }}" name="myform" method="post">
-                        {{ csrf_field() }}
+                <form action="{{ url('home/confirmorder') }}" name="myform" method="post">
+                    {{ csrf_field() }}
                         <div class="title"><h2>选择地址</h2></div>
                         <div style="margin:10px;font-size:16px;">
                             收货人姓名：
@@ -125,80 +125,91 @@
                         </div>
                        
                             <input type="text" name="uid" value="{{ session('user')->id }}" style="display:none;">
-                            <input type="text" name="gid" value="{{ $list->gid }}" style="display:none;">
+                            <input type="text" name="gid" value="{{ $idp }}" style="display:none;">
                             <input type="text" name="time" value="{{ time() }}" style="display:none;">
                             <input type="text" name="sendtime" value="" style="display:none;">
                             <input type="text" name="address" value="" style="display:none;">
-                            <input type="text" name="mynumber" value="{{ $_GET['number'] }}" style="display:none;">
-                    </form>
-                </div>
-                <div class="order-address-send" node-name="choice">
-                    <div class="title"><h2>送货时间</h2></div>
-                    <div id="sendTime">
-                        <p sendtimeid="1" class="hover">
-                            <samp>不限送货时间<br>
-                                <span>周一到周日</span>
-                            </samp>
-                        </p>
-                        <p sendtimeid="2">
-                            <samp>工作日送货<br>
-                                <span>周一到周五</span>
-                            </samp>
-                        </p>
-                        <p sendtimeid="3">
-                            <samp>双休日、节假日送货<br>
-                                <span>非工作日时间</span>
-                            </samp>
-                        </p>
-                    </div>
+                            <input type="text" name="mynumber" value="{{ $num }}" style="display:none;">
+                            <input type="text" name="myprice" value="{{ $sum }}" style="display:none;">
                     
-                </div>
-                <div class="order-address-shop">
-                    <div class="title"><h2>确认商品及优惠</h2></div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th width="40%">商品信息</th>
-                                <th width="20%">单价</th>
-                                <th>数量</th>
-                                <th>小计</th>
-                            </tr>
-                        </thead>
-                        <tbody id="proDetailList">
-                            <tr proid="126">
-                                <td style="text-align: left;padding-left:10px;">
-                                    <dl><dt><img src="{{ asset('admin/upload/goods/'.$list->gimage) }}" height="50" width="50" alt=""></dt><dd style="width:290px;word-wrap:break-word;">{{ $list->gname }}</dd></dl>
-                                </td>
-                                <td>¥{{ $list->price }}</td>
-                                <td>{{ $_GET['number'] }}</td>
-                                <td><p>¥{{ ($list->price)*($_GET['number']).'.00' }}</p></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="integral">
+                        </div>
+                        <div class="order-address-send" node-name="choice">
+                            <div class="title"><h2>送货时间</h2></div>
+                            <div id="sendTime">
+                                <p sendtimeid="1" class="hover">
+                                    <samp>不限送货时间<br>
+                                        <span>周一到周日</span>
+                                    </samp>
+                                </p>
+                                <p sendtimeid="2">
+                                    <samp>工作日送货<br>
+                                        <span>周一到周五</span>
+                                    </samp>
+                                </p>
+                                <p sendtimeid="3">
+                                    <samp>双休日、节假日送货<br>
+                                        <span>非工作日时间</span>
+                                    </samp>
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="order-address-shop">
+                            <div class="title"><h2>确认商品及优惠</h2></div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th width="40%">商品信息</th>
+                                        <th width="20%">单价</th>
+                                        <th>数量</th>
+                                        <th>小计</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="proDetailList">
+                                    @foreach($arr as $v)
+                                    <tr proid="126">
+                                        <td style="text-align: left;padding-left:10px;">
+                                            <dl><dt><img src="{{ asset('admin/upload/goods/'.$v->gimage) }}" height="50" width="50" alt=""></dt><dd style="width:290px;word-wrap:break-word;">{{ $v->gname }}</dd></dl>
+                                        </td>
+                                        <td>¥{{ $v->price }}</td>
+                                        <td>{{ $v->number }}</td>
+                                        <td><p>¥{{ ($v->price)*($v->number) }}</p></td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <div class="integral">
                         <h2>
-                            <samp><i style="width:100px; display:inline-block;">共 <b id="proNum">{{ $_GET['number'] }}</b>件商品，</i><label style="width:150px; display:inline-block;">商品总价：￥<span id="proPrice">{{ ($list->price)*($_GET['number']).'.00' }}</span> </label>
+                            <samp><i style="width:100px; display:inline-block;">共 <b id="proNum">{{ $num }}</b>件商品，</i><label style="width:150px; display:inline-block;">商品总价：￥<span id="proPrice">{{ $sum }}</span> </label>
                             </samp> 
                         </h2>
-                           <h2 style="margin-top:10px;">
+                            <h2 style="margin-top:10px;">
                             <samp><i style="width:100px; display:inline-block;">&nbsp;</i><label style="width:150px; display:inline-block;">商品运费：<span id="shipPrice">免运费</span> </label>
                             </samp> 
-                        </h2>
+                            </h2>
                     </div>
                 </div>
                 <div class="contant-bottom">
                     <p><label style="display:inline-block;margin-top:6px;">您需支付:</label>
-                        <span style="display:inline-block; margin-top:2px;">￥
-                            <em id="payAllPrice">{{ ($list->price)*($_GET['number']).'.00' }}</em>
+                        <span style="display:inline-block; margin-top:2px;">￥{{ $sum }}
+                            <em id="payAllPrice"></em>
                         </span>
+                </form>
                         <em id="payAllPrice"><a href="javascript:doSub()" class="but" style="text-decoration:none; margin-top:-8px;">确认订单</a></em>
-                    </p><em id="payAllPrice">
-                </em></div><em id="payAllPrice">
-            </em></div><em id="payAllPrice">
-        </em></div><em id="payAllPrice">
-    </em></div><em id="payAllPrice">
-     <div id="background" class="background" style="display: none; "></div>
-    <div id="progressBar" class="progressBar" style="display: none; ">数据加载中，请稍等...</div>
+                     </p><em id="payAllPrice">
+                           </em></div><em id="payAllPrice">
+                        </em></div><em id="payAllPrice">
+                     </em></div><em id="payAllPrice">
+                  </em></div><em id="payAllPrice">
+                 <div id="background" class="background" style="display: none; "></div>
+              <div id="progressBar" class="progressBar" style="display: none; ">数据加载中，请稍等...</div>
+   
+
+
+
+
+
+
 
     <script type="text/javascript">
         require.config({
@@ -276,19 +287,22 @@
         $('#sendTime').find('p').click(function(){
             $('#sendTime').find('p').removeClass('hover');
             $(this).attr('class','hover');
-            var str = $(this).find('span').html();
-            $("input[name='sendtime']").val(str);
+            
         })
 
         // 提交
         function doSub()
         {
+            var str = $(".hover").find('span').html();
+            $("input[name='sendtime']").val(str);
             var str = '';
             $("option:selected").each(function() {
                 str = str+$(this).html();
             })
             $("input[name='address']").val(str);
+           
             var myform = document.myform;
+
             myform.submit();
         }
 

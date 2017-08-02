@@ -2,54 +2,7 @@
 @section('content')
 
 <script type="text/javascript" language="javascript">
-    //选择城市操作
-    $("#change").click(function () {
-        $(".City_list").show();
-        var cityNo = getCookie("_CityNo_");
-        if (cityNo != "") {
-            $("#" + cityNo).attr("class", "sel");
-        }
-    });
-    function changeCityClick() {
-        $(".City_list").show();
-        var cityNo = getCookie("_CityNo_");
-        if (cityNo != "") {
-            $("#" + cityNo).attr("class", "sel");
-        }
-    }
-    $(".City_list").mouseleave(function () {
-        $(".City_list").hide();
-    });
-
-    //切换城市
-    function ChangCity(id) {
-        var str = $("#" + id).html();
-        if (str.length > 4) {
-            str = str.substr(0, 4);
-        }
-        $("#span_CityName").html(str);
-        setCookie("_CityName_", encodeURI(str));
-        setCookie("_CityNo_", encodeURI(id));
-        // window.location.href = '../index.aspx';
-        var urls = window.location.href;
-        if (urls != "" && urls.indexOf("movie.aspx") != -1 && urls.indexOf("?") == -1) {    //影片页面
-            window.location.href = window.location.href;
-        } else if (urls != "" && urls.indexOf("cinema.aspx") != -1 && urls.indexOf("?") == -1) {    //影院页面
-            window.location.href = window.location.href;
-        } else if (urls != "" && urls.indexOf("schedule.aspx") != -1) { //排期查询页面
-            //window.location.href = window.location.href;
-            window.location.href = "schedule.aspx";
-        } else if (urls != "" && urls.indexOf("exticket_list.aspx") != -1) { //活动促销页面
-            window.location.href = window.location.href;
-        }
-        else if (urls != "" && urls.indexOf("mall") != -1) { //商城页
-            window.location.href = window.location.href;
-        }
-        else {
-            window.location.href = '../index.aspx';
-        }
-
-    }
+    
 
     //设置默认值
     if (getCookie("_CityName_") != null) {
@@ -174,7 +127,7 @@
 <div class="layout1" id="m_centerNav">
     <div class="title"><em class="titleicon1 sprite"></em>
         <br>
-        <div id="lblMenuName"></div>
+        <div >我的积分：{{ session('user')->score }}分</div>
     </div>
     <ul node-name="nav">
         <li>
@@ -184,21 +137,11 @@
         </li>
         <li>
             <h2>
-                <em class="ordericon sprite"></em>我的订单
+                <em class="ordericon sprite"></em><a style="background: none;" href="{{ url('home/order')}}" id="m_1">购票订单
             </h2>
 
-            <p>
-                <a id="m_2" href="../user/ordersManager.aspx">购票订单</a>
-               
-                <a id="m_6" href="../mall/MyProductOrder.aspx">购商品订单</a>
-            </p>
         </li>
-        
-        <li>
-            <h2>
-                <em class="integralicon sprite"></em><a style="background: none;" id="m_10" href="{{ url('home/score') }}">我的积分</a>
-            </h2>
-        </li>
+      
         
     </ul>
 </div>
@@ -207,79 +150,7 @@
 
 <script type="text/javascript">
 
-    require.config({
-        baseUrl: "../resource/js/mall/src/",
-        urlArgs: "__ts=" + new Date().getTime()
-    });
-
-    require(["pages/myCenter"], function (page) {
-        page.init();
-    });
-
-    $(function () {
-        var menuname = '购票订单';
-       $("#lblMenuName").html(menuname);
-  
-       var indexFlg;
-       var pFlg = 1;
-     
-       switch (menuname) {
-           case "我的资料":
-               indexFlg = '1';
-               pFlg = 0;
-
-
-               break;
-           case "购票订单":
-               indexFlg = '2';
-               break;
-           case "购卡订单":
-               indexFlg = '3';
-               break;
-           case "充值订单":
-               indexFlg = '4';
-               break;
-           case "购卖品订单":
-               indexFlg = '5';
-               break;
-           case "购商品订单":
-               indexFlg = '6';
-               break;
-           case "中影通会员卡":
-               indexFlg = '7';
-               break;
-           case "我的中影通会员卡":
-               indexFlg = '7';
-               break;
-           case "影城会员卡":
-               indexFlg = '8';
-               break;
-           case "我的电子券":
-               indexFlg = '9';
-               break;
-           case "我的积分":
-               indexFlg = '10';
-               pFlg = 0;
-               break;
-           case "我的意见":
-               indexFlg = '11';
-               pFlg = 0;
-               break;
-           default:
-               indexFlg = '1';
-               pFlg = 0;
-               break;
-
-       }
-       $('#m_centerNav li').attr("class", "");
-       $('#m_centerNav li p').css("display", "none");
-       $('#m_centerNav li a').attr("class", "");
-
-       $('#m_' + indexFlg).attr("class", "hover");
-       $('#m_' + indexFlg).parent().parent().attr("class", "hover");
-       if (pFlg == 1)
-           $('#m_' + indexFlg).parent().css("display", "block");
-
+    
    });
 
 
@@ -452,53 +323,43 @@
                 <div class="r_menuc" id="div_num1">
                     <div class="menu_con">
                         <div class="search_area cf">
-                        <div class="orderSeach" >
-                                  订单号：<input name="ctl00$ContentPlaceHolder1$orderNo" type="text" id="ContentPlaceHolder1_orderNo" maxlength="15" class="text2" /> 
-                                  手机号： <input name="ctl00$ContentPlaceHolder1$mobile" type="text" id="ContentPlaceHolder1_mobile" maxlength="11" class="text2" style="width:93px;" /><em class="errtip"></em> 
-                                  支付状态：<select name="ctl00$ContentPlaceHolder1$payStatus" id="ContentPlaceHolder1_payStatus" style="width:90px;">
-	<option selected="selected" value="0">所有</option>
-	<option value="1">未支付</option>
-	<option value="3">已支付</option>
-</select>
-                                  </div>
-                                  <div class="orderSeach">
-                                  时　间：<input name="ctl00$ContentPlaceHolder1$startDate" type="text" id="ContentPlaceHolder1_startDate" onfocus="HS_setDate(this)" readonly="readonly" class="text2" />
-                                            -
-                                            <input name="ctl00$ContentPlaceHolder1$endDate" type="text" id="ContentPlaceHolder1_endDate" onfocus="HS_setDate(this)" readonly="readonly" class="text2" />  订单状态：<select name="ctl00$ContentPlaceHolder1$orderStatus" id="ContentPlaceHolder1_orderStatus" style="width:90px;">
-	<option selected="selected" value="0">所有</option>
-	<option value="1">交易成功</option>
-	<option value="4">未处理</option>
-	<option value="2">已超时</option>
-	<option value="5">异常退款</option>
-	<option value="6">正常退款</option>
-</select>
-                                                <input name="ctl00$ContentPlaceHolder1$find" type="submit" id="ContentPlaceHolder1_find" class="subc_btn" value="查 询" style=" margin-left:10px;" onclick="return checkfind();" />
-                                  </div>
-                            
                         </div>
-                        <div>
-                            <table width="745" border="0" cellpadding="0" cellspacing="0" class="t_head">
+
+                <div>
+                    <table width="745"  border="1"  >
                                 <tr>
-                                    <td width="235" height="20" align="center">
-                                        订单详情
+                                    <th width="40" height="50" align="center">序号</th>
+                                    <th width="180" height="20"  align="center">订单号</th>
+                                    <th width="280" align="center">座位</th>
+                                    <th width="120" align="center">电话</th>
+                                    <th width="100" height="20" align="center">价格</th>
+                                </tr>
+                    <?php $i = 1; ?> 
+                                @foreach($arr as $v)
+                                 <tr>
+                                    <td height="30" align="center">
+                                        {{ $i }}
                                     </td>
                                     <td height="20" align="center">
-                                        单价/数量
+                                        {{ $v->number }}
                                     </td>
-                                    <td height="20" align="center">
-                                        实付款
+                                    <td align="center">
+                                         {{ $v->seat }}
                                     </td>
-                                    
-                                    <td width="120" height="20" align="center">
-                                        状态
+                                    <td align="center">
+                                       {{ $v->phone }}
                                     </td>
-                                    <td width="135" height="20" align="center">
-                                        操作
+                                    <td align="center">
+                                        {{ $v->allprice }}
                                     </td>
                                 </tr>
+                               
+                                <?php $i++; ?>
+                                @endforeach
                             </table>
-                            
+                             {!! $arr->render() !!}
                         </div>
+                            
                         <!---分页开始-->
                         
                         <!---分页结束-->
@@ -512,83 +373,9 @@
     <div id="fullbg"></div> 
     <div id="dialog" class="dialog-dhm"></div> 
      
-    <script type="text/javascript">
-        
-        function menuShowclass(value) {
-            $("#m" + value).attr("class", "current");
-        }
-        function menuHideclass(value) {
-            $(".r_menu li").attr("class", "");
-            $("#m1").attr("class", "current");
-        }
-
-        function isDelete() {
-            return confirm("你确定要撤销此订单?");
-        }
-
-        function jumpurl(url) {
-            if (url != '')
-                window.location.href = url;
-        }
-        function reloadpage() {
-            window.location.href = 'ordersManager.aspx';
-        }
-        
-        function couvertshow() {
-            $(".couvert").show();
-        }
-        function hidelookBtn() {
-            $(".lookBtn").hide();
-        }
-         
-        function closeBg() {
-            $("#fullbg,#dialog").hide();
-        }
-
-        function QRcodeClick(obj)
-        {
-            $.post('ordersManager.ashx?action=loadMyOrders&orderNo=' + obj + "&flg=0", function (data) {
-                if (data != "") {
-                   
-                    $("#dialog").html(data);
-                }
-            });
-            var bh = $("body").height();
-            var bw = $("body").width();
-            $("#fullbg").css({
-                height: bh,
-                width: bw,
-                display: "block"
-            });
-            $("#dialog").show();
-        }
-
-        function checkfind() {
-            var orderNo = $("#ContentPlaceHolder1_orderNo").val();
-            var mobile = $("#ContentPlaceHolder1_mobile").val();
-            if ($.trim(orderNo) != "") {
-                if (!CheckNumberOrEn($.trim(orderNo)) || $.trim(orderNo).length > 15) {
-                    $("#ContentPlaceHolder1_orderNo").parent().find("em").text("请输入正确的订单编号！").show();
-                    return false;
-                } else {
-                    $("#ContentPlaceHolder1_orderNo").parent().find("em").hide();
-                }
-            }
-            if ($.trim(mobile) != "")
-            {
-                if (!CheckMobile($.trim(mobile)) || $.trim(mobile).length > 12) {
-                    $("#ContentPlaceHolder1_mobile").parent().find("em").text("请输入正确的手机号！").show();
-                    return false;
-                } else {
-                    $("#ContentPlaceHolder1_mobile").parent().find("em").hide();
-                }
-            }
-            return true;
-        
-        }
-        
-
-    </script>
+   
 
 
 @endsection
+
+

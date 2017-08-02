@@ -58,12 +58,16 @@ class OrderController extends Controller
     public function show($id)
     {
         // dd($_GET['number']);
-        $list = DB::table('goods')->where('goods.id',$id)
+        $arr = DB::table('goods')->where('goods.id',$id)
             ->join('goods_photo','goods_photo.gid','=','goods.id')
             ->where('goods_photo.index',2)
-            ->first();
-        // dd($list);
-        return view('home.goods.goodsOrder',['list' => $list, 'num' => $_GET['number']]);
+            ->get();
+         $arr['0']->number  = $_GET['number'];
+
+         $sum = $_GET['number']*$arr['0']->price;
+         //dd($sum);
+
+        return view('home.goods.goodsOrder',['arr' => $arr,'num'=>$_GET['number'],'sum'=>$sum,'idp'=>$id]);
     }
 
     /**

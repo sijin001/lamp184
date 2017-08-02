@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\home\user;
 
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +16,12 @@ class OrderController extends Controller
      */
     public function index()
     {
-       return view('home.user.order');
+
+
+       $ob = DB::table('movie_order');
+       //dd($arr);
+        $arr = $ob->paginate(5);
+       return view('home.user.order',['arr'=>$arr]);
     }
 
     /**

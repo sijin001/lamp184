@@ -232,40 +232,12 @@
         
     <div class="pbd m-mall-bg">
         <div class="m-mall-con" id="m_pay">
-            <div class="m-mall-con-order-header sprite" style="background-position:0 -63px;"></div>
+            <div class="m-mall-con-order-header sprite" style="background-position:0 0px;"></div>
             <div class="order-con-submit" id="orderInfo">
-                <h2>订单已提交成功，请在<span><em class="time sprite"></em><em id="paytimeoutShow">00:08:09</em></span>内完成支付，否则订单将自动取消。</h2>
-                 
-                <p><span>订单金额：<span><i>￥<?php echo $arr['prices']; ?></i></span></span></p>
+                <h2>订单已支付成功。</h2>
                 
-                <p><span>订单编号：</span><samp>{{ $arr['time'] }}</samp></p>
-
-                <p><span>配送地址：</span><samp>{{ $arr['sname'] }}， {{ $arr['phone'] }}，
-                    <br>{{ $arr['site'] }}，{{ $arr['sendtime'] }}</samp></p>
             </div>
-            <div class="order-con-order">
-                <div node-name="payType">
-          
-                    <div class="title"><em class="checkbox sprite hover"></em>选择支付方式</div>
-                </div>
-                <div class="contant">
-                    <div class="contant-top" node-name="payCard">
-                        <ul>
-                            
-                            <li class="hover">第三方支付</li>
-                        </ul>
-                    </div>
-                    <div class="contant-bottom">
-                        <div class="business-con-top">
-                             <span><input name="pay" type="radio" value="ALIPAY10" class="radio"><em class="bank-bg1 sprite"></em></span>
-                            <span><input name="pay" type="radio" value="WEIXIN" checked="checked" class="radio"><em class="bank-bg2 sprite"></em></span>
-                             <span><input name="pay" type="radio" value="CCB" class="radio"><em class="bank-bg3 sprite"></em></span>
-                             <span id="uid" style="display:none;">{{ session('user')->id }}</span>                                
-                        </div>
-                        <p>您还需支付:<span>￥<?php echo $arr['prices']; ?></span><a href="{{ url('home/ordersuccess/'.$arr['gid']) }}" class="but" style="text-decoration:none;cursor:pointer;">立即支付</a></p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 
@@ -443,7 +415,6 @@
             });
 
         </script>
-    </form>
 
 
 
