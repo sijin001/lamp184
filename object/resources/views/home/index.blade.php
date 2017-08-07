@@ -127,90 +127,82 @@
     <div class="pic" style=" position:relative;width:100%;">
         <!--图片列表-->
         <ul id="slides">
-                @foreach($res as $img)
-                <li style='z-index:5; display: none; background: url("{{ asset('admin/upload/slides/'.$img->img) }}") 50% 0% no-repeat;' >
-				<a href="/" target="_blank" ></a></li>
-                @endforeach
-            </ul>
+            @foreach($res as $img)
+            <li style='z-index:5; display: none; background: url("{{ asset('admin/upload/slides/'.$img->img) }}") 50% 0% no-repeat;' >
+			<a href="/" target="_blank" ></a></li>
+            @endforeach
+        </ul>
     </div>
 </div>  
 <section class="movies-list">
-		<div class="movies-list-con">
-			<div class="layout1">
-					<div class="title">
-						<ul>
-							<li onclick="changeFilm(1)"><a href="javascript:void(0)" id="hotClickA"  class="cur">正在热映</a></li>
-							<li onclick="changeFilm(2)"><a href="javascript:void(0)" id="futureClickA" >即将上映</a></li>
-						</ul>
-						<div class="prompt" id="span_Notice"></div>
-					</div>
-
-					<div class="content" id="hotFilmDiv">
-                        <ul>
-                            @foreach($movies as $m)
-                            <li style="margin-left: 6px;">                                   
-								<div class="movies-box">
-									<div width="221" height="321"><img src="{{ asset('admin/upload/movie/'.$m->title_pic ) }}" /></div>
-									<div class="movies-box-eject">
-										<div class="icon-box1"><a href="{{ url('/home/movie/description/'.$m->id ) }}"><div class="icon-5"></div></a><a href="{{ url('/home/movie/description/'.$m->id ) }}">影片详情</a></div>
-										<div class="icon-box2"><a href="{{ url('/home/movie/get')}}"><div class="icon-6"></div></a><a href="{{ url('/home/movie/get')}}">选座购票</a></div>
-									</div>
-								</div>
-								<div class="text-box">
-									<p>{{ $m->title }}</p>
-								</div>
-							</li>
-                            @endforeach
-                        </ul>
-                        <div class="drop-down" style="display:none;clear:both;">
-							<div class="icon-8" onclick="morefilm(1)"><a href="javascript:void(0)" ></a></div>
+	<div class="movies-list-con">
+		<div class="layout1">
+			<div class="title">
+				<ul>
+					<li onclick="changeFilm(1)"><a href="javascript:void(0)" id="hotClickA"  class="cur">正在热映</a></li>
+					<li onclick="changeFilm(2)"><a href="javascript:void(0)" id="futureClickA" >即将上映</a></li>
+				</ul>
+				<div class="prompt" id="span_Notice"></div>
+			</div>
+			<div class="content" id="hotFilmDiv">
+                <ul>
+                    @foreach($movies as $m)
+                    <li style="margin-left: 6px;">                                   
+						<div class="movies-box">
+							<div width="221" height="321"><img src="{{ asset('admin/upload/movie/'.$m->title_pic ) }}" /></div>
+							<div class="movies-box-eject">
+								<div class="icon-box1"><a href="{{ url('/home/movie/description/'.$m->id ) }}"><div class="icon-5"></div></a><a href="{{ url('/home/movie/description/'.$m->id ) }}">影片详情</a></div>
+								<div class="icon-box2"><a href="{{ url('/home/movie/get')}}"><div class="icon-6"></div></a><a href="{{ url('/home/movie/get')}}">选座购票</a></div>
+							</div>
 						</div>
-
-					</div>
-                <div class="content" id="comingFilmDiv" style="display: none;">  
-                    <ul>
-                        @foreach($comovies as $co)
-                        <li style="margin-left: 6px;">                                   
-							<div class="movies-box">
-								<div width="221" height="321"><img src="{{ asset('admin/upload/movie/'.$co->title_pic) }}"  alt=""/></div>
-								<div class="movies-box-eject">
-									<div class="icon-box1"><a href="{{ url('/home/movie/toDescription/'.$co->id) }}"><div class="icon-5" style="margin-top:140px;"></div></a><a href="{{ url('/home/movie/toDescription/'.$co->id) }}">影片详情</a></div>											
-								</div>
+						<div class="text-box">
+							<p>{{ $m->title }}</p>
+						</div>
+					</li>
+                    @endforeach
+                </ul>
+                <div class="drop-down" style="display:none;clear:both;">
+					<div class="icon-8" onclick="morefilm(1)"><a href="javascript:void(0)" ></a></div>
+				</div>
+			</div>
+            <div class="content" id="comingFilmDiv" style="display: none;">  
+                <ul>
+                    @foreach($comovies as $co)
+                    <li style="margin-left: 6px;">                                   
+						<div class="movies-box">
+							<div width="221" height="321"><img src="{{ asset('admin/upload/movie/'.$co->title_pic) }}"  alt=""/></div>
+							<div class="movies-box-eject">
+								<div class="icon-box1"><a href="{{ url('/home/movie/toDescription/'.$co->id) }}"><div class="icon-5" style="margin-top:140px;"></div></a><a href="{{ url('/home/movie/toDescription/'.$co->id) }}">影片详情</a></div>											
 							</div>
-							<div class="text-box">
-								<p>{{ $co->title }}
-                                    <br/>
-                                    <span class="fl grey f12" style="line-height: 20px;margin-top: -10px;">
-                                    {{ $co->showtime}}                                             
-                                    </span>
-								</p>
-							</div>
-						</li>
-                        @endforeach
-                    </ul>                 
-                 
-                    <div class="drop-down" style="display:none;clear:both;">
-						<div class="icon-8" onclick="morefilm(2)"><a href="javascript:void(0)" ></a></div>
-					</div>
+						</div>
+						<div class="text-box">
+							<p>{{ $co->title }}
+                                <br/>
+                                <span class="fl grey f12" style="line-height: 20px;margin-top: -10px;">
+                                {{ $co->showtime}}                                             
+                                </span>
+							</p>
+						</div>
+					</li>
+                    @endforeach
+                </ul>                 
+                <div class="drop-down" style="display:none;clear:both;">
+					<div class="icon-8" onclick="morefilm(2)"><a href="javascript:void(0)" ></a></div>
+				</div>
             </div>
-		</div>
-		<div class="layout2">
-			
-				@foreach($ads as $v)
-                
-					<a href="{{ $v->url }}" target="_blank">    
-					<img src="{{ asset('admin/upload/ads/'.$v->picture) }} " width=200 height=196>
-				    </a>
-                <div class="process">
-                    <div class="title" >
-                            <div class="icon-40"></div><a href="{{ $v->url }}" target="_blank" style="{{ 'color:rgb('.rand(0,255).','.rand(0,255).','.rand(0,255).')' }}" >:{{ $v->content }}</a>
-                    </div>  
-                
-                </div>
-                
-                @endforeach
-		
-			
+	    </div>
+        <div class="layout2">
+			@foreach($ads as $v)
+	        <a href="{{ $v->url }}" target="_blank">    
+                <img src="{{ asset('admin/upload/ads/'.$v->picture) }} " width=200 height=196>
+		    </a>
+            <div class="process">
+                <div class="title" >
+                        <div class="icon-40"></div>
+                        <a href="{{ $v->url }}" target="_blank" style="{{ 'color:rgb('.rand(0,255).','.rand(0,255).','.rand(0,255).')' }}" >:{{ $v->content }}</a>
+                </div>  
+            </div>  
+            @endforeach
 		</div>
 	</div>
 </section>
@@ -246,11 +238,9 @@
 		<div class="mall-con">
             <div>
                 <ul>
-               
                     @foreach($arr[$type[0]->tname] as $g)
                     <li><a  target="_blank" href="{{ url('/goods/'.$g->gid) }}"><img src="{{ asset('/admin/upload/goods/'.$g->gimage) }}" alt=""></a></li>
-                    @endforeach 
-                                        
+                    @endforeach                          
                 </ul>
             </div>
             <div style="display:none;">
@@ -258,7 +248,6 @@
                     @foreach($arr[$type[1]->tname] as $g)
                     <li><a  target="_blank" href="{{ url('/goods/'.$g->gid) }}"><img src="{{ asset('/admin/upload/goods/'.$g->gimage) }}" alt=""></a></li>
                     @endforeach
-                  
                 </ul>
             </div>
             <div  style="display:none;">
@@ -268,7 +257,6 @@
                         <a target="_blank" href="{{ url('/goods/'.$g->gid) }}"><img src="{{ asset('/admin/upload/goods/'.$g->gimage) }}" alt=""></a>
                     </li>
                     @endforeach
-
                 </ul>
             </div>
             <div  style="display:none;">
@@ -280,7 +268,6 @@
                     @endforeach
                 </ul>
             </div>
-
             <div  style="display:none;">
                 <ul>
                     @foreach($arr[$type[4]->tname] as $g)
@@ -293,44 +280,31 @@
         </div>
 	</div>
 </section>
-
     <!--衍生品模块 end-->
-
-
     <!--卖品模块 start-->
-    <section class="shop-list">
-			<div class="shop-list-con">				
-                <div class="activity mt30">
-                <!-- <input type="hidden" id="hidPostion" value="A002" /> -->
-               <div id="banner">
-				<img src="{{ asset('home/Upload/SellerAdvNewPic/Temp/imgYX_20160614202052.jpg') }}" alt="" title="" />
-                    <div id="banner_bg">
-                    </div>
-                    <div id="banner_info">
-                    </div>
-                    <ul style="display: none;"  id="span_footAdLi">
-                    </ul>
-                    <div id="banner_list">
-                    </div> 
-                               
+<section class="shop-list">
+	<div class="shop-list-con">				
+        <div class="activity mt30">
+        <!-- <input type="hidden" id="hidPostion" value="A002" /> -->
+            <div id="banner">
+                <img src="{{ asset('home/Upload/SellerAdvNewPic/Temp/imgYX_20160614202052.jpg') }}" alt="" title="" />
+                <div id="banner_bg">
                 </div>
-                
-            </div>
-
-				
-
-				
-
-                    <div id="sellLeftShoppingCart" class="shop-package-list" style="display:none"></div>
-
-                    <div class="quxiao" id="btnClose" style="cursor: pointer;display:none;" onclick="btnclose()"></div>
-                    <input id="selected" type="hidden" value="110100" />
-                    <input id="typeid" type="hidden" value="1" />
-                    <input id="pagetype" type="hidden" value="1" />
-					
-				</div>
-			</div>
-		</section>
-    <!--卖品模块 end-->
+                <div id="banner_info">
+                </div>
+                <ul style="display: none;"  id="span_footAdLi">
+                </ul>
+                <div id="banner_list">
+                </div>                
+            </div>     
+        </div>
+        <div id="sellLeftShoppingCart" class="shop-package-list" style="display:none"></div>
+        <div class="quxiao" id="btnClose" style="cursor: pointer;display:none;" onclick="btnclose()"></div>
+        <input id="selected" type="hidden" value="110100" />
+        <input id="typeid" type="hidden" value="1" />
+        <input id="pagetype" type="hidden" value="1" />	
+	</div>
+</section>
+<!--卖品模块 end-->
 
 @endsection

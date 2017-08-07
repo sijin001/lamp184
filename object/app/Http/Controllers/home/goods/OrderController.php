@@ -12,9 +12,9 @@ use DB;
 class OrderController extends Controller
 {
     /**
-     * 显示购买商品进入填写订单页面
+     * 购买商品进入填写订单页面
      *
-     * @return \Illuminate\Http\Response
+     * @return 
      */
     public function index()
     {
@@ -36,15 +36,15 @@ class OrderController extends Controller
     /**
      * 商品添加购物车
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  
+     * @return 
      */
     public function store(Request $request)
     {   
         // echo $_POST['id'];
         // echo $_POST['num'];
         $res = DB::table('shopping_cart')->insertGetId(
-            ['uid'=>1, 'gid'=>$_POST['id'], 'number'=>$_POST['num']]
+            ['uid'=>session('user')->id, 'gid'=>$_POST['id'], 'number'=>$_POST['num']]
         );
         $str = '添加购物车成功';
         echo json_encode($str);        
@@ -114,10 +114,5 @@ class OrderController extends Controller
     {
         $list = DB::table('district')->where('upid',$request->input('upid'))->get();
         echo json_encode($list);
-    }
-
-    public function doConfirm($id)
-    {
-        return 11111111;
     }
 }

@@ -102,7 +102,7 @@
             <div class="order-address" id="m_orderDetail">
 
                 <div class="order-address-distribution " node-name="choice">
-                <form action="{{ url('home/confirmorder') }}" name="myform" method="post">
+                    <form action="{{ url('home/confirmorder') }}" name="myform" method="post">
                     {{ csrf_field() }}
                         <div class="title"><h2>选择地址</h2></div>
                         <div style="margin:10px;font-size:16px;">
@@ -204,13 +204,6 @@
                  <div id="background" class="background" style="display: none; "></div>
               <div id="progressBar" class="progressBar" style="display: none; ">数据加载中，请稍等...</div>
    
-
-
-
-
-
-
-
     <script type="text/javascript">
         require.config({
             baseUrl: "/resource/js/mall/src",
@@ -308,6 +301,4 @@
 
 
     </script>
-
-
   @endsection

@@ -40,8 +40,6 @@
         <div class="aspNetHidden">
         <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="">
         </div>
-
-
         <div id="zhezao" class="loading" style="display: none;">
             <div id="container"></div>
         </div>
@@ -62,7 +60,7 @@
                         <li id="4"><a href="{{ url('/home/movie/get') }}" title="在线购票">在线购票</a></li>
                         <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li>
                       
-                        <li id="6"><a href="activity/ActList.aspx" title="优惠活动">优惠活动</a></li>
+                        <li id="6"><a href="{{ url('/') }}" title="优惠活动">优惠活动</a></li>
                     </ul>
                 </nav>
                 <!---菜单导航 end-->
@@ -90,7 +88,7 @@
                             <div node-name="userEject" class="my-user-eject" style="display: none;">
                                 <p><a href="{{ url('home/user')}}" style="font-size:14px">我的资料</a></p>
                                 <p><a href="{{ url('home/order') }}" style="font-size:14px"><p>我的订单</a></p>
-                                <p><a href="{{ url('home/score') }}" style="font-size:14px"><p>我的积分</a></p>
+                                <!-- <p><a href="{{ url('home/score') }}" style="font-size:14px"><p>我的积分</a></p> -->
                                 <p><a href="{{ url('home/over') }}" style="font-size:14px">退出</a></p>
                             </div>  
                         </div>
@@ -411,43 +409,41 @@
                         </div>
                     <!--examples-->
                     </div>
+                    <!--卖品-->
+                    <div class="choseProduct">
+                        <h2>选择卖品：</h2>
+                        <div class=" productMenu " id="productDetails">
+                            <ul>
 
-                        <!--卖品-->
-                        <div class="choseProduct">
-                            <h2>选择卖品：</h2>
-                            <div class=" productMenu " id="productDetails">
-                                <ul>
-
-                                    
-                                </ul>
-
-                            </div>
-
+                                
+                            </ul>
 
                         </div>
-                        <!--卖品-->
-                        <div class="payHelp mt30">
-                            <h5>使用说明：</h5>
-                            <p class="mt15">
-                                • 每笔订单最多可选购4张电影票；情侣座不单卖；
-                            </p>
-                            <p>
-                                • 选座时，请尽量选择相邻座位，请不要留下单个座位；
-                            </p>
-                            <p>
-                                • 部分影院3D眼镜需要押金，请观影前准备好现金；
-                            </p>
-                            <p>
-                                • 完成座位选择后，请在10分钟内完成支付，否则票务系统将自动释放已选座位，订单将过期失效；
-                            </p>
-                            <p>
-                                • 请认真核对订单信息，电影票及优惠套餐售出后，因票务系统限制，无法进行退换操作。
-                            </p>
-                            <p>
-                                • 支付中如遇到问题请致电：400-998-8022
-                            </p>
-                        </div>
+
                     </div>
+                    <!--卖品-->
+                    <div class="payHelp mt30">
+                        <h5>使用说明：</h5>
+                        <p class="mt15">
+                            • 每笔订单最多可选购4张电影票；情侣座不单卖；
+                        </p>
+                        <p>
+                            • 选座时，请尽量选择相邻座位，请不要留下单个座位；
+                        </p>
+                        <p>
+                            • 部分影院3D眼镜需要押金，请观影前准备好现金；
+                        </p>
+                        <p>
+                            • 完成座位选择后，请在10分钟内完成支付，否则票务系统将自动释放已选座位，订单将过期失效；
+                        </p>
+                        <p>
+                            • 请认真核对订单信息，电影票及优惠套餐售出后，因票务系统限制，无法进行退换操作。
+                        </p>
+                        <p>
+                            • 支付中如遇到问题请致电：400-998-8022
+                        </p>
+                    </div>
+                </div>
                     @if(session('msg'))
                         <script>alert(session('msg'))</script>
                     @endif
@@ -521,7 +517,7 @@
                                 请输入接收电子电影票的手机号码：
                             </p>
                             <p>
-                                <form action="/home/movieorder" method="post" name="myform" >
+                                <form action="{{ url('/home/movieorder') }}" method="post" name="myform" >
                                     {{ csrf_field() }}
                                     <input type="text" name="myshowid" style="display:none;" value="{{ $show[0]->id }}" />
                                     <input type="text" name="myprice" style="display:none;" value="" />
@@ -889,7 +885,6 @@
                 // var number = myDate.getTime()+Math.floor(Math.random()*10).toString();
                 var phone = $('#mobileNo').val();
                 var mycode = $('#verifyCode').val();
-                var url = "{{ url('/home/movieorder') }}";
 
                 $("input[name='myseat']").val(seat);
                 $("input[name='myprice']").val(myprice);

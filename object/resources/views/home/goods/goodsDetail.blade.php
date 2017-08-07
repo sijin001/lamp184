@@ -2,99 +2,98 @@
 @section('content')
 <!---头部结束-->
 
-<script type="text/javascript" language="javascript">
-    
-    //JS Cookie操作
-    function getCookieVal(offset) {
-        var endstr = document.cookie.indexOf(";", offset);
-        if (endstr == -1) {
-            endstr = document.cookie.length;
-        }
-        return decodeURI(document.cookie.substring(offset, endstr));
-    }
-
-    function getCookie(name) {
-        var arg = name + "=";
-        var alen = arg.length;
-        var clen = document.cookie.length;
-        var i = 0;
-        var j = 0;
-        while (i < clen) {
-            j = i + alen;
-            if (document.cookie.substring(i, j) == arg)
-                return getCookieVal(j);
-            i = document.cookie.indexOf(" ", i) + 1;
-            if (i == 0)
-                break;
-        }
-        return null;
-    }
-
-    function deleteCookie(name) {
-        var exp = new Date();
-        var cval = getCookie(name);
-        exp.setTime(exp.getTime() - 1);
-        document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
-    }
-
-    function setCookie(name, value) {
-        var argv = setCookie.arguments;
-        var argc = setCookie.arguments.length;
-        var exp = (argc > 2) ? argv[2] : 1;
-        var path = (argc > 3) ? argv[3] : null;
-        var domain = (argc > 4) ? argv[4] : null;
-        var secure = (argc > 5) ? argv[5] : false;
-        var expires = new Date();
-        expires.setTime(expires.getTime() + (exp * 24 * 60 * 60 * 1000));
-        document.cookie = name + "=" + value + "; path=/; expires=" + expires.toGMTString();
-    }
-
-    //选项卡操作
-    //$(".mune_xia").hide();
-    var name = window.location.pathname;
-    var on = 1;
-    if (name.indexOf("index") != -1) {
-        on = 1;
-    } else if (name.indexOf("cinema") != -1) {
-        on = 2;
-    } else if (name.indexOf("schedule") != -1 || name.indexOf("search") != -1 || name.indexOf("/buy/") != -1) {
-        on = 3;
-    } else if (name.indexOf("client") != -1) {
-        on = 4;
-    } else if (name.indexOf("ActList") != -1 || name.indexOf("CinnemaActivity") != -1 || name.indexOf("ActivityMoreInfo") > 0) {
-        on = 6;
-    } else if (name.indexOf("mall") != -1) {
-        on = 5;
-    }
-    $(".mune ul li a").attr("class", "");
-    $("#" + on).children("a").attr("class", "hover");
-    //$("#content" + on).show();
-
-    //鼠标悬停事件
-    $(".mune ul li").hover(
-        function () {
-            var id = this.id;
-            var a = $(this).children("a");
-            var c = a.attr("class");
-            if (c != "sel") {
-                a.attr("class", "sel");
-            }
-            else
-                a.removeAttr("class");
-        },
-        function () {
-            $("div .mune_xia").hide();
-            $(".mune ul li a").removeAttr("class");
-            $("#" + on + " a").attr("class", "sel");
-            //$("#content" + on).show();
-        }
-    );
-
-    function notify() {
-        showAlert("商城正在维护升级中，预计于2016年7月18日16时完成，请稍候访问!");
-    }
-</script>
+    <script type="text/javascript" language="javascript">
         
+        //JS Cookie操作
+        function getCookieVal(offset) {
+            var endstr = document.cookie.indexOf(";", offset);
+            if (endstr == -1) {
+                endstr = document.cookie.length;
+            }
+            return decodeURI(document.cookie.substring(offset, endstr));
+        }
+
+        function getCookie(name) {
+            var arg = name + "=";
+            var alen = arg.length;
+            var clen = document.cookie.length;
+            var i = 0;
+            var j = 0;
+            while (i < clen) {
+                j = i + alen;
+                if (document.cookie.substring(i, j) == arg)
+                    return getCookieVal(j);
+                i = document.cookie.indexOf(" ", i) + 1;
+                if (i == 0)
+                    break;
+            }
+            return null;
+        }
+
+        function deleteCookie(name) {
+            var exp = new Date();
+            var cval = getCookie(name);
+            exp.setTime(exp.getTime() - 1);
+            document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+        }
+
+        function setCookie(name, value) {
+            var argv = setCookie.arguments;
+            var argc = setCookie.arguments.length;
+            var exp = (argc > 2) ? argv[2] : 1;
+            var path = (argc > 3) ? argv[3] : null;
+            var domain = (argc > 4) ? argv[4] : null;
+            var secure = (argc > 5) ? argv[5] : false;
+            var expires = new Date();
+            expires.setTime(expires.getTime() + (exp * 24 * 60 * 60 * 1000));
+            document.cookie = name + "=" + value + "; path=/; expires=" + expires.toGMTString();
+        }
+
+        //选项卡操作
+        //$(".mune_xia").hide();
+        var name = window.location.pathname;
+        var on = 1;
+        if (name.indexOf("index") != -1) {
+            on = 1;
+        } else if (name.indexOf("cinema") != -1) {
+            on = 2;
+        } else if (name.indexOf("schedule") != -1 || name.indexOf("search") != -1 || name.indexOf("/buy/") != -1) {
+            on = 3;
+        } else if (name.indexOf("client") != -1) {
+            on = 4;
+        } else if (name.indexOf("ActList") != -1 || name.indexOf("CinnemaActivity") != -1 || name.indexOf("ActivityMoreInfo") > 0) {
+            on = 6;
+        } else if (name.indexOf("mall") != -1) {
+            on = 5;
+        }
+        $(".mune ul li a").attr("class", "");
+        $("#" + on).children("a").attr("class", "hover");
+        //$("#content" + on).show();
+
+        //鼠标悬停事件
+        $(".mune ul li").hover(
+            function () {
+                var id = this.id;
+                var a = $(this).children("a");
+                var c = a.attr("class");
+                if (c != "sel") {
+                    a.attr("class", "sel");
+                }
+                else
+                    a.removeAttr("class");
+            },
+            function () {
+                $("div .mune_xia").hide();
+                $(".mune ul li a").removeAttr("class");
+                $("#" + on + " a").attr("class", "sel");
+                //$("#content" + on).show();
+            }
+        );
+
+        function notify() {
+            showAlert("商城正在维护升级中，预计于2016年7月18日16时完成，请稍候访问!");
+        }
+    </script>   
     <div class="pbd m-mall-bg">
         <div id="detail" class="m-mall-con">
             <div class="m-mall-all-header" style="font-size: 14px; text-align: left;">
@@ -159,8 +158,7 @@
                     @foreach($photo as $img)
                     <img src="{{ asset('/admin/upload/goods/'.$img->gimage) }}" alt="">
                     @endforeach
-                </div>
-                
+                </div>  
             </div>
         </div>
     </div>
@@ -234,14 +232,6 @@
             });
         }
     </script>
-
-
-
-        
-        
-
-        
-
 @endsection
 
 

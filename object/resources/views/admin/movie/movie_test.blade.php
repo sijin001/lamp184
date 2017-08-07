@@ -310,7 +310,7 @@
         if (confirm('确定要删除吗？')) {
             var form = document.myform;
             form.innerHTML = form.innerHTML+' {{ method_field('DElETE')}}';
-            form.action = "{{ url('/admin/movie/"+id+"') }}";
+            form.action = "{{ url('/admin/movie') }}"+"/"+id;
             form.submit();
         }
     }

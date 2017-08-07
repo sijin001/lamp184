@@ -32,7 +32,7 @@ class ConfirmController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 立即支付
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -73,18 +73,18 @@ class ConfirmController extends Controller
      */
     public function show($id)
     {
-        // dd($id);
-        $res = explode('&',$id);
-        // dd($res);
+        // // dd($id);
+        // $res = explode('&',$id);
+        // // dd($res);
         
-        $arr = DB::table('goods')->where('goods.id',$res[0])
-            // ->join('goods_photo','goods_photo.gid','=','goods.id')
-            ->first();
+        // $arr = DB::table('goods')->where('goods.id',$res[0])
+        //     // ->join('goods_photo','goods_photo.gid','=','goods.id')
+        //     ->first();
         
-        $num = $res[1];
-        // dd($num);
-        // dd($list);
-        return view('home.goods.orderConfirm', ['arr' => $arr, 'num' => $num]);
+        // $num = $res[1];
+        // // dd($num);
+        // // dd($list);
+        // return view('home.goods.orderConfirm', ['arr' => $arr, 'num' => $num]);
     }
 
     /**
@@ -121,6 +121,10 @@ class ConfirmController extends Controller
         //
     }
 
+    /**
+     * 立即支付，支付成功
+     * 
+     */
     public function doSuccess($id) 
     {
         //var_dump($id);

@@ -17,8 +17,6 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 	//后台首页显示
 	Route::get('/film', 'admin\user\ShowController@index');
 	Route::get('/film/set/{id}','admin\user\ShowController@show');
-	// Route::post('/film/update/{id}','admin\user\ShowController@updato');
-	// Route::get('/film/get','admin\user\ShowController@showgl');
 
 	//user用户资源路由
 	Route::resource('/user', 'admin\user\MoControllers');
@@ -26,8 +24,6 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 	Route::resource('/adminuser', 'admin\user\AdminUserController');
 						//删除列表路由，ajax方式传输
 	Route::get('/delete','admin\user\MoControllers@delo');
-
-
     
     // 商品
     Route::resource('/goods', 'admin\goods\GoodsController');
@@ -80,8 +76,6 @@ Route::group(['prefix' => 'admin','middleware' => 'login'],function(){
 						//删除友情链接路由，ajax方式传输
 	Route::get('/deletethree','admin\ads\MoControllers@delo');
 
-
-
 	//退出
 	Route::get('/over','admin\user\LoginController@out');
 });
@@ -124,9 +118,11 @@ Route::group(['prefix' => 'home','middleware' => 'logins'],function(){
     Route::resource('/moviecapth','home\movie\MovieCapthController');
 
 
-	//前台订单
+	//前台商品订单
 	Route::resource('/goodsorder', 'home\goods\OrderController');
+	// 确认商品订单，立即支付页
 	Route::resource('/confirmorder', 'home\goods\ConfirmController');
+	// 立即支付，支付成功页
     Route::get('/ordersuccess/{tmp}', 'home\goods\ConfirmController@doSuccess');
 
 	//前台退出

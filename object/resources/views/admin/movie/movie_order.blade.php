@@ -87,7 +87,7 @@
 		{
 			if(confirm('确定要删除吗?')) {
 				var form = document.myform;
-				form.action = "/admin/movieorder/"+id;
+				form.action = "{{ url('/admin/movieorder') }}"+"/"+id;
 				form.submit();
 			}
 		}

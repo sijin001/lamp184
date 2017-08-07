@@ -86,7 +86,7 @@
             <header class="index-header">
                 <div class="header-con">
                     <div class="logo">
-                        <img src="{{ asset('home/images/web-v2/logo_03.png') }}" alt=""></div>
+                        <img src="{{ asset('admin/upload/config/'.session('config')->logo) }}" alt=""></div>
 
                     <div class="address" onclick="changeCityClick()"><a href="javascript:void(0);" id="span_CityName"></a><span class="" id="change"></span></div>
                     
@@ -99,7 +99,7 @@
                             <li id="4"><a href="{{ url('/home/movie/get') }}" title="在线购票">在线购票</a></li>
                             <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li>
                           
-                            <li id="6"><a href="activity/ActList.aspx" title="优惠活动">优惠活动</a></li>
+                            <li id="6"><a href="{{ url('/') }}" title="优惠活动">优惠活动</a></li>
                         </ul>
                     </nav>
                     <!---菜单导航 end-->
@@ -124,7 +124,7 @@
                                 <div node-name="userEject" class="my-user-eject" style="display: none;">
                                     <p><a href="{{ url('home/user')}}" style="font-size:14px">我的资料</a></p>
                                     <p><a href="{{ url('home/order') }}" style="font-size:14px"><p>我的订单</a></p>
-                                    <p><a href="{{ url('home/score') }}" style="font-size:14px"><p>我的积分</a></p>
+                                    <!-- <p><a href="{{ url('home/score') }}" style="font-size:14px"><p>我的积分</a></p> -->
                                     <p><a href="{{ url('home/over') }}" style="font-size:14px">退出</a></p>
                                 </div>  
                             </div>
@@ -364,7 +364,7 @@
                                             <input type="button" class="kbtn" onclick="unionPay()" value="立即支付">
                                             <input type="button" class="kbtn" onclick="BreakOrCancelOrder(&#39;1&#39;)" value="返回重选">
                                             <input type="button" class="kbtn" onclick="BreakOrCancelOrder(&#39;2&#39;)" value="取消订单">
-                                            <span id="uid">{{ session('user')->id }}</span>
+                                            <span id="uid" style="display:none;">{{ session('user')->id }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -381,40 +381,36 @@
                     <img style=" margin-top: 50px;
                 margin-right: 50px;float: left;display: block;" class="codePic" src="{{ asset('home/images/doubleCode.jpg') }}">
                     <ul style="float: left;width: 840px;margin-top: 30px;">
-                            <?php $link = session('link');?>
-                            @foreach($link as $v)
+                        <?php $link = session('link');?>
+                        @foreach($link as $v)
                         <li style="margin-top:5px">
                             <p><a href="{{ $v->url }}" target="_blank">{{ $v->title }}</a></p>
                         </li>
-
-                            @endforeach
-                      
+                        @endforeach
                     </ul>
-                     <div class="clear" style="clear: both;"></div> 
+                    <div class="clear" style="clear: both;"></div> 
                 </div>
                 <div class="links-box">
                     <ul>
-                        <li><a href="common/aboutus.aspx">关于中影</a></li>
-                        <li><a href="common/contactus.aspx">联系方式</a></li>
-                        <li><a href="common/addservice.aspx">服务协议 </a></li>
-                        <li><a href="common/complaint.aspx">会员协议 </a></li>
-                        <li><a href="common/hr.aspx">市场合作 </a></li>
-                        <li><a href="common/privacy.aspx">隐私条款 </a></li>
-                        <li style="border-right: 0;"><a  href="common/pre.aspx">免责声明</a></li>
-
+                        <li><a href="#">关于中影</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">服务协议 </a></li>
+                        <li><a href="#">会员协议 </a></li>
+                        <li><a href="#">市场合作 </a></li>
+                        <li><a href="#">隐私条款 </a></li>
+                        <li style="border-right: 0;"><a  href="#">免责声明</a></li>
                     </ul>
                 </div>
                 <div class="copyright">
                     Copyright © 2007 -
                     2017
                     ChinaFilm All rights reserved.<a href="../www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备15040734号-1 </a>中影影院投资有限公司 版权所有
-
                     
                     <script type="text/javascript">
                         var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
                         document.write(unescape("%3Cspan id='cnzz_stat_icon_1000542813'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1000542813%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
                     </script>
-                    </div>
+                </div>
             </footer>
             <script type="text/javascript">
 

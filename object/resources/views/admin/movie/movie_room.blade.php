@@ -10,7 +10,7 @@
 					{{ csrf_field() }}
 					{{ method_field('DELETE') }}
 				</form>
-				<form action="/movieroom" method="post" name="addform">
+				<form action="{{ url('/admin/movieroom') }}" method="post" name="addform">
 					{{ csrf_field() }}
 					<div class="col-md-8 bottom-form">
 						<div class="col-md-2 grid-form">
@@ -73,7 +73,7 @@
 	    {
 	        if (confirm('确定要删除吗？')) {
 	            var form = document.myform;
-	            form.action = "{{ url('/admin/movieroom/"+id+"') }}";
+	            form.action = "{{ url('/admin/movieroom') }}"+"/"+id;
 	            form.submit();
 	        }
 	    }

@@ -20,7 +20,7 @@ class GouwuController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 显示商品确认订单页面
      *
      * @return \Illuminate\Http\Response
      */
@@ -61,7 +61,7 @@ class GouwuController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * 显示商品购物车页面
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -82,7 +82,7 @@ class GouwuController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * 删除购物车商品
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

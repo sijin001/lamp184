@@ -2,64 +2,7 @@
 @section('content')
 
 <script type="text/javascript" language="javascript">
-    //选择城市操作
-    $("#change").click(function () {
-        $(".City_list").show();
-        var cityNo = getCookie("_CityNo_");
-        if (cityNo != "") {
-            $("#" + cityNo).attr("class", "sel");
-        }
-    });
-    function changeCityClick() {
-        $(".City_list").show();
-        var cityNo = getCookie("_CityNo_");
-        if (cityNo != "") {
-            $("#" + cityNo).attr("class", "sel");
-        }
-    }
-    $(".City_list").mouseleave(function () {
-        $(".City_list").hide();
-    });
-
-    //切换城市
-    function ChangCity(id) {
-        var str = $("#" + id).html();
-        if (str.length > 4) {
-            str = str.substr(0, 4);
-        }
-        $("#span_CityName").html(str);
-        setCookie("_CityName_", encodeURI(str));
-        setCookie("_CityNo_", encodeURI(id));
-        // window.location.href = '../index.aspx';
-        var urls = window.location.href;
-        if (urls != "" && urls.indexOf("movie.aspx") != -1 && urls.indexOf("?") == -1) {    //影片页面
-            window.location.href = window.location.href;
-        } else if (urls != "" && urls.indexOf("cinema.aspx") != -1 && urls.indexOf("?") == -1) {    //影院页面
-            window.location.href = window.location.href;
-        } else if (urls != "" && urls.indexOf("schedule.aspx") != -1) { //排期查询页面
-            //window.location.href = window.location.href;
-            window.location.href = "schedule.aspx";
-        } else if (urls != "" && urls.indexOf("exticket_list.aspx") != -1) { //活动促销页面
-            window.location.href = window.location.href;
-        }
-        else if (urls != "" && urls.indexOf("mall") != -1) { //商城页
-            window.location.href = window.location.href;
-        }
-        else {
-            window.location.href = '../index.aspx';
-        }
-
-    }
-
-    //设置默认值
-    if (getCookie("_CityName_") != null) {
-        $("#span_CityName").html(getCookie("_CityName_"));
-
-    } else {
-        setCookie("_CityName_", encodeURI("北京"));
-        setCookie("_CityNo_", encodeURI("110100"));
-    }
-
+    
     //JS Cookie操作
     function getCookieVal(offset) {
         var endstr = document.cookie.indexOf(";", offset);

@@ -110,15 +110,12 @@
                     }
                 });
             }
-
-
             //投诉
             function showComplain() {
                 if (checkIsLogin()) {
                     setTimeout(openComplain, 20);
                 }
             }
-
 
             //弹出投诉
             function openComplain() {
@@ -135,7 +132,7 @@
         <title>
         </title>
     </head>
-<body>
+    <body>
     <!-- <form method="post" action="http://www.cfc.com.cn/cinema/cinema.aspx" id="form1"> -->
         <div class="aspNetHidden">
             <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="">
@@ -148,7 +145,7 @@
         <header class="index-header">
             <div class="header-con">
                 <div class="logo">
-                    <img src="{{ asset('home/images/web-v2/logo_03.png') }}" alt=""></div>
+                    <img src="{{ asset('admin/upload/config/'.session('config')->logo) }}" alt=""></div>
                 <div class="address" onclick="changeCityClick()"><a href="javascript:void(0);" id="span_CityName"></a><span
                  id="change"></span></div>
                 <!---菜单导航 start-->
@@ -157,9 +154,8 @@
                         <li id="2"><a href="{{ url('/') }}" title="首页">首 页</a></li>
                         <li id="3"><a href="{{ url('/home/movieplace') }}" title="购票通道">影 院</a></li>
                         <li id="4"><a href="{{ url('/home/movie/get') }}" title="在线购票">在线购票</a></li>
-                        <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li>
-                      
-                        <li id="6"><a href="activity/ActList.aspx" title="优惠活动">优惠活动</a></li>
+                        <li id="5"><a href="{{ url('/goods') }}" title="商城"><span class="icon-2"></span>商城</a></li> 
+                        <li id="6"><a href="{{ url('/') }}" title="优惠活动">优惠活动</a></li>
                     </ul>
                 </nav>
                 <!---菜单导航 end-->
@@ -185,7 +181,7 @@
                             <div node-name="userEject" class="my-user-eject" style="display: none;">
                                 <p><a href="{{ url('home/user')}}" style="font-size:14px">我的资料</a></p>
                                 <p><a href="{{ url('home/order') }}" style="font-size:14px"><p>我的订单</a></p>
-                                <p><a href="{{ url('home/score') }}" style="font-size:14px"><p>我的积分</a></p>
+                                <!-- <p><a href="{{ url('home/score') }}" style="font-size:14px"><p>我的积分</a></p> -->
                                 <p><a href="{{ url('home/over') }}" style="font-size:14px">退出</a></p>
                             </div>  
                         </div>
@@ -467,27 +463,25 @@
                 <img style=" margin-top: 50px;
             margin-right: 50px;float: left;display: block;" class="codePic" src="{{ asset('home/images/doubleCode.jpg') }}">
                 <ul style="float: left;width: 840px;margin-top: 30px;">
-                        <?php $link = session('link');?>
-                        @foreach($link as $v)
+                    <?php $link = session('link');?>
+                    @foreach($link as $v)
                     <li style="margin-top:5px">
                         <p><a href="{{ $v->url }}" target="_blank">{{ $v->title }}</a></p>
                     </li>
-
-                        @endforeach
-                  
+                    @endforeach
                 </ul>
                  <div class="clear" style="clear: both;"></div> 
             </div>
 
             <div class="links-box">
                 <ul>
-                    <li><a href="common/aboutus.aspx">关于中影</a></li>
-                    <li><a href="common/contactus.aspx">联系方式</a></li>
-                    <li><a href="common/addservice.aspx">服务协议 </a></li>
-                    <li><a href="common/complaint.aspx">会员协议 </a></li>
-                    <li><a href="common/hr.aspx">市场合作 </a></li>
-                    <li><a href="common/privacy.aspx">隐私条款 </a></li>
-                    <li style="border-right: 0;"><a  href="common/pre.aspx">免责声明</a></li>
+                    <li><a href="#">关于中影</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">服务协议 </a></li>
+                    <li><a href="#">会员协议 </a></li>
+                    <li><a href="#">市场合作 </a></li>
+                    <li><a href="#">隐私条款 </a></li>
+                    <li style="border-right: 0;"><a  href="#">免责声明</a></li>
 
                 </ul>
             </div>
